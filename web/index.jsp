@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>Heshan Hardware | Inventory Management</title>
   </head>
   <body>
-  $END$
+    <nav></nav>
   </body>
 </html>
