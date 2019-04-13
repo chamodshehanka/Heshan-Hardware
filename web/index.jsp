@@ -11,6 +11,6 @@
     <title>Heshan Hardware | Inventory Management</title>
   </head>
   <body>
-    <nav></nav>
+    <h2>Heshan Hardware</h2>
   </body>
 </html>
