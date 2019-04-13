@@ -1,0 +1,7 @@
+
+
+url=jdbc:mysql://localhost:3306/heshanhardware
+driverName=com.mysql.jdbc.Driver
+username=root
+password=root
+queryFilePath=EmployeeQuery.xml
