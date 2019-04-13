@@ -7,5 +7,5 @@ import com.chamodshehanka.heshanhardware.service.SuperService;
  * @author chamodshehanka on 4/13/2019
  * @project HeshanHardware
  **/
-public interface IAdminService extends SuperService<Admin, String> {
+public interface AdminService extends SuperService<Admin, String> {
 }

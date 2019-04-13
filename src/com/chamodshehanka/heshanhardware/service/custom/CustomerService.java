@@ -7,5 +7,5 @@ import com.chamodshehanka.heshanhardware.service.SuperService;
  * @author chamodshehanka on 4/13/2019
  * @project HeshanHardware
  **/
-public interface ICustomerService extends SuperService<Customer, String> {
+public interface CustomerService extends SuperService<Customer, String> {
 }

@@ -1,7 +1,7 @@
 package com.chamodshehanka.heshanhardware.service.custom.impl;
 
 import com.chamodshehanka.heshanhardware.model.Employee;
-import com.chamodshehanka.heshanhardware.service.custom.IEmployeeService;
+import com.chamodshehanka.heshanhardware.service.custom.EmployeeService;
 
 import java.util.ArrayList;
 
@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @author chamodshehanka on 4/13/2019
  * @project HeshanHardware
  **/
-public class EmployeeServiceImpl implements IEmployeeService {
+public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void add(Employee employee) {

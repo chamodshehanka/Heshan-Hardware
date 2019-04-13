@@ -1,7 +1,7 @@
 package com.chamodshehanka.heshanhardware.service.custom.impl;
 
 import com.chamodshehanka.heshanhardware.model.Item;
-import com.chamodshehanka.heshanhardware.service.custom.IItemService;
+import com.chamodshehanka.heshanhardware.service.custom.ItemService;
 
 import java.util.ArrayList;
 
@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @author chamodshehanka on 4/13/2019
  * @project HeshanHardware
  **/
-public class ItemServiceImpl implements IItemService {
+public class ItemServiceImpl implements ItemService {
 
     @Override
     public void add(Item item) {

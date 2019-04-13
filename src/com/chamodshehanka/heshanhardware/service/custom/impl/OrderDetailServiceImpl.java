@@ -1,7 +1,7 @@
 package com.chamodshehanka.heshanhardware.service.custom.impl;
 
 import com.chamodshehanka.heshanhardware.model.OrderDetail;
-import com.chamodshehanka.heshanhardware.service.custom.IOrderDetailService;
+import com.chamodshehanka.heshanhardware.service.custom.OrderDetailService;
 
 import java.util.ArrayList;
 
@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @author chamodshehanka on 4/13/2019
  * @project HeshanHardware
  **/
-public class OrderDetailServiceImpl implements IOrderDetailService {
+public class OrderDetailServiceImpl implements OrderDetailService {
     @Override
     public void add(OrderDetail orderDetail) {
 

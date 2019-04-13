@@ -1,7 +1,7 @@
 package com.chamodshehanka.heshanhardware.service.custom.impl;
 
 import com.chamodshehanka.heshanhardware.model.Admin;
-import com.chamodshehanka.heshanhardware.service.custom.IAdminService;
+import com.chamodshehanka.heshanhardware.service.custom.AdminService;
 import com.chamodshehanka.heshanhardware.util.CommonConstants;
 import com.chamodshehanka.heshanhardware.util.CommonUtil;
 import com.chamodshehanka.heshanhardware.util.DBConnectionUtil;
@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  * @author chamodshehanka on 4/13/2019
  * @project HeshanHardware
  **/
-public class AdminServiceImpl implements IAdminService {
+public class AdminServiceImpl implements AdminService {
 
     public static final Logger LOGGER = Logger.getLogger(AdminServiceImpl.class.getName());
     private static Connection connection;

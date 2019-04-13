@@ -1,6 +1,6 @@
 package com.chamodshehanka.heshanhardware.util;
 
-import com.chamodshehanka.heshanhardware.service.custom.IEmployeeService;
+import com.chamodshehanka.heshanhardware.service.custom.EmployeeService;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ import java.util.logging.Logger;
  **/
 public class CommonUtil {
 
-    public static final Logger log = Logger.getLogger(IEmployeeService.class.getName());
+    public static final Logger log = Logger.getLogger(EmployeeService.class.getName());
 
     public static final Properties properties = new Properties();
 

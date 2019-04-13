@@ -7,5 +7,5 @@ import com.chamodshehanka.heshanhardware.service.SuperService;
  * @author chamodshehanka on 4/13/2019
  * @project HeshanHardware
  **/
-public interface IItemService extends SuperService<Item, String> {
+public interface ItemService extends SuperService<Item, String> {
 }

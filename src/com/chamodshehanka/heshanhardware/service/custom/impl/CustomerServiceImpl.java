@@ -1,7 +1,7 @@
 package com.chamodshehanka.heshanhardware.service.custom.impl;
 
 import com.chamodshehanka.heshanhardware.model.Customer;
-import com.chamodshehanka.heshanhardware.service.custom.ICustomerService;
+import com.chamodshehanka.heshanhardware.service.custom.CustomerService;
 
 import java.util.ArrayList;
 
@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @author chamodshehanka on 4/13/2019
  * @project HeshanHardware
  **/
-public class CustomerServiceImpl implements ICustomerService {
+public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void add(Customer customer) {
