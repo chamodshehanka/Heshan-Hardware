@@ -2,6 +2,7 @@ package com.chamodshehanka.heshanhardware.service.impl;
 
 import com.chamodshehanka.heshanhardware.service.ServiceFactory;
 import com.chamodshehanka.heshanhardware.service.SuperService;
+import com.chamodshehanka.heshanhardware.service.custom.impl.AdminServiceImpl;
 import com.chamodshehanka.heshanhardware.service.custom.impl.EmployeeServiceImpl;
 
 /**
@@ -24,7 +25,7 @@ public class ServiceFactoryImpl implements ServiceFactory {
     @Override
     public SuperService getService(ServiceType serviceType) throws Exception {
         switch (serviceType){
-            case ADMIN:
+            case ADMIN: return new AdminServiceImpl();
             case CUSTOMER:
             case EMPLOYEE: return new EmployeeServiceImpl();
             default: return null;

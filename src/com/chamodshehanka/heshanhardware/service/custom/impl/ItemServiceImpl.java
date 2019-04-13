@@ -1,7 +1,7 @@
 package com.chamodshehanka.heshanhardware.service.custom.impl;
 
-import com.chamodshehanka.heshanhardware.model.Customer;
-import com.chamodshehanka.heshanhardware.service.custom.ICustomerService;
+import com.chamodshehanka.heshanhardware.model.Item;
+import com.chamodshehanka.heshanhardware.service.custom.IItemService;
 
 import java.util.ArrayList;
 
@@ -9,10 +9,10 @@ import java.util.ArrayList;
  * @author chamodshehanka on 4/13/2019
  * @project HeshanHardware
  **/
-public class CustomerServiceImpl implements ICustomerService {
+public class ItemServiceImpl implements IItemService {
 
     @Override
-    public void add(Customer customer) {
+    public void add(Item item) {
 
     }
 
@@ -22,7 +22,7 @@ public class CustomerServiceImpl implements ICustomerService {
     }
 
     @Override
-    public Customer update(String s, Customer customer) {
+    public Item update(String s, Item item) {
         return null;
     }
 
@@ -32,8 +32,7 @@ public class CustomerServiceImpl implements ICustomerService {
     }
 
     @Override
-    public ArrayList<Customer> getAll() {
+    public ArrayList<Item> getAll() {
         return null;
     }
-
 }
