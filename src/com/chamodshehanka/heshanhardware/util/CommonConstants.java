@@ -19,7 +19,12 @@ public class CommonConstants {
     public static final String ATTRIB_ID = "id";
 
     /** Constant for employee id prefix */
+    public static final String ADMIN_ID_PREFIX = "A";
+    public static final String CUSTOMER_ID_PREFIX = "C";
     public static final String EMPLOYEE_ID_PREFIX = "E300";
+    public static final String ITEM_ID_PREFIX = "I";
+    public static final String ORDERDETAIL_ID_PREFIX = "";
+    public static final String ORDER_ID_PREFIX = "A";
 
     /** Constant for comma */
     public static final String COMMA = ",";
@@ -84,4 +89,5 @@ public class CommonConstants {
     /** Constant for Column index eight */
     public static final int COLUMN_INDEX_EIGHT = 8;
 
+    public static final String QUERY_ID_INSERT_ADMIN = "admin_ids";
 }
