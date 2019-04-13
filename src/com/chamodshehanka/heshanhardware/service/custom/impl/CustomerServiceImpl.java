@@ -17,8 +17,9 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void getByID(String s) {
+    public Customer getByID(String s) {
 
+        return null;
     }
 
     @Override

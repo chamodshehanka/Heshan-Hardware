@@ -79,8 +79,8 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public void getByID(String s) {
-
+    public Admin getByID(String s) {
+        return null;
     }
 
     @Override

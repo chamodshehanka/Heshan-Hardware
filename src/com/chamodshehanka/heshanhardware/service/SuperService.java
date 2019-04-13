@@ -10,7 +10,7 @@ public interface SuperService<T, ID> {
 
     public void add(T t);
 
-    public void getByID(ID id);
+    public T getByID(ID id);
 
     public T update(ID id, T t);
 

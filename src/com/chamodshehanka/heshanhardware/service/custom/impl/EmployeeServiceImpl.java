@@ -17,8 +17,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void getByID(String s) {
-
+    public Employee getByID(String s) {
+        return null;
     }
 
     @Override

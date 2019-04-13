@@ -16,8 +16,9 @@ public class OrderDetailServiceImpl implements OrderDetailService {
     }
 
     @Override
-    public void getByID(String s) {
+    public OrderDetail getByID(String s) {
 
+        return null;
     }
 
     @Override

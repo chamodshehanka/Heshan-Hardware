@@ -17,8 +17,9 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public void getByID(String s) {
+    public Item getByID(String s) {
 
+        return null;
     }
 
     @Override
