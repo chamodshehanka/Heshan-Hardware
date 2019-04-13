@@ -15,12 +15,16 @@ public class DBConnectionUtil {
     public DBConnectionUtil() {
     }
 
-    public static Connection getDBConnection() throws SQLException {
-//        if (connection == null || connection.isClosed()){
-//            Class.forName(properties.getProperty(CommonConstants.DRIVER_NAME));
-//            connection = DriverManager.getConnection(properties.getProperty(CommonConstants.URL),
-//                    properties.getProperty(CommonConstants.USERNAME), properties.getProperty(CommonConstants.PASSWORD));
-//        }
+    public static Connection getDBConnection() throws SQLException, ClassNotFoundException {
+        if (connection == null || connection.isClosed()){
+            Class.forName(
+                    CommonUtil.properties.getProperty(CommonConstants.DRIVER_NAME));
+            connection = DriverManager.getConnection(
+                    CommonUtil.properties.getProperty(CommonConstants.URL),
+                    CommonUtil.properties.getProperty(CommonConstants.USERNAME),
+                    CommonUtil.properties.getProperty(CommonConstants.PASSWORD)
+            );
+        }
         return connection;
     }
 }

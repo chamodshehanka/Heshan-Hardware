@@ -38,7 +38,7 @@ public class AdminServiceImpl implements AdminService {
             statement = connection.createStatement();
             statement.executeUpdate(QueryUtil.queryByID(CommonConstants.QUERY_ID_DROP_TABLE));
             statement.executeUpdate(QueryUtil.queryByID(CommonConstants.QUERY_ID_CREATE_TABLE));
-        } catch (SQLException | IOException | ParserConfigurationException | SAXException e) {
+        } catch (SQLException | IOException | ParserConfigurationException | SAXException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -61,7 +61,7 @@ public class AdminServiceImpl implements AdminService {
 
             preparedStatement.execute();
             connection.commit();
-        } catch (SQLException | SAXException | IOException | ParserConfigurationException e) {
+        } catch (SQLException | SAXException | IOException | ParserConfigurationException | ClassNotFoundException e) {
             e.printStackTrace();
         } finally {
             try {

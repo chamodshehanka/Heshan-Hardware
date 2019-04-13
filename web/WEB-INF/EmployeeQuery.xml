@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Queries>
+
+    <query id="create_employee_table">
+        <![CDATA[
+                    CREATE TABLE employee(
+
+                    )
+        ]]>
+    </query>
+
+</Queries>
