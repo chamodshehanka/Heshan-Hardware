@@ -1,6 +1,6 @@
 package com.chamodshehanka.heshanhardware.util;
 
-import com.chamodshehanka.heshanhardware.service.IEmployeeService;
+import com.chamodshehanka.heshanhardware.service.custom.IEmployeeService;
 
 import java.io.IOException;
 import java.util.ArrayList;
