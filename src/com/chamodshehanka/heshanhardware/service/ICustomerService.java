@@ -4,5 +4,5 @@ package com.chamodshehanka.heshanhardware.service;
  * @author chamodshehanka on 4/13/2019
  * @project HeshanHardware
  **/
-public class EmployeeServiceImpl {
+public interface ICustomerService {
 }
