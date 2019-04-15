@@ -10,12 +10,12 @@ import javax.servlet.http.HttpServletResponse;
 public class UpdateEmployeeServlet extends SuperServlet {
 
     @Override
-    protected void goGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+    protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 
     }
 
     @Override
-    protected void goPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+    protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 
     }
 }

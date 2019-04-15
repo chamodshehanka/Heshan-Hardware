@@ -17,7 +17,7 @@ import java.io.IOException;
  * @project HeshanHardware
  **/
 @WebServlet("/AddEmployeeServlet")
-public class AddEmployeeServlet extends HttpServlet {
+public class AddEmployeeServlet extends SuperServlet {
 
     public static final long serialVersionUID = 1L;
 
@@ -25,10 +25,12 @@ public class AddEmployeeServlet extends HttpServlet {
         super();
     }
 
+    @Override
     protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws IOException {
         httpServletResponse.getWriter().append("Served at: ").append(httpServletRequest.getContextPath());
     }
 
+    @Override
     protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
             throws ServletException, IOException {
         httpServletResponse.setContentType("text/html");

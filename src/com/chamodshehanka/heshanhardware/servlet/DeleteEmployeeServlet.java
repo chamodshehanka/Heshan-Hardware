@@ -14,7 +14,7 @@ import java.io.IOException;
  * @author chamodshehanka on 4/14/2019
  * @project HeshanHardware
  **/
-public class DeleteEmployeeServlet extends HttpServlet {
+public class DeleteEmployeeServlet extends SuperServlet {
 
     private static final long serialVersionUID = 1871871796669342804L;
 
@@ -22,7 +22,7 @@ public class DeleteEmployeeServlet extends HttpServlet {
         super();
     }
 
-    protected void goGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse){
+    protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse){
 
     }
 
