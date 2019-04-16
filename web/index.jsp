@@ -9,8 +9,21 @@
 <html>
   <head>
     <title>Heshan Hardware | Inventory Management</title>
+
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/WEB-INF/assets/css/bootstrap.css">
+
+    <style>
+      body{
+        background-image: url('${pageContext.request.contextPath}/assets/images/background.jpg');
+      }
+
+      button{
+        background-color: rebeccapurple;
+      }
+    </style>
   </head>
-  <body style="background-image:url('/WEB-INF/resources/images/background.jpg')">
+  <body style="background-image:url('${pageContext.request.contextPath}/WEB-INF/resources/images/background.jpg')">
     <h2>Heshan Hardware</h2>
+    <button class="btn btn-danger">Hello</button>
   </body>
 </html>
