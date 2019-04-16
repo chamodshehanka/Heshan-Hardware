@@ -14,7 +14,7 @@ import java.io.IOException;
  * @author chamodshehanka on 4/14/2019
  * @project HeshanHardware
  **/
-public class DeleteEmployeeServlet extends SuperServlet {
+public class DeleteEmployeeServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1871871796669342804L;
 

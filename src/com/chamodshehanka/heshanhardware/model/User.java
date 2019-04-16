@@ -21,6 +21,16 @@ public class User {
         this.userType = userType;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "userID='" + userID + '\'' +
+                ", userName='" + userName + '\'' +
+                ", userPassword='" + userPassword + '\'' +
+                ", userType='" + userType + '\'' +
+                '}';
+    }
+
     public String getUserID() {
         return userID;
     }

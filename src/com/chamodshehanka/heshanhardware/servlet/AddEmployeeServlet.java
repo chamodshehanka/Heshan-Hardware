@@ -17,7 +17,7 @@ import java.io.IOException;
  * @project HeshanHardware
  **/
 @WebServlet("/AddEmployeeServlet")
-public class AddEmployeeServlet extends SuperServlet {
+public class AddEmployeeServlet extends HttpServlet {
 
     public static final long serialVersionUID = 1L;
 

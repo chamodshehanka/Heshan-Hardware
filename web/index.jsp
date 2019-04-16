@@ -10,7 +10,7 @@
   <head>
     <title>Heshan Hardware | Inventory Management</title>
   </head>
-  <body>
+  <body style="background-image:url('/WEB-INF/resources/images/background.jpg')">
     <h2>Heshan Hardware</h2>
   </body>
 </html>
