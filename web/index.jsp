@@ -14,7 +14,7 @@
 
     <style>
       body{
-        background-image: url('${pageContext.request.contextPath}/assets/images/background.jpg');
+        background-image: url('/WEB-INF/assets/images/background.jpg');
       }
 
       button{
