@@ -5,6 +5,7 @@ import com.chamodshehanka.heshanhardware.service.custom.impl.EmployeeServiceImpl
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,6 +15,7 @@ import java.io.IOException;
  * @author chamodshehanka on 4/14/2019
  * @project HeshanHardware
  **/
+@WebServlet(name = "DeleteEmployee")
 public class DeleteEmployeeServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1871871796669342804L;
