@@ -41,14 +41,12 @@
             text-shadow: 2px 2px 4px black;
         }
 
-        .login-section {
-            width: 600px;
-            height: 600px;
+        .uk-button-primary{
             background-color: #FFA726;
         }
 
-        .uk-button-primary{
-            background-color: #FFA726;
+        .uk-button-primary:hover{
+            background-color: #FF9800;
         }
     </style>
 </head>
@@ -59,31 +57,52 @@
         <h1 class="header-banner-text">Heshan Hardware Inventory Management System</h1>
 
         <div>
-            <button class="uk-button uk-button-primary">Sign In</button>
-            <button class="uk-button uk-button-secondary">Sign Up</button>
+            <button class="uk-button uk-button-primary" uk-toggle="target: #modal-signIn">Sign In</button>
+            <button class="uk-button uk-button-secondary" uk-toggle="target: #modal-signUp">Sign Up</button>
+
+            <%--   SignIn Modal   --%>
+            <div id="modal-signIn" uk-modal>
+                <div class="uk-modal-dialog uk-modal-body">
+                    <button class="uk-modal-close-default" type="button" uk-close></button>
+
+                    <h2 class="uk-modal-title">Sign In</h2>
+
+                    <form>
+                        <div class="uk-margin">
+                            <div class="uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                <input class="uk-input" type="text" placeholder="Username">
+                            </div>
+                        </div>
+
+                        <div class="uk-margin">
+                            <div class="uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                                <input class="uk-input" type="password" placeholder="password">
+                            </div>
+                        </div>
+
+                        <button class="uk-button uk-button-primary">Sign In</button>
+                    </form>
+
+                </div>
+            </div>
+
+
+            <%--   SignUp Modal  --%>
+            <div id="modal-signUp" uk-modal>
+                <div class="uk-modal-dialog uk-modal-body">
+                    <button class="uk-modal-close-default" type="button" uk-close></button>
+                    <h2 class="uk-modal-title">Default</h2>
+
+                </div>
+            </div>
+
         </div>
     </div>
 </header>
 
-<section class="login-section">
-    <form>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                   placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-warning">Submit</button>
-    </form>
-</section>
+
 
 </body>
 
