@@ -71,18 +71,18 @@
                         <div class="uk-margin">
                             <div class="uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: user"></span>
-                                <input class="uk-input" type="text" placeholder="Username">
+                                <input id="txt-username" class="uk-input" type="text" placeholder="Username">
                             </div>
                         </div>
 
                         <div class="uk-margin">
                             <div class="uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: lock"></span>
-                                <input class="uk-input" type="password" placeholder="password">
+                                <input id="txt-password" class="uk-input" type="password" placeholder="password">
                             </div>
                         </div>
 
-                        <button class="uk-button uk-button-primary">Sign In</button>
+                        <button id="btn-signIn" class="uk-button uk-button-primary">Sign In</button>
                     </form>
 
                 </div>
@@ -93,8 +93,12 @@
             <div id="modal-signUp" uk-modal>
                 <div class="uk-modal-dialog uk-modal-body">
                     <button class="uk-modal-close-default" type="button" uk-close></button>
-                    <h2 class="uk-modal-title">Default</h2>
 
+                    <h2 class="uk-modal-title">Sign Up</h2>
+
+                    <form>
+
+                    </form>
                 </div>
             </div>
 
@@ -110,4 +114,5 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.4/js/uikit.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.4/js/uikit-icons.min.js"></script>
+<script src="WEB-INF/assets/js/validationUtil.js" type="text/javascript"></script>
 </html>
