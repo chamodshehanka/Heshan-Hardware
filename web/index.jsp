@@ -107,6 +107,7 @@
 </header>
 
 
+<img src="assets/images/logo.jpg" alt="">
 
 </body>
 
@@ -114,5 +115,5 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.4/js/uikit.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.4/js/uikit-icons.min.js"></script>
-<script src="WEB-INF/assets/js/validationUtil.js" type="text/javascript"></script>
+<script src="assets/js/validationUtil.js" type="text/javascript"></script>
 </html>
