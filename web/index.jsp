@@ -1,4 +1,3 @@
-<%@ page import="java.util.Date" %>
 <%@ page import="com.chamodshehanka.heshanhardware.service.custom.UserService" %>
 <%@ page import="com.chamodshehanka.heshanhardware.service.custom.impl.UserServiceImpl" %>
 <%@ page import="java.util.ArrayList" %>
@@ -56,7 +55,7 @@
                             </div>
                         </div>
 
-                        <button id="btn-signIn" class="uk-button uk-button-primary">Sign In</button>
+                        <button id="btn-signIn" class="uk-button uk-button-primary" onclick="">Sign In</button>
                     </form>
 
                 </div>
@@ -90,10 +89,10 @@
         }
     %>
 
-    <%
+    <%--<%
         Date date = new Date();
         out.print("<h2>" + date.toString() + "</h2>");
-    %>
+    %>--%>
 </div>
 
 </body>

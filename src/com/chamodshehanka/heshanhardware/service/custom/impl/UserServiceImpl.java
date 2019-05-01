@@ -63,6 +63,7 @@ public class UserServiceImpl implements UserService {
     public ArrayList<User> getAll() {
         ArrayList<User> userArrayList = new ArrayList<>();
         try {
+            System.out.println("GetAll DB : " + DBConnectionUtil.getDBConnection());
             connection = DBConnectionUtil.getDBConnection();
             preparedStatement = connection.prepareStatement("SELECT * FROM user");
 
