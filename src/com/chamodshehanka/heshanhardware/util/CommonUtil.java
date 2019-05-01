@@ -3,8 +3,10 @@ package com.chamodshehanka.heshanhardware.util;
 import com.chamodshehanka.heshanhardware.service.custom.EmployeeService;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Properties;
+import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
 /**
@@ -18,8 +20,15 @@ public class CommonUtil {
     public static final Properties properties = new Properties();
 
     static {
+
+        ResourceBundle resourceBundle = ResourceBundle.getBundle("config");
+        System.out.println("Reso: " + resourceBundle);
+
+
         try {
-            properties.load(QueryUtil.class.getResourceAsStream(CommonConstants.PROPERTY_FILE));
+            InputStream inputStream = CommonUtil.class.getClassLoader().getResourceAsStream("/config.properties");
+
+            properties.load(inputStream);
         }catch (IOException e){
             e.printStackTrace();
         }

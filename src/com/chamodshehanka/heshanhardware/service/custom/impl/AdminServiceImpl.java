@@ -33,49 +33,49 @@ public class AdminServiceImpl implements AdminService {
     }
 
     public static void createAdminTable(){
-        try {
-            connection = DBConnectionUtil.getDBConnection();
-            statement = connection.createStatement();
-            statement.executeUpdate(QueryUtil.queryByID(CommonConstants.QUERY_ID_DROP_TABLE));
-            statement.executeUpdate(QueryUtil.queryByID(CommonConstants.QUERY_ID_CREATE_TABLE));
-        } catch (SQLException | IOException | ParserConfigurationException | SAXException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            connection = DBConnectionUtil.getDBConnection();
+//            statement = connection.createStatement();
+//            statement.executeUpdate(QueryUtil.queryByID(CommonConstants.QUERY_ID_DROP_TABLE));
+//            statement.executeUpdate(QueryUtil.queryByID(CommonConstants.QUERY_ID_CREATE_TABLE));
+//        } catch (SQLException | IOException | ParserConfigurationException | SAXException | ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
     }
 
     @Override
     public void add(Admin admin) {
-        assert getAdminIDs() != null;
-        String adminID = CommonUtil.generateIDs(getAdminIDs());
-
-        try {
-            connection = DBConnectionUtil.getDBConnection();
-            preparedStatement = connection
-                    .prepareStatement(QueryUtil.queryByID(CommonConstants.QUERY_ID_INSERT_ADMIN));
-            connection.setAutoCommit(false);
-
-            admin.setAdminID(adminID);
-            preparedStatement.setString(CommonConstants.COLUMN_INDEX_ONE, admin.getAdminID());
-            preparedStatement.setString(CommonConstants.COLUMN_INDEX_TWO, admin.getUserName());
-            preparedStatement.setString(CommonConstants.COLUMN_INDEX_THREE, admin.getPassword());
-
-            preparedStatement.execute();
-            connection.commit();
-        } catch (SQLException | SAXException | IOException | ParserConfigurationException | ClassNotFoundException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (preparedStatement != null){
-                    preparedStatement.close();
-                }
-
-                if (connection != null){
-                    connection.close();
-                }
-            }catch (SQLException e){
-                e.printStackTrace();
-            }
-        }
+//        assert getAdminIDs() != null;
+//        String adminID = CommonUtil.generateIDs(getAdminIDs());
+//
+//        try {
+//            connection = DBConnectionUtil.getDBConnection();
+//            preparedStatement = connection
+//                    .prepareStatement(QueryUtil.queryByID(CommonConstants.QUERY_ID_INSERT_ADMIN));
+//            connection.setAutoCommit(false);
+//
+//            admin.setAdminID(adminID);
+//            preparedStatement.setString(CommonConstants.COLUMN_INDEX_ONE, admin.getAdminID());
+//            preparedStatement.setString(CommonConstants.COLUMN_INDEX_TWO, admin.getUserName());
+//            preparedStatement.setString(CommonConstants.COLUMN_INDEX_THREE, admin.getPassword());
+//
+//            preparedStatement.execute();
+//            connection.commit();
+//        } catch (SQLException | SAXException | IOException | ParserConfigurationException | ClassNotFoundException e) {
+//            e.printStackTrace();
+//        } finally {
+//            try {
+//                if (preparedStatement != null){
+//                    preparedStatement.close();
+//                }
+//
+//                if (connection != null){
+//                    connection.close();
+//                }
+//            }catch (SQLException e){
+//                e.printStackTrace();
+//            }
+//        }
     }
 
     @Override

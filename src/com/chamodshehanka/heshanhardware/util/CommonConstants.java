@@ -10,7 +10,7 @@ public class CommonConstants {
     public static final String QUERY_XML = "queryFilePath";
 
     /** Constant for file path of config.properties */
-    public static final String PROPERTY_FILE = "config.properties";
+    public static final String PROPERTY_FILE = "/config.properties";
 
     /** Constant for query tag in EmployeeQuery.xml */
     public static final String TAG_NAME = "query";

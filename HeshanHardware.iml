@@ -25,5 +25,6 @@
     <orderEntry type="library" name="materialize" level="application" />
     <orderEntry type="library" name="uikit" level="application" />
     <orderEntry type="library" name="uikit-icons" level="application" />
+    <orderEntry type="library" exported="" name="lib" level="project" />
   </component>
 </module>

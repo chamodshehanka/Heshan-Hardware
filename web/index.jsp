@@ -1,3 +1,8 @@
+<%@ page import="java.util.Date" %>
+<%@ page import="com.chamodshehanka.heshanhardware.service.custom.UserService" %>
+<%@ page import="com.chamodshehanka.heshanhardware.service.custom.impl.UserServiceImpl" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.chamodshehanka.heshanhardware.model.User" %>
 <%--
   Created by IntelliJ IDEA.
   User: chamodshehanka
@@ -13,41 +18,10 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.4/css/uikit.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 
     <style>
 
-        .header-section{
-            width: 100%;
-            height: 90vh;
-            background-image: url("https://www.vikingmergers.com/wp-content/uploads/2016/09/Hardware-Supplies.jpg");
-            background-repeat: no-repeat;
-            -webkit-background-size: 100%;
-            -moz-background-size: 100%;
-            background-size: 100%;
-            /*opacity: 0.75;*/
-        }
-
-        .header-container{
-            margin: auto;
-            width: 65%;
-            padding: 100px 10px 10px;
-        }
-
-        .header-banner-text {
-            color: whitesmoke;
-            font-family: 'Ubuntu', sans-serif;
-            font-size: 72px;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px black;
-        }
-
-        .uk-button-primary{
-            background-color: #FFA726;
-        }
-
-        .uk-button-primary:hover{
-            background-color: #FF9800;
-        }
     </style>
 </head>
 <body>
@@ -106,8 +80,21 @@
     </div>
 </header>
 
+<div>
+    <%
+        UserService userService = new UserServiceImpl();
+        ArrayList<User> userArrayList = userService.getAll();
 
-<img src="assets/images/logo.jpg" alt="">
+        for (User user: userArrayList) {
+            out.println("<h5>" + user.getUserName() + "</h5>");
+        }
+    %>
+
+    <%
+        Date date = new Date();
+        out.print("<h2>" + date.toString() + "</h2>");
+    %>
+</div>
 
 </body>
 

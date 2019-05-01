@@ -10,4 +10,10 @@
         ]]>
     </query>
 
+    <query id="drop_table">
+        <![CDATA[
+            DROP TABLE IF EXISTS employee
+        ]]>
+    </query>
+
 </Queries>
