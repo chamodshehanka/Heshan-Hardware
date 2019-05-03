@@ -55,7 +55,7 @@
                             </div>
                         </div>
 
-                        <button id="btn-signIn" class="uk-button uk-button-primary" onclick="">Sign In</button>
+                        <button id="btn-signIn" class="uk-button uk-button-primary">Sign In</button>
                     </form>
 
                 </div>
