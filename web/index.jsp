@@ -71,6 +71,33 @@
 
                     <form>
 
+                        <div class="uk-margin">
+                            <div class="uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: mail"></span>
+                                <input id="txt-email-reg" class="uk-input" type="text" placeholder="Email">
+                            </div>
+                        </div>
+
+                        <div class="uk-margin">
+                            <div class="uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                <input id="txt-username-reg" class="uk-input" type="text" placeholder="Username">
+                            </div>
+                        </div>
+
+                        <div class="uk-margin">
+                            <div class="uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                                <input id="txt-password-reg" class="uk-input" type="password" placeholder="Password">
+                            </div>
+                        </div>
+
+                        <div class="uk-margin">
+                            <div class="uk-inline">
+                                <span class="uk-form-icon" uk-icon="icon: unlock"></span>
+                                <input id="txt-password-confirm-reg" class="uk-input" type="password" placeholder="Confirm Password">
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -79,21 +106,28 @@
     </div>
 </header>
 
+<%--DB Check--%>
 <div>
-    <%
+    <%--<%
         UserService userService = new UserServiceImpl();
         ArrayList<User> userArrayList = userService.getAll();
 
         for (User user: userArrayList) {
             out.println("<h5>" + user.getUserName() + "</h5>");
         }
-    %>
+    %>--%>
 
     <%--<%
         Date date = new Date();
         out.print("<h2>" + date.toString() + "</h2>");
     %>--%>
 </div>
+
+<footer class="footer">
+    <div class="container">
+
+    </div>
+</footer>
 
 </body>
 
