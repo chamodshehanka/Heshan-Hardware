@@ -3,6 +3,7 @@ package com.chamodshehanka.heshanhardware.service.custom.impl;
 import com.chamodshehanka.heshanhardware.model.Item;
 import com.chamodshehanka.heshanhardware.service.custom.ItemService;
 import com.chamodshehanka.heshanhardware.util.DBConnectionUtil;
+import com.chamodshehanka.heshanhardware.util.IDGenarator;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -110,5 +111,15 @@ public class ItemServiceImpl implements ItemService {
 
 
         return itemArrayList;
+    }
+
+    public String getNewID(){
+        String newID = null;
+        try {
+            newID = IDGenarator.getNewID("item","item_code","I");
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return newID;
     }
 }

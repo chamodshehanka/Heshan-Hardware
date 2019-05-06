@@ -1,3 +1,5 @@
+<%@ page import="com.chamodshehanka.heshanhardware.service.custom.ItemService" %>
+<%@ page import="com.chamodshehanka.heshanhardware.service.custom.impl.ItemServiceImpl" %>
 <%--
   Created by IntelliJ IDEA.
   User: chamodshehanka
@@ -127,6 +129,10 @@
                 <button class="uk-button uk-button-primary">Submit</button>
                 <button class="uk-button uk-button-danger">Reset</button>
 
+                <%
+                    ItemServiceImpl itemService = new ItemServiceImpl();
+                    out.println("<p>"+ itemService.getNewID()+"</p>");
+                %>
             </div>
         </form>
     </div>
