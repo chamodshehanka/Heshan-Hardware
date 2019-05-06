@@ -8,12 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Manage Items</title>
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/mdb.min.css">
     <link rel="stylesheet" href="assets/css/addons/datatables.min.css">
     <link rel="stylesheet" href="assets/css/addons/datatables-select.min.css">
+    <link rel="stylesheet" href="assets/css/uikit.min.css"/>
+    <link rel="stylesheet" href="assets/css/styles.css">
 
     <style>
         .pt-3-half {
@@ -23,41 +25,103 @@
 </head>
 <body>
 
+<nav class="uk-navbar-container" style="background-color: #0d0d0d" uk-navbar>
 
-<section>
+    <div class="uk-navbar-left">
+
+        <ul class="uk-navbar-nav">
+            <li class="uk-active"><a href="#">Active</a></li>
+            <li>
+                <a href="#">Parent</a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li class="uk-active"><a href="#">Active</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">Item</a></li>
+        </ul>
+
+    </div>
+
+    <div class="uk-navbar-right">
+
+        <ul class="uk-navbar-nav">
+            <li class="uk-active"><a href="#">Active</a></li>
+            <li>
+                <a href="#">Parent</a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li class="uk-active"><a href="#">Active</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">Item</a></li>
+        </ul>
+
+    </div>
+
+</nav>
+
+<section class="uk-card uk-card-default uk-card-hover uk-card-body">
     <div class="container">
         <form>
-            <div class="">
-                <div class="uk-inline">
-                    <span class="uk-form-icon" uk-icon="icon: item"></span>
-                    <input id="txt-username" class="uk-input" type="text" placeholder="Item Code">
-
-                    <input class="uk-input" type="text" placeholder="Description">
-
-                    <input class="uk-input" type="text" placeholder="Brand">
-
-                    <input class="uk-input" type="text" placeholder="Unit Price">
-
-                    <input class="uk-input" type="text" placeholder="Quantity">
-
-
+            <div class="row">
+                <div class="col-2">
+                    <div class="uk-inline">
+                        <span class="uk-form-icon" uk-icon="icon: item"></span>
+                        <input id="txt-username" class="uk-input" type="text" placeholder="Item Code">
+                    </div>
                 </div>
-            </div>
 
-            <div class="col-md-6">
-                <div class="md-form mb-0">
-                    <input type="text" id="name" name="name" class="form-control">
-                    <label for="name" class="">Your name</label>
+                <div class="col-3">
+                    <div class="uk-inline">
+                        <span class="uk-form-icon" uk-icon="icon: item"></span>
+                        <input class="uk-input" type="text" placeholder="Description">
+                    </div>
                 </div>
+
+                <div class="col-2">
+                    <div class="uk-inline">
+                        <span class="uk-form-icon" uk-icon="icon: item"></span>
+                        <input class="uk-input" type="text" placeholder="Brand">
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="uk-inline">
+                        <span class="uk-form-icon" uk-icon="icon: item"></span>
+                        <input class="uk-input" type="text" placeholder="Unit Price">
+                    </div>
+                </div>
+
+                <div class="col-2">
+                    <div class="uk-inline">
+                        <span class="uk-form-icon" uk-icon="icon: item"></span>
+                        <input class="uk-input" type="text" placeholder="Quantity">
+                    </div>
+                </div>
+
             </div>
             <!--Grid column-->
+
+            <br>
+
+            <div style="float: right">
+                <button class="uk-button uk-button-primary">Submit</button>
+                <button class="uk-button uk-button-danger">Reset</button>
+            </div>
         </form>
     </div>
 </section>
 
 <!-- Editable table -->
 <div class="card">
-    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Manage Items</h3>
+<%--    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Manage Items</h3>--%>
     <div class="card-body">
         <div id="table" class="table-editable">
       <span class="table-add float-right mb-3 mr-2">
