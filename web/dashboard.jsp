@@ -39,7 +39,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="" onclick="openNav()">Features</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Pricing</a>
@@ -62,7 +62,7 @@
         <form class="form-inline">
             <div class="md-form my-0">
 <%--                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">--%>
-    <span style="font-size:30px;cursor:pointer;color: whitesmoke;" onclick="openNav()">&#9776;</span>
+                <span style="font-size:30px;cursor:pointer;color: whitesmoke;" onclick="openNav()">&#9776;</span>
             </div>
         </form>
     </div>
@@ -85,6 +85,10 @@
 
 
 <div style="width: 100%;height: 10px"></div>
+<div class="uk-alert-warning" uk-alert>
+    <a class="uk-alert-close" uk-close></a>
+    <p><b>Tips : </b>Click menu icon to open side nav </p>
+</div>
 <div class="container" style="width: 100%;height: 400px;">
     <div class="sales-activity">
         <div class="uk-card uk-card-primary uk-card-hover uk-card-body card-activity">
@@ -110,6 +114,8 @@
 
     <div class="inventory-summary">
         <h4>Inventory Summary</h4>
+        <p>Quantity in Hand <span class="uk-badge">100</span></p>
+        <p>Quantity to be Received <span class="uk-badge">10</span></p>
     </div>
 </div>
 

@@ -126,6 +126,7 @@
             <div style="float: right">
                 <button class="uk-button uk-button-primary">Submit</button>
                 <button class="uk-button uk-button-danger">Reset</button>
+
             </div>
         </form>
     </div>
