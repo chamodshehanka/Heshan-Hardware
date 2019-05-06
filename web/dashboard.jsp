@@ -86,17 +86,29 @@
 <div style="width: 100%;height: 10px"></div>
 <div class="container" style="width: 100%;height: 400px;">
     <div class="sales-activity">
-        <div class="uk-card uk-card-primary card-activity">
-
+        <div class="uk-card uk-card-primary uk-card-hover uk-card-body card-activity">
+            <h3 class="uk-card-title">11 Qty</h3>
+            <p>To be packed</p>
         </div>
 
-        <div class="uk-card uk-card-primary card-activity">
-
+        <div class="uk-card uk-card-primary uk-card-hover uk-card-body card-activity">
+            <h3 class="uk-card-title">19 Pkgs</h3>
+            <p>To be post</p>
         </div>
 
-        <div class="uk-card uk-card-primary card-activity">
-
+        <div class="uk-card uk-card-primary uk-card-hover uk-card-body card-activity">
+            <h3 class="uk-card-title">9 Pkgs</h3>
+            <p>To be Delivered</p>
         </div>
+
+        <div class="uk-card uk-card-primary uk-card-hover uk-card-body card-activity">
+            <h3 class="uk-card-title">1 Pkgs</h3>
+            <p>To be Invoiced</p>
+        </div>
+    </div>
+
+    <div class="inventory-summary">
+        <h4>Inventory Summary</h4>
     </div>
 </div>
 
