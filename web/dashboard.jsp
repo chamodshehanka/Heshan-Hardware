@@ -74,12 +74,15 @@
 <%--SideNav--%>
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
     <a href="manage-item.jsp">Items</a>
     <a href="#">Services</a>
     <a href="#">Clients</a>
     <a href="#">Contact</a>
 </div>
 <%--/SideNav--%>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script>
