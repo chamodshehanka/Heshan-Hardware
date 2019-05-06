@@ -83,12 +83,16 @@
 
 <section class="uk-card uk-card-default uk-card-hover uk-card-body">
     <div class="container">
-        <form>
+        <form action="/add" method="post">
             <div class="row">
                 <div class="col-2">
                     <div class="uk-inline">
                         <span class="uk-form-icon" uk-icon="icon: item"></span>
-                        <input id="txt-username" class="uk-input" type="text" placeholder="Item Code">
+                        <%
+                            ItemServiceImpl itemService = new ItemServiceImpl();
+                            out.println("<input class='uk-input' type='text' name='itemCode' value='"+ itemService.getNewID()+"'>");
+                        %>
+<%--                        <input class="uk-input" type="text" placeholder="Item Code" name="itemCode" value="<% new ItemServiceImpl().getNewID();%>">--%>
                     </div>
                 </div>
 
@@ -129,10 +133,6 @@
                 <button class="uk-button uk-button-primary">Submit</button>
                 <button class="uk-button uk-button-danger">Reset</button>
 
-                <%
-                    ItemServiceImpl itemService = new ItemServiceImpl();
-                    out.println("<p>"+ itemService.getNewID()+"</p>");
-                %>
             </div>
         </form>
     </div>

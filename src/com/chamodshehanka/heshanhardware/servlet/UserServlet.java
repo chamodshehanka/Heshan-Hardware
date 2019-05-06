@@ -32,4 +32,8 @@ public class UserServlet extends HttpServlet {
 
 
     }
+
+    private void addUser(HttpServletRequest request, HttpServletResponse response){
+//        String
+    }
 }
