@@ -1,21 +1,14 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: chamodshehanka
-  Date: 5/5/2019
-  Time: 2:41 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>Manage Items</title>
 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/mdb.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/addons/datatables.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/addons/datatables-select.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/uikit.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/mdb.min.css">
+    <link rel="stylesheet" href="assets/css/addons/datatables.min.css">
+    <link rel="stylesheet" href="assets/css/addons/datatables-select.min.css">
+    <link rel="stylesheet" href="assets/css/uikit.min.css"/>
+    <link rel="stylesheet" href="assets/css/styles.css">
 
     <style>
         .pt-3-half {
@@ -77,7 +70,21 @@
     <!-- Collapsible content -->
 
 </nav>
-<!--Navbar-->
+<!--/.Navbar-->
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">WebSiteName</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 2</a></li>
+            <li><a href="#">Page 3</a></li>
+        </ul>
+    </div>
+</nav>
 
 <section class="uk-card uk-card-default uk-card-hover uk-card-body">
     <div class="container">
@@ -133,7 +140,7 @@
 
 <!-- Editable table -->
 <div class="card">
-<%--    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Manage Items</h3>--%>
+    <%--    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Manage Items</h3>--%>
     <div class="card-body">
         <div id="table" class="table-editable">
       <span class="table-add float-right mb-3 mr-2">
