@@ -20,7 +20,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark primary-color" style="background-color: #0d0d0d">
 
     <!-- Navbar brand -->
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">Heshan Hardware</a>
 
     <!-- Collapse button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -77,10 +77,14 @@
 
     <a href="manage-item.jsp">Items</a>
     <a href="#">Services</a>
-    <a href="#">Clients</a>
+    <a href="#">Clients</a>k
     <a href="#">Contact</a>
 </div>
 <%--/SideNav--%>
+
+<div style="width: 100%;height: 400px;background-color: #005cbf">
+
+</div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
