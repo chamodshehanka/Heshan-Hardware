@@ -82,8 +82,22 @@
 </div>
 <%--/SideNav--%>
 
-<div style="width: 100%;height: 400px;background-color: #005cbf">
 
+<div style="width: 100%;height: 10px"></div>
+<div class="container" style="width: 100%;height: 400px;">
+    <div class="sales-activity">
+        <div class="uk-card uk-card-primary card-activity">
+
+        </div>
+
+        <div class="uk-card uk-card-primary card-activity">
+
+        </div>
+
+        <div class="uk-card uk-card-primary card-activity">
+
+        </div>
+    </div>
 </div>
 
 

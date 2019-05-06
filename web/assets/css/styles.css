@@ -85,3 +85,16 @@
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
+/*End Sidenav*/
+
+/*Sales Activity*/
+.sales-activity {
+
+}
+
+.card-activity {
+    width: 150px;
+    height: 90px;
+    float: left;
+    margin:0 10px 10px 0;
+}
