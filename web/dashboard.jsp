@@ -62,7 +62,7 @@
         <form class="form-inline">
             <div class="md-form my-0">
 <%--                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">--%>
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    <span style="font-size:30px;cursor:pointer;color: whitesmoke;" onclick="openNav()">&#9776;</span>
             </div>
         </form>
     </div>
@@ -75,6 +75,7 @@
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
+    <a href="dashboard.jsp">Dashboard</a>
     <a href="manage-item.jsp">Items</a>
     <a href="#">Services</a>
     <a href="#">Clients</a>k
