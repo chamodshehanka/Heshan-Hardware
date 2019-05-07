@@ -85,60 +85,55 @@
 
 <section class="uk-card uk-card-default uk-card-hover uk-card-body">
     <div class="container">
-        <form action="" method="post">
-            <div class="row">
-                <div class="col-2">
-                    <div class="uk-inline">
-                        <span class="uk-form-icon" uk-icon="icon: item"></span>
-                        <%
-                            ItemServiceImpl itemService = new ItemServiceImpl();
-                            out.println("<input class='uk-input' type='text' name='itemCode' value='"+ itemService.getNewID()+"'>");
-                        %>
-<%--                        <input class="uk-input" type="text" placeholder="Item Code" name="itemCode" value="<% new ItemServiceImpl().getNewID();%>">--%>
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="uk-inline">
-                        <span class="uk-form-icon" uk-icon="icon: item"></span>
-                        <input class="uk-input" type="text" placeholder="Description">
-                    </div>
-                </div>
-
-                <div class="col-2">
-                    <div class="uk-inline">
-                        <span class="uk-form-icon" uk-icon="icon: item"></span>
-                        <input class="uk-input" type="text" placeholder="Brand">
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="uk-inline">
-                        <span class="uk-form-icon" uk-icon="icon: item"></span>
-                        <input class="uk-input" type="text" placeholder="Unit Price">
-                    </div>
-                </div>
-
-                <div class="col-2">
-                    <div class="uk-inline">
-                        <span class="uk-form-icon" uk-icon="icon: item"></span>
-                        <input class="uk-input" type="text" placeholder="Quantity">
-                    </div>
-                </div>
-
-            </div>
-            <!--Grid column-->
-
-            <br>
-
-            <div style="float: right">
-                <button class="uk-button uk-button-primary">Submit</button>
-                <button class="uk-button uk-button-danger">Reset</button>
-
-            </div>
-        </form>
+        <button class="uk-button uk-button-primary" uk-toggle="target: #add-item-modal">New Item</button>
+        <button class="uk-button uk-button-primary">Search Item</button>
+        <button class="uk-button uk-button-primary">Update Item</button>
+        <button class="uk-button uk-button-danger">Delete Item</button>
     </div>
 </section>
+
+<%--Modals--%>
+
+<%--Add Item Modal--%>
+<div id="add-item-modal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title">Add Item</h2>
+        <button class="uk-modal-close" type="button"></button>
+
+        <form action="/AddItem" method="post">
+
+
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: item"></span>
+                <%
+                    ItemServiceImpl itemService = new ItemServiceImpl();
+                    out.println("<input class='uk-input' type='text' name='itemCode' value='"+ itemService.getNewID()+"'>");
+                %>
+            </div>
+
+            <div class="uk-inline">
+                <input class="uk-input" type="text" name="description" placeholder="Description">
+            </div>
+
+            <div class="uk-inline">
+                <input class="uk-input" type="text" name="brand" placeholder="Brand">
+            </div>
+
+            <div class="uk-inline">
+                <input class="uk-input" type="text" name="unitPrice" placeholder="Unit Price">
+            </div>
+
+            <div class="uk-inline">
+                <input class="uk-input" type="text" name="qty" placeholder="Quantity">
+            </div>
+
+            <button class="uk-button uk-button-primary" type="submit">Add Item</button>
+        </form>
+    </div>
+</div>
+<%--End Add Item Modal--%>
+
+<%--End Modals--%>
 
 <!-- Editable table -->
 <div class="card">

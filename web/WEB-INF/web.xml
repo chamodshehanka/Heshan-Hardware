@@ -33,4 +33,14 @@
         <servlet-name>UserList</servlet-name>
         <url-pattern>/UserList</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddItemServlet</servlet-name>
+        <servlet-class>com.chamodshehanka.heshanhardware.servlet.AddItemServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddItemServlet</servlet-name>
+        <url-pattern>/AddItem</url-pattern>
+    </servlet-mapping>
 </web-app>
