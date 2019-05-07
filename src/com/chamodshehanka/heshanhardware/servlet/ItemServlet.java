@@ -5,6 +5,7 @@ import com.chamodshehanka.heshanhardware.service.custom.ItemService;
 import com.chamodshehanka.heshanhardware.service.custom.impl.ItemServiceImpl;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,6 +15,7 @@ import java.io.IOException;
  * @author chamodshehanka on 5/7/2019
  * @project HeshanHardware
  **/
+@WebServlet(name = "Item")
 public class ItemServlet extends HttpServlet {
 
     private ItemService itemService;

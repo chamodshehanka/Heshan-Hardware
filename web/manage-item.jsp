@@ -85,7 +85,7 @@
 
 <section class="uk-card uk-card-default uk-card-hover uk-card-body">
     <div class="container">
-        <form action="/add" method="post">
+        <form action="" method="post">
             <div class="row">
                 <div class="col-2">
                     <div class="uk-inline">
