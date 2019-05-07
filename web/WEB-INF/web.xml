@@ -43,4 +43,14 @@
         <servlet-name>AddItemServlet</servlet-name>
         <url-pattern>/AddItem</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ItemController</servlet-name>
+        <servlet-class>com.chamodshehanka.heshanhardware.servlet.ItemController</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ItemController</servlet-name>
+        <url-pattern>/ItemController</url-pattern>
+    </servlet-mapping>
 </web-app>

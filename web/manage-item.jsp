@@ -191,33 +191,6 @@
                 <%
                     }
                 %>
-
-                <%--<tr>
-                    <td class="pt-3-half" contenteditable="true">I001</td>
-                    <td class="pt-3-half" contenteditable="true">Cement</td>
-                    <td class="pt-3-half" contenteditable="true">Tokyo</td>
-                    <td class="pt-3-half" contenteditable="true">1000</td>
-                    <td class="pt-3-half" contenteditable="true">100</td>
-                    <td class="pt-3-half">
-                        <span class="table-up">
-                            <a href="#!" class="indigo-text">
-                                <i class="fas fa-long-arrow-alt-up" aria-hidden="true"></i>
-                            </a>
-                        </span>
-                        <span class="table-down">
-                            <a href="#!" class="indigo-text">
-                                <i class="fas fa-long-arrow-alt-down" aria-hidden="true"></i>
-                            </a>
-                        </span>
-                    </td>
-                    <td>
-                        <span class="table-remove">
-                            <button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Remove</button>
-                        </span>
-                    </td>
-                </tr>--%>
-                <!-- This is our clonable table line -->
-
             </table>
         </div>
     </div>

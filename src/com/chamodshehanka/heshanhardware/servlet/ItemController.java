@@ -15,8 +15,8 @@ import java.io.IOException;
  * @author chamodshehanka on 5/7/2019
  * @project HeshanHardware
  **/
-@WebServlet(name = "Item", urlPatterns = "/Item")
-public class ItemServlet extends HttpServlet {
+//@WebServlet(name = "Item", urlPatterns = "/Item")
+public class ItemController extends HttpServlet {
 
     private ItemService itemService;
 
@@ -26,7 +26,7 @@ public class ItemServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+        super.doGet(req, resp);
     }
 
     @Override
@@ -61,14 +61,14 @@ public class ItemServlet extends HttpServlet {
     }
 
     private void addItem(HttpServletRequest request, HttpServletResponse response) throws IOException {
-//        String itemCode = request.getParameter("itemCode");
-//        String description = request.getParameter("description");
-//        String brand = request.getParameter("brand");
-//        double unitPrice = Double.parseDouble(request.getParameter("unitPrice"));
-//        int qty = Integer.parseInt(request.getParameter("qty"));
-//
-//        itemService.add(new Item(itemCode,description,brand,unitPrice,qty));
-//
-//        response.sendRedirect("item");
+        String itemCode = request.getParameter("itemCode");
+        String description = request.getParameter("description");
+        String brand = request.getParameter("brand");
+        double unitPrice = Double.parseDouble(request.getParameter("unitPrice"));
+        int qty = Integer.parseInt(request.getParameter("qty"));
+
+        itemService.add(new Item(itemCode,description,brand,unitPrice,qty));
+
+        response.sendRedirect("item");
     }
 }
