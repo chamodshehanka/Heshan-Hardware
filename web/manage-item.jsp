@@ -85,55 +85,56 @@
 
 <section class="uk-card uk-card-default uk-card-hover uk-card-body">
     <div class="container">
-        <button class="uk-button uk-button-primary" uk-toggle="target: #add-item-modal">New Item</button>
+        <button class="uk-button uk-button-primary" uk-toggle="target: #add-item-modal" type="button">New Item</button>
         <button class="uk-button uk-button-primary">Search Item</button>
         <button class="uk-button uk-button-primary">Update Item</button>
         <button class="uk-button uk-button-danger">Delete Item</button>
+
+
+        <%--Modals--%>
+
+        <%--Add Item Modal--%>
+        <div id="add-item-modal" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <h2 class="uk-modal-title">Add Item</h2>
+                <button class="uk-modal-close" type="button"></button>
+
+                <form action="${pageContext.request.contextPath}/AddItem" method="post">
+
+
+                    <div class="uk-inline">
+                        <span class="uk-form-icon" uk-icon="icon: item"></span>
+                        <%
+                            ItemServiceImpl itemService = new ItemServiceImpl();
+                            out.println("<input class='uk-input' type='text' name='itemCode' value='"+ itemService.getNewID()+"'>");
+                        %>
+                    </div>
+
+                    <div class="uk-inline">
+                        <input class="uk-input" type="text" name="description" placeholder="Description">
+                    </div>
+
+                    <div class="uk-inline">
+                        <input class="uk-input" type="text" name="brand" placeholder="Brand">
+                    </div>
+
+                    <div class="uk-inline">
+                        <input class="uk-input" type="text" name="unitPrice" placeholder="Unit Price">
+                    </div>
+
+                    <div class="uk-inline">
+                        <input class="uk-input" type="text" name="qty" placeholder="Quantity">
+                    </div>
+
+                    <button class="uk-button uk-button-primary" type="submit">Add Item</button>
+                </form>
+            </div>
+        </div>
+        <%--End Add Item Modal--%>
+
+        <%--End Modals--%>
     </div>
 </section>
-
-<%--Modals--%>
-
-<%--Add Item Modal--%>
-<div id="add-item-modal" uk-modal>
-    <div class="uk-modal-dialog uk-modal-body">
-        <h2 class="uk-modal-title">Add Item</h2>
-        <button class="uk-modal-close" type="button"></button>
-
-        <form action="/AddItem" method="post">
-
-
-            <div class="uk-inline">
-                <span class="uk-form-icon" uk-icon="icon: item"></span>
-                <%
-                    ItemServiceImpl itemService = new ItemServiceImpl();
-                    out.println("<input class='uk-input' type='text' name='itemCode' value='"+ itemService.getNewID()+"'>");
-                %>
-            </div>
-
-            <div class="uk-inline">
-                <input class="uk-input" type="text" name="description" placeholder="Description">
-            </div>
-
-            <div class="uk-inline">
-                <input class="uk-input" type="text" name="brand" placeholder="Brand">
-            </div>
-
-            <div class="uk-inline">
-                <input class="uk-input" type="text" name="unitPrice" placeholder="Unit Price">
-            </div>
-
-            <div class="uk-inline">
-                <input class="uk-input" type="text" name="qty" placeholder="Quantity">
-            </div>
-
-            <button class="uk-button uk-button-primary" type="submit">Add Item</button>
-        </form>
-    </div>
-</div>
-<%--End Add Item Modal--%>
-
-<%--End Modals--%>
 
 <!-- Editable table -->
 <div class="card">
@@ -225,6 +226,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/uikit.min.js"></script>
 <script src="assets/js/validationUtil.js" type="text/javascript"></script>
 <script src="assets/js/tableController.js" type="text/javascript"></script>
 </body>
