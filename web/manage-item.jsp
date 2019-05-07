@@ -1,5 +1,7 @@
 <%@ page import="com.chamodshehanka.heshanhardware.service.custom.ItemService" %>
 <%@ page import="com.chamodshehanka.heshanhardware.service.custom.impl.ItemServiceImpl" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.chamodshehanka.heshanhardware.model.Item" %>
 <%--
   Created by IntelliJ IDEA.
   User: chamodshehanka
@@ -159,7 +161,42 @@
                     <th class="text-center">Remove</th>
                 </tr>
 
-                <tr>
+                <%
+                    ItemService itemService1 = new ItemServiceImpl();
+                    ArrayList<Item> itemArrayList = itemService1.getAll();
+
+                    for (Item item : itemArrayList
+                         ) {
+                        %>
+                        <tr>
+                            <td class="pt-3-half" contenteditable="true"><%=item.getItemCode()%></td>
+                            <td class="pt-3-half" contenteditable="true"><%=item.getItemDescription()%></td>
+                            <td class="pt-3-half" contenteditable="true"><%=item.getItemBrand()%></td>
+                            <td class="pt-3-half" contenteditable="true"><%=item.getUnitPrice()%></td>
+                            <td class="pt-3-half" contenteditable="true"><%=item.getQty()%></td>
+                            <td class="pt-3-half">
+                        <span class="table-up">
+                            <a href="#!" class="indigo-text">
+                                <i class="fas fa-long-arrow-alt-up" aria-hidden="true"></i>
+                            </a>
+                        </span>
+                                <span class="table-down">
+                            <a href="#!" class="indigo-text">
+                                <i class="fas fa-long-arrow-alt-down" aria-hidden="true"></i>
+                            </a>
+                        </span>
+                            </td>
+                            <td>
+                        <span class="table-remove">
+                            <button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Remove</button>
+                        </span>
+                            </td>
+                        </tr>
+                <%
+                    }
+                %>
+
+                <%--<tr>
                     <td class="pt-3-half" contenteditable="true">I001</td>
                     <td class="pt-3-half" contenteditable="true">Cement</td>
                     <td class="pt-3-half" contenteditable="true">Tokyo</td>
@@ -182,32 +219,7 @@
                             <button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Remove</button>
                         </span>
                     </td>
-                </tr>
-                <!-- This is our clonable table line -->
-                <tr>
-                    <td class="pt-3-half" contenteditable="true">I002</td>
-                    <td class="pt-3-half" contenteditable="true">Sand</td>
-                    <td class="pt-3-half" contenteditable="true">River</td>
-                    <td class="pt-3-half" contenteditable="true">3500</td>
-                    <td class="pt-3-half" contenteditable="true">300</td>
-                    <td class="pt-3-half">
-                        <span class="table-up">
-                            <a href="#!" class="indigo-text">
-                                <i class="fas fa-long-arrow-alt-up" aria-hidden="true"></i>
-                            </a>
-                        </span>
-                        <span class="table-down">
-                            <a href="#!" class="indigo-text">
-                                <i class="fas fa-long-arrow-alt-down" aria-hidden="true"></i>
-                            </a>
-                        </span>
-                    </td>
-                    <td>
-                        <span class="table-remove">
-                            <button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Remove</button>
-                        </span>
-                    </td>
-                </tr>
+                </tr>--%>
                 <!-- This is our clonable table line -->
 
             </table>

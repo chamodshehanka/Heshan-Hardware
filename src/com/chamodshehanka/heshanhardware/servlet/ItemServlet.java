@@ -48,6 +48,8 @@ public class ItemServlet extends HttpServlet {
     }
 
     private void searchItem(HttpServletRequest req, HttpServletResponse resp) {
+        String itemCode = req.getParameter("itemCode");
+        Item item = itemService.getByID(itemCode);
     }
 
     private void deleteItem(HttpServletRequest req, HttpServletResponse resp) {
