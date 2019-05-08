@@ -35,4 +35,9 @@ public class OrderServiceImpl implements OrderService {
     public ArrayList<Order> getAll() {
         return null;
     }
+
+    @Override
+    public String getNewID() {
+        return null;
+    }
 }

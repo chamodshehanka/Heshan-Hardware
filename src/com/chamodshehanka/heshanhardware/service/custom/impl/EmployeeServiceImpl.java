@@ -36,4 +36,9 @@ public class EmployeeServiceImpl implements EmployeeService {
         return null;
     }
 
+    @Override
+    public String getNewID() {
+        return null;
+    }
+
 }

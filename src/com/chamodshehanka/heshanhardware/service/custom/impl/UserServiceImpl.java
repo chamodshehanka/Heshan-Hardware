@@ -21,15 +21,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void add(User user) {
-        //String userID = CommonUtil.generateIDs(getUserID());
-        String userID = "U002";
-
         try {
             connection = DBConnectionUtil.getDBConnection();
             preparedStatement = connection.prepareStatement("INSERT INTO user VALUES (?,?,?,?)");
             connection.setAutoCommit(false);
-
-            user.setUserID(userID);
 
             preparedStatement.setString(1, user.getUserID());
             preparedStatement.setString(2, user.getUserName());
@@ -63,7 +58,6 @@ public class UserServiceImpl implements UserService {
     public ArrayList<User> getAll() {
         ArrayList<User> userArrayList = new ArrayList<>();
         try {
-            System.out.println("GetAll DB : " + DBConnectionUtil.getDBConnection());
             connection = DBConnectionUtil.getDBConnection();
             preparedStatement = connection.prepareStatement("SELECT * FROM user");
 
@@ -95,6 +89,11 @@ public class UserServiceImpl implements UserService {
         }
 
         return userArrayList;
+    }
+
+    @Override
+    public String getNewID() {
+        return null;
     }
 
 

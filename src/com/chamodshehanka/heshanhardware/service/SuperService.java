@@ -18,4 +18,6 @@ public interface SuperService<T, ID> {
 
     public ArrayList<T> getAll();
 
+    public String getNewID();
+
 }

@@ -98,6 +98,11 @@ public class AdminServiceImpl implements AdminService {
         return null;
     }
 
+    @Override
+    public String getNewID() {
+        return null;
+    }
+
     private ArrayList<String> getAdminIDs(){
         return null;
     }

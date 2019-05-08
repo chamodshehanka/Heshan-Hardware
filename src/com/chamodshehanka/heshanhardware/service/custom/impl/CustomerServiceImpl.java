@@ -37,4 +37,9 @@ public class CustomerServiceImpl implements CustomerService {
         return null;
     }
 
+    @Override
+    public String getNewID() {
+        return null;
+    }
+
 }

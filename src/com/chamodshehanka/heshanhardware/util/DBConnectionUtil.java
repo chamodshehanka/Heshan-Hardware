@@ -16,7 +16,6 @@ public class DBConnectionUtil {
     }
 
     public static Connection getDBConnection() throws SQLException, ClassNotFoundException {
-//        System.out.println(CommonUtil.properties.getProperty("Common"+CommonConstants.DRIVER_NAME));
         if (connection == null || connection.isClosed()){
 //            Class.forName(
 //                    CommonUtil.properties.getProperty(CommonConstants.DRIVER_NAME));

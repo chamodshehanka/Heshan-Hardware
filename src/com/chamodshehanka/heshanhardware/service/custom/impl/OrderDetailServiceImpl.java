@@ -35,4 +35,9 @@ public class OrderDetailServiceImpl implements OrderDetailService {
     public ArrayList<OrderDetail> getAll() {
         return null;
     }
+
+    @Override
+    public String getNewID() {
+        return null;
+    }
 }
