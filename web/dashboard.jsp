@@ -10,9 +10,11 @@
 <head>
     <title>Inventory Management System | Dashboard</title>
 
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/uikit.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/mdb.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/uikit.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
+
 </head>
 <body>
 
@@ -59,12 +61,12 @@
         </ul>
         <!-- Links -->
 
-        <form class="form-inline">
+        <div class="form-inline">
             <div class="md-form my-0">
-<%--                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">--%>
+                <a href="index.jsp"><button class="uk-button uk-button-danger" type="button">Log Out</button></a>
                 <span style="font-size:30px;cursor:pointer;color: whitesmoke;" onclick="openNav()">&#9776;</span>
             </div>
-        </form>
+        </div>
     </div>
     <!-- Collapsible content -->
 
@@ -77,17 +79,19 @@
 
     <a href="dashboard.jsp">Dashboard</a>
     <a href="manage-item.jsp">Items</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>k
+    <a href="#">Order</a>
+    <a href="#">Customer</a>
     <a href="#">Contact</a>
 </div>
 <%--/SideNav--%>
 
 
 <div style="width: 100%;height: 10px"></div>
-<div class="uk-alert-warning" uk-alert>
-    <a class="uk-alert-close" uk-close></a>
-    <p><b>Tips : </b>Click menu icon to open side nav </p>
+<div class="container">
+    <div class="uk-alert-warning" uk-alert>
+        <a class="uk-alert-close" uk-close></a>
+        <p><b>Tips : </b>Click menu icon to open side nav </p>
+    </div>
 </div>
 <div class="container" style="width: 100%;height: 400px;">
     <div class="sales-activity">

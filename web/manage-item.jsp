@@ -72,11 +72,12 @@
         </ul>
         <!-- Links -->
 
-        <form class="form-inline">
+        <div class="form-inline">
             <div class="md-form my-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <a href="index.jsp"><button class="uk-button uk-button-danger" type="button">Log Out</button></a>
+                <span style="font-size:30px;cursor:pointer;color: whitesmoke;" onclick="openNav()">&#9776;</span>
             </div>
-        </form>
+        </div>
     </div>
     <!-- Collapsible content -->
 
@@ -202,5 +203,16 @@
 <script src="assets/js/uikit.min.js"></script>
 <script src="assets/js/validationUtil.js" type="text/javascript"></script>
 <script src="assets/js/tableController.js" type="text/javascript"></script>
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+    }
+</script>
 </body>
 </html>
