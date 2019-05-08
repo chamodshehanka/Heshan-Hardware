@@ -19,7 +19,7 @@ public class ItemServiceImpl implements ItemService {
     private static PreparedStatement preparedStatement;
 
     @Override
-    public void add(Item item) {
+    public boolean add(Item item) {
         try {
             connection = DBConnectionUtil.getDBConnection();
             preparedStatement = connection.prepareStatement("INSERT INTO item VALUES (?,?,?,?,?)");
@@ -30,10 +30,11 @@ public class ItemServiceImpl implements ItemService {
             preparedStatement.setObject(4, item.getUnitPrice());
             preparedStatement.setObject(5, item.getQty());
 
-            preparedStatement.executeUpdate();
+            return 0 < preparedStatement.executeUpdate();
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+        return false;
     }
 
     @Override
@@ -61,7 +62,7 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public Item update(String itemCode, Item item) {
+    public boolean update(String itemCode, Item item) {
         try {
             connection = DBConnectionUtil.getDBConnection();
             preparedStatement = connection
@@ -72,18 +73,20 @@ public class ItemServiceImpl implements ItemService {
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return null;
+        return false;
     }
 
     @Override
-    public void remove(String itemCode) {
+    public boolean remove(String itemCode) {
         try {
             connection = DBConnectionUtil.getDBConnection();
             preparedStatement = connection.prepareStatement("DELETE FROM item WHERE item_code='"+itemCode+"'");
-            preparedStatement.executeUpdate();
+            return 0 < preparedStatement.executeUpdate();
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+
+        return false;
     }
 
     @Override

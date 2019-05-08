@@ -12,8 +12,8 @@ import java.util.ArrayList;
 public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
-    public void add(Employee employee) {
-
+    public boolean add(Employee employee) {
+        return false;
     }
 
     @Override
@@ -22,13 +22,13 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Employee update(String s, Employee employee) {
-        return null;
+    public boolean update(String s, Employee employee) {
+        return false;
     }
 
     @Override
-    public void remove(String s) {
-
+    public boolean remove(String s) {
+        return false;
     }
 
     @Override
@@ -40,5 +40,4 @@ public class EmployeeServiceImpl implements EmployeeService {
     public String getNewID() {
         return null;
     }
-
 }

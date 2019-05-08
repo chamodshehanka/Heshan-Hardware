@@ -4,6 +4,7 @@ import com.chamodshehanka.heshanhardware.model.User;
 import com.chamodshehanka.heshanhardware.service.custom.UserService;
 import com.chamodshehanka.heshanhardware.service.custom.impl.UserServiceImpl;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,10 +20,6 @@ import java.util.ArrayList;
 @WebServlet(name = "SignUpServlet", urlPatterns = "/signUp")
 public class SignUpServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserService userService = new UserServiceImpl();
 
         String userID = userService.getNewID();
@@ -34,14 +31,28 @@ public class SignUpServlet extends HttpServlet {
 
         ArrayList<User> userArrayList = userService.getAll();
         for (User user: userArrayList
-             ) {
+        ) {
             if (user.getUserName().equals(username)){
                 isValidUserName = false;
             }
         }
 
         if (isValidUserName) {
+            boolean isAdded = userService.add(
+                    new User(userID, username, password, userType)
+            );
 
+            if (isAdded){
+                RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/dashboard.jsp");
+                requestDispatcher.forward(request, response);
+            }else {
+                RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/error.jsp");
+                requestDispatcher.forward(request, response);
+            }
         }
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
     }
 }

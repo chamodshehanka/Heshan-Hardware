@@ -1,7 +1,3 @@
-<%@ page import="com.chamodshehanka.heshanhardware.service.custom.UserService" %>
-<%@ page import="com.chamodshehanka.heshanhardware.service.custom.impl.UserServiceImpl" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="com.chamodshehanka.heshanhardware.model.User" %>
 <%--
   Created by IntelliJ IDEA.
   User: chamodshehanka
@@ -69,26 +65,26 @@
 
                     <h2 class="uk-modal-title">Sign Up</h2>
 
-                    <form>
+                    <form action="${pageContext.request.contextPath}/signUp" method="post">
 
                         <div class="uk-margin">
                             <div class="uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: mail"></span>
-                                <input id="txt-email-reg" class="uk-input" type="text" placeholder="Email">
+                                <input id="txt-email-reg" class="uk-input" type="text" placeholder="Email" name="email">
                             </div>
                         </div>
 
                         <div class="uk-margin">
                             <div class="uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: user"></span>
-                                <input id="txt-username-reg" class="uk-input" type="text" placeholder="Username">
+                                <input id="txt-username-reg" class="uk-input" type="text" placeholder="Username" name="username">
                             </div>
                         </div>
 
                         <div class="uk-margin">
                             <div class="uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: lock"></span>
-                                <input id="txt-password-reg" class="uk-input" type="password" placeholder="Password">
+                                <input id="txt-password-reg" class="uk-input" type="password" placeholder="Password" name="password">
                             </div>
                         </div>
 
@@ -98,6 +94,8 @@
                                 <input id="txt-password-confirm-reg" class="uk-input" type="password" placeholder="Confirm Password">
                             </div>
                         </div>
+
+                        <button id="btn-signUp" class="uk-button uk-button-primary" type="submit">Sign Up</button>
                     </form>
                 </div>
             </div>
@@ -106,22 +104,6 @@
     </div>
 </header>
 
-<%--DB Check--%>
-<div>
-    <%--<%
-        UserService userService = new UserServiceImpl();
-        ArrayList<User> userArrayList = userService.getAll();
-
-        for (User user: userArrayList) {
-            out.println("<h5>" + user.getUserName() + "</h5>");
-        }
-    %>--%>
-
-    <%--<%
-        Date date = new Date();
-        out.print("<h2>" + date.toString() + "</h2>");
-    %>--%>
-</div>
 
 <footer class="footer">
     <div class="container">

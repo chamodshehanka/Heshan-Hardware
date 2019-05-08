@@ -12,24 +12,23 @@ import java.util.ArrayList;
 public class CustomerServiceImpl implements CustomerService {
 
     @Override
-    public void add(Customer customer) {
-
+    public boolean add(Customer customer) {
+        return false;
     }
 
     @Override
     public Customer getByID(String s) {
-
         return null;
     }
 
     @Override
-    public Customer update(String s, Customer customer) {
-        return null;
+    public boolean update(String s, Customer customer) {
+        return false;
     }
 
     @Override
-    public void remove(String s) {
-
+    public boolean remove(String s) {
+        return false;
     }
 
     @Override
@@ -41,5 +40,4 @@ public class CustomerServiceImpl implements CustomerService {
     public String getNewID() {
         return null;
     }
-
 }
