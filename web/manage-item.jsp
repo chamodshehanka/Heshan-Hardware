@@ -165,8 +165,9 @@
                     for (Item item : itemArrayList
                          ) {
                         %>
+
                         <tr>
-                            <td class="pt-3-half" contenteditable="true"><%=item.getItemCode()%></td>
+                            <td id="itemCode" class="pt-3-half" contenteditable="true"><%=item.getItemCode()%></td>
                             <td class="pt-3-half" contenteditable="true"><%=item.getItemDescription()%></td>
                             <td class="pt-3-half" contenteditable="true"><%=item.getItemBrand()%></td>
                             <td class="pt-3-half" contenteditable="true"><%=item.getUnitPrice()%></td>

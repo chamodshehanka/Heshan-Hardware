@@ -8,7 +8,10 @@ $('.table-add').click(function () {
 });
 
 $('.table-remove').click(function () {
-    $(this).parents('tr').detach();
+    // $(this).parents('tr').detach();
+    var itemCode = $(this).parent('tr').getElementsByTagName("td");
+    console.log(itemCode[0].innerText);
+    $.post("/DeleteItem", itemCode);
 });
 
 $('.table-up').click(function () {
