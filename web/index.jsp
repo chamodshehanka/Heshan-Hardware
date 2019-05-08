@@ -40,22 +40,22 @@
 
                     <h2 class="uk-modal-title">Sign In</h2>
 
-                    <form>
+                    <form action="${pageContext.request.contextPath}/login" method="post">
                         <div class="uk-margin">
                             <div class="uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: user"></span>
-                                <input id="txt-username" class="uk-input" type="text" placeholder="Username">
+                                <input id="txt-username" class="uk-input" type="text" placeholder="Username" name="username">
                             </div>
                         </div>
 
                         <div class="uk-margin">
                             <div class="uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: lock"></span>
-                                <input id="txt-password" class="uk-input" type="password" placeholder="password">
+                                <input id="txt-password" class="uk-input" type="password" placeholder="password" name="password">
                             </div>
                         </div>
 
-                        <button id="btn-signIn" class="uk-button uk-button-primary">Sign In</button>
+                        <button id="btn-signIn" class="uk-button uk-button-primary" type="submit">Sign In</button>
                     </form>
 
                 </div>

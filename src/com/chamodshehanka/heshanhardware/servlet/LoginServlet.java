@@ -17,7 +17,7 @@ import java.util.ArrayList;
  * @author chamodshehanka on 4/16/2019
  * @project HeshanHardware
  **/
-@WebServlet(name = "login", urlPatterns = "/login")
+@WebServlet(name = "LoginServlet", urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
 
     @Override

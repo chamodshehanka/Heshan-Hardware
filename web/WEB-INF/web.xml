@@ -5,10 +5,18 @@
          version="4.0">
 
     <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.chamodshehanka.heshanhardware.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>UserList</servlet-name>
         <servlet-class>com.chamodshehanka.heshanhardware.servlet.UserListServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>UserList</servlet-name>
         <url-pattern>/UserList</url-pattern>
@@ -18,7 +26,6 @@
         <servlet-name>AddItemServlet</servlet-name>
         <servlet-class>com.chamodshehanka.heshanhardware.servlet.AddItemServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>AddItemServlet</servlet-name>
         <url-pattern>/AddItem</url-pattern>
@@ -28,7 +35,6 @@
         <servlet-name>ItemController</servlet-name>
         <servlet-class>com.chamodshehanka.heshanhardware.servlet.ItemController</servlet-class>
     </servlet>
-    
     <servlet-mapping>
         <servlet-name>ItemController</servlet-name>
         <url-pattern>/ItemController</url-pattern>
