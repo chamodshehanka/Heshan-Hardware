@@ -134,6 +134,45 @@
         </div>
         <%--End Add Item Modal--%>
 
+        <%--Update Item Modal--%>
+        <div id="add-item-modal" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <h2 class="uk-modal-title">Add Item</h2>
+                <button class="uk-modal-close" type="button"></button>
+
+                <form action="${pageContext.request.contextPath}/UpdateItem" method="post">
+
+
+                    <div class="uk-inline">
+                        <span class="uk-form-icon" uk-icon="icon: item"></span>
+                        <input class="uk-input" type="text" name="itemCode" placeholder="Item Code">
+                        <%
+
+                        %>
+                    </div>
+
+                    <div class="uk-inline">
+                        <input class="uk-input" type="text" name="description" placeholder="Description">
+                    </div>
+
+                    <div class="uk-inline">
+                        <input class="uk-input" type="text" name="brand" placeholder="Brand">
+                    </div>
+
+                    <div class="uk-inline">
+                        <input class="uk-input" type="text" name="unitPrice" placeholder="Unit Price">
+                    </div>
+
+                    <div class="uk-inline">
+                        <input class="uk-input" type="text" name="qty" placeholder="Quantity">
+                    </div>
+
+                    <button class="uk-button uk-button-primary" type="submit">Add Item</button>
+                </form>
+            </div>
+        </div>
+        <%--End ITem Update Modal--%>
+
         <%--End Modals--%>
     </div>
 </section>
