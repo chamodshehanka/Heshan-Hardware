@@ -55,3 +55,12 @@ $BTN.click(function () {
 // Output the result
     $EXPORT.text(JSON.stringify(data));
 });
+
+$('#btnSearchItem').click(function () {
+    var itemCode = "I002";
+    $.get('GetItemServlet', {
+        itemCode: itemCode
+    }, function (responseText) {
+        console.log(responseText);
+    });
+});

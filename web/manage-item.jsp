@@ -88,7 +88,7 @@
 <section class="uk-card uk-card-default uk-card-hover uk-card-body">
     <div class="container">
         <button class="uk-button uk-button-primary" uk-toggle="target: #add-item-modal" type="button">New Item</button>
-        <button class="uk-button uk-button-primary">Search Item</button>
+        <button id="btnSearchItem" class="uk-button uk-button-primary" >Search Item</button>
         <button class="uk-button uk-button-primary">Update Item</button>
         <button class="uk-button uk-button-danger">Delete Item</button>
 
