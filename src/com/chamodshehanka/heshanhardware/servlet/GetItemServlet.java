@@ -18,7 +18,14 @@ import java.io.IOException;
 @WebServlet(name = "GetItemServlet", urlPatterns = "/SearchItem")
 public class GetItemServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ItemService itemService = new ItemServiceImpl();
+        String itemCode = request.getParameter("itemCode");
+        Item item = itemService.getByID(itemCode);
 
+        String result = item.getItemDescription();
+
+        response.setContentType("text/plain");
+        response.getWriter().write(result);
 
     }
 

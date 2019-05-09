@@ -58,9 +58,16 @@ $BTN.click(function () {
 
 $('#btnSearchItem').click(function () {
     var itemCode = "I002";
-    $.get('GetItemServlet', {
-        itemCode: itemCode
-    }, function (responseText) {
-        console.log(responseText);
+    $.ajax({
+        type: "POST",
+        url: "GetItemServlet",
+        data: itemCode,
+        success: function (response) {
+            if (response.status == "SUCCESS") {
+                console.log(response.toString());
+            }else {
+                console.log("Not Working");
+            }
+        }
     });
 });
