@@ -25,8 +25,9 @@ public class GetItemServlet extends HttpServlet {
         String result = item.getItemDescription();
 
         response.setContentType("text/plain");
-        response.getWriter().write(result);
-
+//        response.getWriter().write(result);
+        request.setAttribute("Result", result);
+        request.getRequestDispatcher("manage-item.jsp").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
