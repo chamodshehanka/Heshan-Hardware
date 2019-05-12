@@ -10,7 +10,7 @@ public class CommonConstants {
     public static final String QUERY_XML = "queryFilePath";
 
     /** Constant for file path of config.properties */
-    public static final String PROPERTY_FILE = "/config.properties";
+    public static final String PROPERTY_FILE = "config.properties";
 
     /** Constant for query tag in EmployeeQuery.xml */
     public static final String TAG_NAME = "query";
@@ -21,7 +21,7 @@ public class CommonConstants {
     /** Constant for employee id prefix */
     public static final String ADMIN_ID_PREFIX = "A";
     public static final String CUSTOMER_ID_PREFIX = "C";
-    public static final String EMPLOYEE_ID_PREFIX = "E300";
+    public static final String EMPLOYEE_ID_PREFIX = "E";
     public static final String ITEM_ID_PREFIX = "I";
     public static final String ORDERDETAIL_ID_PREFIX = "";
     public static final String ORDER_ID_PREFIX = "A";

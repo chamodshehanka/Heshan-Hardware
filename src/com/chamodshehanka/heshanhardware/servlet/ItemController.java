@@ -4,6 +4,7 @@ import com.chamodshehanka.heshanhardware.model.Item;
 import com.chamodshehanka.heshanhardware.service.custom.ItemService;
 import com.chamodshehanka.heshanhardware.service.custom.impl.ItemServiceImpl;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,7 +16,7 @@ import java.io.IOException;
  * @author chamodshehanka on 5/7/2019
  * @project HeshanHardware
  **/
-//@WebServlet(name = "Item", urlPatterns = "/Item")
+@WebServlet(name = "Item", urlPatterns = "/ItemController")
 public class ItemController extends HttpServlet {
 
     private ItemService itemService;
@@ -25,50 +26,61 @@ public class ItemController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String action = req.getServletPath();
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getServletPath();
 
         switch (action){
-            case "/add":
-                addItem(req, resp);
+            case "/addItemC":
+                addItem(request, response);
                 break;
-            case "/update":
-                updateItem(req, resp);
+            case "/updateItemC":
+                updateItem(request, response);
                 break;
-            case "/delete":
-                deleteItem(req, resp);
+            case "/deleteItemC":
+                deleteItem(request, response);
                 break;
-            case "/search":
-                searchItem(req, resp);
+            case "/searchItemC":
+                searchItem(request, response);
+                break;
+            case "/editItemC":
+                editItem(request,response);
                 break;
         }
     }
 
-    private void searchItem(HttpServletRequest req, HttpServletResponse resp) {
-        String itemCode = req.getParameter("itemCode");
-        Item item = itemService.getByID(itemCode);
+    private void searchItem(HttpServletRequest request, HttpServletResponse response) {
     }
 
-    private void deleteItem(HttpServletRequest req, HttpServletResponse resp) {
+    private void deleteItem(HttpServletRequest request, HttpServletResponse response) {
     }
 
-    private void updateItem(HttpServletRequest req, HttpServletResponse resp) {
-    }
-
-    private void addItem(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    private void updateItem(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String itemCode = request.getParameter("itemCode");
         String description = request.getParameter("description");
         String brand = request.getParameter("brand");
         double unitPrice = Double.parseDouble(request.getParameter("unitPrice"));
         int qty = Integer.parseInt(request.getParameter("qty"));
 
-        itemService.add(new Item(itemCode,description,brand,unitPrice,qty));
-
-        response.sendRedirect("item");
+        itemService.update(itemCode,
+                new Item(itemCode, description,brand,unitPrice,qty));
+        response.sendRedirect("");
     }
+
+    private void addItem(HttpServletRequest request, HttpServletResponse response) {
+    }
+
+    private void editItem(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String itemCode = request.getParameter("ItemCode");
+
+        Item item = itemService.getByID(itemCode);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("");
+        request.setAttribute("item", item);
+        requestDispatcher.forward(request,response);
+    }
+
 }

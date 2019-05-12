@@ -22,13 +22,14 @@ public class CommonUtil {
     static {
 
         ResourceBundle resourceBundle = ResourceBundle.getBundle("config");
-        System.out.println("Reso: " + resourceBundle);
+//        System.out.println("Reso: " + resourceBundle);
 
 
         try {
             InputStream inputStream = CommonUtil.class.getClassLoader().getResourceAsStream("/config.properties");
 
             properties.load(inputStream);
+            System.out.println("Pro : "+properties.getProperty("username"));
         }catch (IOException e){
             e.printStackTrace();
         }

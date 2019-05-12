@@ -89,7 +89,7 @@
     <div class="container">
         <button class="uk-button uk-button-primary" uk-toggle="target: #add-item-modal" type="button">New Item</button>
         <button id="btnSearchItem" class="uk-button uk-button-primary" >Search Item</button>
-        <button class="uk-button uk-button-primary">Update Item</button>
+        <button class="uk-button uk-button-primary" uk-toggle="target: #update-item-modal">Update Item</button>
         <button class="uk-button uk-button-danger">Delete Item</button>
 
 
@@ -135,12 +135,12 @@
         <%--End Add Item Modal--%>
 
         <%--Update Item Modal--%>
-        <div id="add-item-modal" uk-modal>
+        <div id="update-item-modal" uk-modal>
             <div class="uk-modal-dialog uk-modal-body">
                 <h2 class="uk-modal-title">Add Item</h2>
-                <button class="uk-modal-close" type="button"></button>
+<%--                <button class="uk-modal-close" type="button"></button>--%>
 
-                <form action="${pageContext.request.contextPath}/UpdateItem" method="post">
+                <form action="${pageContext.request.contextPath}/SearchItem" method="post">
 
 
                     <div class="uk-inline">
