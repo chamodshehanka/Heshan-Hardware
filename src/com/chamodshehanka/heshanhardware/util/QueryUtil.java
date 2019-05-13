@@ -13,7 +13,7 @@ import java.io.IOException;
  * @author chamodshehanka on 4/13/2019
  * @project HeshanHardware
  **/
-public class QueryUtil {
+public class QueryUtil extends CommonUtil {
 
     public static String queryByID(String id) throws SAXException, IOException, ParserConfigurationException {
 
