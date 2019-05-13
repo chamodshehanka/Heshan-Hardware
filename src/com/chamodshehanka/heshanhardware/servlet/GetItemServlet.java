@@ -22,11 +22,8 @@ public class GetItemServlet extends HttpServlet {
         String itemCode = request.getParameter("itemCode");
         Item item = itemService.getByID(itemCode);
 
-        String result = item.getItemDescription();
-
-        response.setContentType("text/plain");
-//        response.getWriter().write(result);
-        request.setAttribute("Result", result);
+        response.setContentType("text/html");
+        request.setAttribute("item", item);
         request.getRequestDispatcher("manage-item.jsp").forward(request,response);
     }
 

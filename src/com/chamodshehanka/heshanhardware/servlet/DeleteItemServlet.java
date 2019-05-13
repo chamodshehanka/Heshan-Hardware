@@ -22,8 +22,7 @@ public class DeleteItemServlet extends HttpServlet {
 
         ItemService itemService = new ItemServiceImpl();
         boolean isRemoved = itemService.remove(itemCode);
-        System.out.println("Item Code : " + itemCode);
-        System.out.println("ITem status : " + isRemoved);
+
         if (isRemoved){
             RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/manage-item.jsp");
             requestDispatcher.forward(request, response);

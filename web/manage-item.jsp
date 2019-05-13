@@ -137,35 +137,41 @@
         <%--Update Item Modal--%>
         <div id="update-item-modal" uk-modal>
             <div class="uk-modal-dialog uk-modal-body">
-                <h2 class="uk-modal-title">Add Item</h2>
-<%--                <button class="uk-modal-close" type="button"></button>--%>
+                <h2 class="uk-modal-title">Update Item</h2>
 
-                <form action="${pageContext.request.contextPath}/SearchItem" method="post">
+                <%
+                    Item item1 = (Item) request.getAttribute("item");
+                    if (item1 == null){
+                        item1 = new Item("N/A","N/A","N/A",0,0);
+                    }
+                %>
+
+                <form action="${pageContext.request.contextPath}/UpdateItem" method="post">
 
 
                     <div class="uk-inline">
                         <span class="uk-form-icon" uk-icon="icon: item"></span>
-                        <input class="uk-input" type="text" name="itemCode" placeholder="Item Code">
+                        <input class="uk-input" type="text" name="itemCode" placeholder="Item Code" value="<%=item1.getItemCode()%>">
 
                     </div>
 
                     <div class="uk-inline">
-                        <input class="uk-input" type="text" name="description" placeholder="Description">
+                        <input class="uk-input" type="text" name="description" placeholder="Description" value="<%=item1.getItemDescription()%>">
                     </div>
 
                     <div class="uk-inline">
-                        <input class="uk-input" type="text" name="brand" placeholder="Brand">
+                        <input class="uk-input" type="text" name="brand" placeholder="Brand" value="<%=item1.getItemBrand()%>">
                     </div>
 
                     <div class="uk-inline">
-                        <input class="uk-input" type="text" name="unitPrice" placeholder="Unit Price">
+                        <input class="uk-input" type="text" name="unitPrice" placeholder="Unit Price" value="<%=item1.getUnitPrice()%>">
                     </div>
 
                     <div class="uk-inline">
-                        <input class="uk-input" type="text" name="qty" placeholder="Quantity">
+                        <input class="uk-input" type="text" name="qty" placeholder="Quantity" value="<%=item1.getQty()%>">
                     </div>
 
-                    <button class="uk-button uk-button-primary" type="submit">Add Item</button>
+                    <button class="uk-button uk-button-primary" type="submit"  uk-toggle="target: #update-item-modal">Update Item</button>
                 </form>
             </div>
         </div>
@@ -212,7 +218,7 @@
                             <td class="pt-3-half" contenteditable="true"><%=item.getQty()%></td>
                             <td class="pt-3-half">
                                 <form method="post" action="${pageContext.request.contextPath}/SearchItem">
-                                    <input type="hidden" name="itemCode" value="<%=item.getItemCode()%>%>">
+                                    <input type="hidden" name="itemCode" value="<%=item.getItemCode()%>">
 
                                     <button type="submit" class="btn btn-secondary btn-rounded btn-sm my-0">Edit</button>
                                 </form>
@@ -221,7 +227,7 @@
                             <td>
 
                                 <form method="post" action="${pageContext.request.contextPath}/DeleteItem">
-                                    <input type="hidden" name="itemCode" value="<%=item.getItemCode()%>%>">
+                                    <input type="hidden" name="itemCode" value="<%=item.getItemCode()%>">
 
                                     <span class="table-remove">
                                         <button type="submit" class="btn btn-danger btn-rounded btn-sm my-0">Remove</button>
@@ -253,6 +259,12 @@
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("main").style.marginLeft= "0";
     }
+
+    $(document).ready(function () {
+        if (window.location.href.indexOf('#update-item-modal') != -1) {
+            $('#update-item-modal').modal('show');
+        }
+    });
 </script>
 </body>
 </html>
