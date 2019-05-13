@@ -16,7 +16,7 @@ import java.io.IOException;
  * @author chamodshehanka on 5/7/2019
  * @project HeshanHardware
  **/
-@WebServlet(name = "Item", urlPatterns = "/ItemController")
+//@WebServlet(name = "Item", urlPatterns = "/ItemController")
 public class ItemController extends HttpServlet {
 
     private ItemService itemService;
@@ -75,11 +75,13 @@ public class ItemController extends HttpServlet {
     }
 
     private void editItem(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
         String itemCode = request.getParameter("ItemCode");
 
         Item item = itemService.getByID(itemCode);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("");
+
         request.setAttribute("item", item);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("");
         requestDispatcher.forward(request,response);
     }
 

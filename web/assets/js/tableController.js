@@ -8,10 +8,10 @@ $('.table-add').click(function () {
 });
 
 $('.table-remove').click(function () {
-    $(this).parents('tr').detach();
-    var itemCode = $(this).parent('tr').getElementsByTagName("td");
-    console.log(itemCode[0].innerText);
-    $.post("/DeleteItem", itemCode);
+    // $(this).parents('tr').detach();
+    // var itemCode = $(this).parent('tr').getElementsByTagName("td");
+    // console.log(itemCode[0].innerText);
+    // $.post("/DeleteItem", itemCode);
 });
 
 $('.table-up').click(function () {
@@ -57,17 +57,17 @@ $BTN.click(function () {
 });
 
 $('#btnSearchItem').click(function () {
-    var itemCode = "I002";
-    $.ajax({
-        type: "POST",
-        url: "GetItemServlet",
-        data: itemCode,
-        success: function (response) {
-            if (response.status == "SUCCESS") {
-                console.log(response.toString());
-            }else {
-                console.log("Not Working");
-            }
-        }
-    });
+    // var itemCode = "I002";
+    // $.ajax({
+    //     type: "POST",
+    //     url: "GetItemServlet",
+    //     data: itemCode,
+    //     success: function (response) {
+    //         if (response.status == "SUCCESS") {
+    //             console.log(response.toString());
+    //         }else {
+    //             console.log("Not Working");
+    //         }
+    //     }
+    // });
 });

@@ -194,7 +194,7 @@
                     <th class="text-center">Brand</th>
                     <th class="text-center">Unit Price(LKR)</th>
                     <th class="text-center">Quantity</th>
-                    <th class="text-center">Sort</th>
+                    <th class="text-center">Edit</th>
                     <th class="text-center">Remove</th>
                 </tr>
 
@@ -213,21 +213,18 @@
                             <td class="pt-3-half" contenteditable="true"><%=item.getUnitPrice()%></td>
                             <td class="pt-3-half" contenteditable="true"><%=item.getQty()%></td>
                             <td class="pt-3-half">
-                        <span class="table-up">
-                            <a href="#!" class="indigo-text">
-                                <i class="fas fa-long-arrow-alt-up" aria-hidden="true"></i>
-                            </a>
-                        </span>
-                                <span class="table-down">
-                            <a href="#!" class="indigo-text">
-                                <i class="fas fa-long-arrow-alt-down" aria-hidden="true"></i>
-                            </a>
-                        </span>
+                                <form method="post" action=""></form>
                             </td>
+
                             <td>
-                        <span class="table-remove">
-                            <button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Remove</button>
-                        </span>
+
+                                <form method="post" action="${pageContext.request.contextPath}/DeleteItem">
+                                    <input type="hidden" name="itemCode" value="<%=item.getItemCode()%>%>">
+
+                                    <span class="table-remove">
+                                        <button type="submit" class="btn btn-danger btn-rounded btn-sm my-0">Remove</button>
+                                    </span>
+                                </form>
                             </td>
                         </tr>
                 <%
