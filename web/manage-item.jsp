@@ -146,9 +146,7 @@
                     <div class="uk-inline">
                         <span class="uk-form-icon" uk-icon="icon: item"></span>
                         <input class="uk-input" type="text" name="itemCode" placeholder="Item Code">
-                        <%
 
-                        %>
                     </div>
 
                     <div class="uk-inline">
@@ -213,7 +211,11 @@
                             <td class="pt-3-half" contenteditable="true"><%=item.getUnitPrice()%></td>
                             <td class="pt-3-half" contenteditable="true"><%=item.getQty()%></td>
                             <td class="pt-3-half">
-                                <form method="post" action=""></form>
+                                <form method="post" action="${pageContext.request.contextPath}/SearchItem">
+                                    <input type="hidden" name="itemCode" value="<%=item.getItemCode()%>%>">
+
+                                    <button type="submit" class="btn btn-secondary btn-rounded btn-sm my-0">Edit</button>
+                                </form>
                             </td>
 
                             <td>
