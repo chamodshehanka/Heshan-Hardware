@@ -2,6 +2,7 @@
 <%@ page import="com.chamodshehanka.heshanhardware.service.custom.impl.CustomerServiceImpl" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.chamodshehanka.heshanhardware.model.Customer" %>
+<%@ page import="com.chamodshehanka.heshanhardware.model.Item" %>
 <%--
   Created by IntelliJ IDEA.
   User: chamodshehanka
@@ -28,15 +29,14 @@
     </div>
 
     <div class="container">
-        <button class="uk-button uk-button-primary" uk-toggle="target: #add-item-modal" type="button">New Item</button>
+        <button class="uk-button uk-button-primary" uk-toggle="target: #add-customer-modal" type="button">New Customer</button>
+        <button id="btnUpdateModal" class="uk-button uk-button-primary" uk-toggle="target: #update-customer-modal" type="button">New Customer</button>
     </div>
 
     <%--Modals--%>
 
     <%--Add Customer Modal--%>
-
-    <%--End Add Customer Modal--%>
-    <div id="add-item-modal" uk-modal>
+    <div id="add-customer-modal" uk-modal>
         <div class="uk-modal-dialog uk-modal-body">
             <h2 class="uk-modal-title">Add Customer</h2>
             <button class="uk-modal-close" type="button"></button>
@@ -75,6 +75,55 @@
             </form>
         </div>
     </div>
+    <%--End Add Customer Modal--%>
+
+    <%--Update Customer Modal--%>
+    <div id="update-customer-modal" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <h2 class="uk-modal-title">Update Item</h2>
+
+            <div class="uk-alert-danger" uk-alert>
+                <a class="uk-alert-close" uk-close></a>
+            </div>
+
+            <%
+                Customer customer1 = (Customer) request.getAttribute("item");
+                if (customer1 == null){
+                    customer1 = new Customer("N/A","N/A","N/A","N/A",0);
+                }
+            %>
+
+            <form action="${pageContext.request.contextPath}/UpdateCustomer" method="post">
+
+
+                <div class="uk-margin">
+                    <span class="uk-form-icon" uk-icon="icon: item"></span>
+                    <input class="uk-input" type="text" name="itemCode" placeholder="Item Code" value="<%=customer1.getCustomerID()%>">
+
+                </div>
+
+                <div class="uk-margin">
+                    <input class="uk-input" type="text" name="description" placeholder="Description" value="<%=customer1.getName()%>">
+                </div>
+
+                <div class="uk-margin">
+                    <input class="uk-input" type="text" name="brand" placeholder="Brand" value="<%=customer1.getGender()%>">
+                </div>
+
+                <div class="uk-margin">
+                    <input class="uk-input" type="text" name="unitPrice" placeholder="Unit Price" value="<%=customer1.getAddress()%>">
+                </div>
+
+                <div class="uk-margin">
+                    <input class="uk-input" type="text" name="qty" placeholder="Quantity" value="<%=customer1.getPhone()%>">
+                </div>
+
+                <button class="uk-button uk-button-primary" type="submit">Update Customer</button>
+            </form>
+        </div>
+    </div>
+    <%--End Customer Update Modal--%>
+
     <%--End Modals--%>
 
 </section>
@@ -159,6 +208,11 @@
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("main").style.marginLeft= "0";
+    }
+</script>
+<script>
+    function openUpdateModal() {
+        $('#btnUpdateModal').trigger('click');
     }
 </script>
 </body>
