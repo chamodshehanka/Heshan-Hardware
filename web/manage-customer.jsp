@@ -2,7 +2,6 @@
 <%@ page import="com.chamodshehanka.heshanhardware.service.custom.impl.CustomerServiceImpl" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.chamodshehanka.heshanhardware.model.Customer" %>
-<%@ page import="com.chamodshehanka.heshanhardware.model.Item" %>
 <%--
   Created by IntelliJ IDEA.
   User: chamodshehanka
@@ -30,7 +29,7 @@
 
     <div class="container">
         <button class="uk-button uk-button-primary" uk-toggle="target: #add-customer-modal" type="button">New Customer</button>
-        <button id="btnUpdateModal" class="uk-button uk-button-primary" uk-toggle="target: #update-customer-modal" type="button">New Customer</button>
+        <button id="btnUpdateModal" class="uk-button uk-button-primary" uk-toggle="target: #update-customer-modal" type="button">Update Customer</button>
     </div>
 
     <%--Modals--%>
@@ -87,10 +86,11 @@
             </div>
 
             <%
-                Customer customer1 = (Customer) request.getAttribute("item");
+                Customer customer1 = (Customer) request.getAttribute("customer");
                 if (customer1 == null){
                     customer1 = new Customer("N/A","N/A","N/A","N/A",0);
                 }
+                out.println(customer1.getName());
             %>
 
             <form action="${pageContext.request.contextPath}/UpdateCustomer" method="post">
@@ -98,7 +98,7 @@
 
                 <div class="uk-margin">
                     <span class="uk-form-icon" uk-icon="icon: item"></span>
-                    <input class="uk-input" type="text" name="itemCode" placeholder="Item Code" value="<%=customer1.getCustomerID()%>">
+                    <input id="txtCustomerID" class="uk-input" type="text" name="itemCode" placeholder="Item Code" value="<%=customer1.getCustomerID()%>">
 
                 </div>
 
@@ -163,7 +163,7 @@
                     <td class="pt-3-half" contenteditable="true"><%=customer.getPhone()%></td>
                     <td class="pt-3-half">
                         <form method="post" action="${pageContext.request.contextPath}/SearchCustomer">
-                            <input type="hidden" name="itemCode" value="<%=customer.getCustomerID()%>">
+                            <input type="hidden" name="customerID" value="<%=customer.getCustomerID()%>">
 
                             <button type="submit" class="btn btn-secondary btn-rounded btn-sm my-0">Edit</button>
                         </form>
@@ -211,8 +211,18 @@
     }
 </script>
 <script>
+    $(document).ready(function () {
+       var customerID =  $('#txtCustomerID').val();
+
+        if (customerID !== "N/A"){
+            openUpdateModal();
+        }
+    });
+
     function openUpdateModal() {
         $('#btnUpdateModal').trigger('click');
+        /*var updateModal = UIkit.modal("#update-customer-modal");
+        updateModal.show();*/
     }
 </script>
 </body>

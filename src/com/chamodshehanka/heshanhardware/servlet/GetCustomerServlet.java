@@ -24,7 +24,6 @@ public class GetCustomerServlet extends HttpServlet {
 
         response.setContentType("text/html");
         request.setAttribute("customer", customer);
-        response.getOutputStream().println("[openUpdateModal();]");
         request.getRequestDispatcher("/manage-customer.jsp").forward(request,response);
     }
 
