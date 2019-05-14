@@ -20,11 +20,13 @@ public class QueryUtil extends CommonUtil {
         NodeList nodeList;
         Element element = null;
 
+        File tempPath = new File("E:\\SLIIT\\Apps\\HeshanHardware\\web\\WEB-INF\\DBQuery.xml");
+
         File file = new File(System
                 .getProperty("user.dir")+"\\web\\WEB-INF\\DBQuery.xml");
 
         nodeList = DocumentBuilderFactory.newInstance().newDocumentBuilder()
-                .parse(file).getElementsByTagName(CommonConstants.TAG_NAME);
+                .parse(tempPath).getElementsByTagName(CommonConstants.TAG_NAME);
 
         for (int value = 0; value < nodeList.getLength(); value++) {
             element = (Element) nodeList.item(value);
