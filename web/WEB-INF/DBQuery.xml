@@ -41,6 +41,12 @@
         ]]>
     </query>
 
+    <query id="all_customers">
+        <![CDATA[
+            SELECT * FROM customer
+        ]]>
+    </query>
+
 
 
 

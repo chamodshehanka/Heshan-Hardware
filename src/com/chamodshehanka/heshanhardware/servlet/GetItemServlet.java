@@ -24,7 +24,7 @@ public class GetItemServlet extends HttpServlet {
 
         response.setContentType("text/html");
         request.setAttribute("item", item);
-        request.getRequestDispatcher("manage-item.jsp").forward(request,response);
+        request.getRequestDispatcher("/manage-item.jsp").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

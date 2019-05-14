@@ -111,7 +111,25 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public ArrayList<Customer> getAll() {
-        return null;
+        ArrayList<Customer> customerArrayList = new ArrayList<>();
+        try {
+            connection = DBConnectionUtil.getDBConnection();
+            statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(QueryUtil.queryByID(CommonConstants.QUERY_ID_GET_ALL_CUSTOMERS));
+
+            while (resultSet.next()){
+                customerArrayList.add(new Customer(
+                        resultSet.getString(CommonConstants.COLUMN_INDEX_ONE),
+                        resultSet.getString(CommonConstants.COLUMN_INDEX_TWO),
+                        resultSet.getString(CommonConstants.COLUMN_INDEX_THREE),
+                        resultSet.getString(CommonConstants.COLUMN_INDEX_FOUR),
+                        resultSet.getInt(CommonConstants.COLUMN_INDEX_FIVE)
+                ));
+            }
+        } catch (SQLException | ClassNotFoundException | SAXException | ParserConfigurationException | IOException e) {
+            e.printStackTrace();
+        }
+        return customerArrayList;
     }
 
     @Override

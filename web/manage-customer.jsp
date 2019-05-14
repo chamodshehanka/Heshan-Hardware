@@ -1,5 +1,7 @@
 <%@ page import="com.chamodshehanka.heshanhardware.service.custom.CustomerService" %>
 <%@ page import="com.chamodshehanka.heshanhardware.service.custom.impl.CustomerServiceImpl" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.chamodshehanka.heshanhardware.model.Customer" %>
 <%--
   Created by IntelliJ IDEA.
   User: chamodshehanka
@@ -21,7 +23,7 @@
 <section class="uk-card uk-card-default uk-card-hover uk-card-body align-items-center">
     <div>
         <h2 style="text-align: center">
-            Manage Items
+            Manage Customer
         </h2>
     </div>
 
@@ -69,7 +71,7 @@
                     <input class="uk-input" type="text" name="phone" placeholder="Phone Number">
                 </div>
 
-                <button class="uk-button uk-button-primary" type="submit">Add Item</button>
+                <button class="uk-button uk-button-primary" type="submit">Add Customer</button>
             </form>
         </div>
     </div>
@@ -77,6 +79,66 @@
 
 </section>
 
+<%--Table--%>
+<div class="card">
+    <div class="card-body">
+        <div id="table" class="table-editable">
+      <span class="table-add float-right mb-3 mr-2">
+          <a href="#!" class="text-success">
+              <i class="fas fa-plus fa-2x" aria-hidden="true"></i>
+          </a>
+      </span>
+            <table class="table table-bordered table-responsive-md table-striped text-center">
+                <tr>
+                    <th class="text-center">Customer ID</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Gender</th>
+                    <th class="text-center">Address</th>
+                    <th class="text-center">Phone</th>
+                    <th class="text-center">Edit</th>
+                    <th class="text-center">Remove</th>
+                </tr>
+
+                <%
+                    ArrayList<Customer> customerArrayList = customerService.getAll();
+
+                    for (Customer customer : customerArrayList
+                    ) {
+                %>
+
+                <tr>
+                    <td id="itemCode" class="pt-3-half" contenteditable="true"><%=customer.getCustomerID()%></td>
+                    <td class="pt-3-half" contenteditable="true"><%=customer.getName()%></td>
+                    <td class="pt-3-half" contenteditable="true"><%=customer.getGender()%></td>
+                    <td class="pt-3-half" contenteditable="true"><%=customer.getAddress()%></td>
+                    <td class="pt-3-half" contenteditable="true"><%=customer.getPhone()%></td>
+                    <td class="pt-3-half">
+                        <form method="post" action="${pageContext.request.contextPath}/SearchCustomer">
+                            <input type="hidden" name="itemCode" value="<%=customer.getCustomerID()%>">
+
+                            <button type="submit" class="btn btn-secondary btn-rounded btn-sm my-0">Edit</button>
+                        </form>
+                    </td>
+
+                    <td>
+
+                        <form method="post" action="${pageContext.request.contextPath}/DeleteCustomer">
+                            <input type="hidden" name="itemCode" value="<%=customer.getCustomerID()%>">
+
+                            <span class="table-remove">
+                                        <button type="submit" class="btn btn-danger btn-rounded btn-sm my-0">Remove</button>
+                                    </span>
+                        </form>
+                    </td>
+                </tr>
+                <%
+                    }
+                %>
+            </table>
+        </div>
+    </div>
+</div>
+<%--End Table--%>
 
 
 <jsp:include page="views/footer.jsp"></jsp:include>
