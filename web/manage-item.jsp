@@ -14,31 +14,18 @@
 <head>
     <title>Manage Items</title>
 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/mdb.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/addons/datatables.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/addons/datatables-select.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/uikit.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/uikit-rtl.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
+    <jsp:include page="views/styles-header.jsp"></jsp:include>
 
-    <style>
-        .pt-3-half {
-            padding-top: 1.4rem;
-        }
-    </style>
 </head>
 <body>
 
 <jsp:include page="views/header.jsp"></jsp:include>
 
-<section class="uk-card uk-card-default uk-card-hover uk-card-body">
+<section class="uk-card uk-card-default uk-card-hover uk-card-body align-items-center">
     <div class="container">
         <button class="uk-button uk-button-primary" uk-toggle="target: #add-item-modal" type="button">New Item</button>
         <button id="btnSearchItem" class="uk-button uk-button-primary" >Search Item</button>
         <button class="uk-button uk-button-primary" uk-toggle="target: #update-item-modal">Update Item</button>
-        <button class="uk-button uk-button-danger">Delete Item</button>
-
 
         <%--Modals--%>
 
@@ -85,6 +72,11 @@
         <div id="update-item-modal" uk-modal>
             <div class="uk-modal-dialog uk-modal-body">
                 <h2 class="uk-modal-title">Update Item</h2>
+
+                <div class="uk-alert-danger" uk-alert>
+                    <a class="uk-alert-close" uk-close></a>
+                    <%--<p id="">You need to click edit button first.</p>--%>
+                </div>
 
                 <%
                     Item item1 = (Item) request.getAttribute("item");
@@ -196,6 +188,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.4/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.4/js/uikit-icons.min.js"></script>
 <script src="assets/js/validationUtil.js" type="text/javascript"></script>
 <script src="assets/js/tableController.js" type="text/javascript"></script>
 <script>
@@ -208,13 +202,6 @@
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("main").style.marginLeft= "0";
     }
-
-    $(document).ready(function () {
-        // if (window.location.href.indexOf('#update-item-modal') != -1) {
-        //     // $('#update-item-modal').modal('show');
-        //     UIkit.modal(update-item-modal).show();
-        // }
-    });
 </script>
 </body>
 </html>
