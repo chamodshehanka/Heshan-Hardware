@@ -1,4 +1,4 @@
-package com.chamodshehanka.heshanhardware.service.custom.impl;
+package com.chamodshehanka.heshanhardware.service.custom;
 
 import com.chamodshehanka.heshanhardware.model.Staff;
 import com.chamodshehanka.heshanhardware.service.SuperService;

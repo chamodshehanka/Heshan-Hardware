@@ -98,6 +98,14 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public boolean remove(String customerID) {
+        try {
+            connection = DBConnectionUtil.getDBConnection();
+            preparedStatement = connection.prepareStatement(QueryUtil.queryByID(CommonConstants.QUERY_ID_REMOVE_CUSTOMER));
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_ONE, customerID);
+            return 0 < preparedStatement.executeUpdate();
+        } catch (SQLException | ClassNotFoundException | SAXException | ParserConfigurationException | IOException e) {
+            e.printStackTrace();
+        }
         return false;
     }
 

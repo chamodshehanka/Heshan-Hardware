@@ -2,6 +2,7 @@ package com.chamodshehanka.heshanhardware.service.custom.impl;
 
 
 import com.chamodshehanka.heshanhardware.model.Stock;
+import com.chamodshehanka.heshanhardware.service.custom.StockService;
 import com.chamodshehanka.heshanhardware.util.IDGenerator;
 
 import java.sql.SQLException;
@@ -10,7 +11,8 @@ import java.util.ArrayList;
 /**
  * @author surangamahesh on 5/14/2019
  * @project HeshanHardware
- **/
+ *
+*/
 
 public class StockServiceImpl implements StockService {
 
@@ -36,7 +38,7 @@ public class StockServiceImpl implements StockService {
     public String getNewID() {
         String newID = null;
         try {
-            newID = IDGenerator.getNewID("Stock", "Stock_ID", "s");
+            newID = IDGenerator.getNewID("Stock", "Stock_ID", "S");
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }

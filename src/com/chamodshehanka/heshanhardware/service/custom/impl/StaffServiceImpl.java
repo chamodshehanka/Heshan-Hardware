@@ -1,6 +1,7 @@
 package com.chamodshehanka.heshanhardware.service.custom.impl;
 
 import com.chamodshehanka.heshanhardware.model.Staff;
+import com.chamodshehanka.heshanhardware.service.custom.StaffService;
 import com.chamodshehanka.heshanhardware.util.IDGenerator;
 
 import java.sql.SQLException;
