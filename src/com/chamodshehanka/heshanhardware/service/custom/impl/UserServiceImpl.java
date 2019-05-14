@@ -20,28 +20,21 @@ public class UserServiceImpl implements UserService {
     private PreparedStatement preparedStatement;
 
     @Override
-    public void add(User user) {
-        //String userID = CommonUtil.generateIDs(getUserID());
-        String userID = "U002";
-
+    public boolean add(User user) {
         try {
             connection = DBConnectionUtil.getDBConnection();
             preparedStatement = connection.prepareStatement("INSERT INTO user VALUES (?,?,?,?)");
-            connection.setAutoCommit(false);
-
-            user.setUserID(userID);
 
             preparedStatement.setString(1, user.getUserID());
             preparedStatement.setString(2, user.getUserName());
             preparedStatement.setString(3, user.getUserPassword());
             preparedStatement.setString(4, user.getUserType());
 
-            preparedStatement.execute();
-            connection.commit();
+            return 0 < preparedStatement.executeUpdate();
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-
+        return false;
     }
 
     @Override
@@ -50,20 +43,20 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User update(String userID, User user) {
-        return null;
+    public boolean update(String userID, User user) {
+        return false;
     }
 
     @Override
-    public void remove(String userID) {
+    public boolean remove(String userID) {
 
+        return false;
     }
 
     @Override
     public ArrayList<User> getAll() {
         ArrayList<User> userArrayList = new ArrayList<>();
         try {
-            System.out.println("GetAll DB : " + DBConnectionUtil.getDBConnection());
             connection = DBConnectionUtil.getDBConnection();
             preparedStatement = connection.prepareStatement("SELECT * FROM user");
 
@@ -95,6 +88,11 @@ public class UserServiceImpl implements UserService {
         }
 
         return userArrayList;
+    }
+
+    @Override
+    public String getNewID() {
+        return null;
     }
 
 

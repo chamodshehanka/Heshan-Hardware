@@ -2,7 +2,9 @@ package com.chamodshehanka.heshanhardware.service.custom.impl;
 
 import com.chamodshehanka.heshanhardware.model.Customer;
 import com.chamodshehanka.heshanhardware.service.custom.CustomerService;
+import com.chamodshehanka.heshanhardware.util.IDGenerator;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -12,24 +14,23 @@ import java.util.ArrayList;
 public class CustomerServiceImpl implements CustomerService {
 
     @Override
-    public void add(Customer customer) {
-
+    public boolean add(Customer customer) {
+        return false;
     }
 
     @Override
     public Customer getByID(String s) {
-
         return null;
     }
 
     @Override
-    public Customer update(String s, Customer customer) {
-        return null;
+    public boolean update(String s, Customer customer) {
+        return false;
     }
 
     @Override
-    public void remove(String s) {
-
+    public boolean remove(String s) {
+        return false;
     }
 
     @Override
@@ -37,4 +38,14 @@ public class CustomerServiceImpl implements CustomerService {
         return null;
     }
 
+    @Override
+    public String getNewID() {
+        String newID = null;
+        try {
+            newID = IDGenerator.getNewID("customer", "customer_id", "C");
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return newID;
+    }
 }

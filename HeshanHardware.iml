@@ -26,5 +26,8 @@
     <orderEntry type="library" name="uikit" level="application" />
     <orderEntry type="library" name="uikit-icons" level="application" />
     <orderEntry type="library" exported="" name="lib" level="project" />
+    <orderEntry type="library" name="jquery-3.3.1.slim" level="application" />
+    <orderEntry type="library" name="popper" level="application" />
+    <orderEntry type="library" name="jquery.mCustomScrollbar.concat" level="application" />
   </component>
 </module>

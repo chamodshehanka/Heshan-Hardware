@@ -10,29 +10,34 @@ import java.util.ArrayList;
  * @project HeshanHardware
  **/
 public class OrderDetailServiceImpl implements OrderDetailService {
-    @Override
-    public void add(OrderDetail orderDetail) {
 
+    @Override
+    public boolean add(OrderDetail orderDetail) {
+        return false;
     }
 
     @Override
     public OrderDetail getByID(String s) {
-
         return null;
     }
 
     @Override
-    public OrderDetail update(String s, OrderDetail orderDetail) {
-        return null;
+    public boolean update(String s, OrderDetail orderDetail) {
+        return false;
     }
 
     @Override
-    public void remove(String s) {
-
+    public boolean remove(String s) {
+        return false;
     }
 
     @Override
     public ArrayList<OrderDetail> getAll() {
+        return null;
+    }
+
+    @Override
+    public String getNewID() {
         return null;
     }
 }

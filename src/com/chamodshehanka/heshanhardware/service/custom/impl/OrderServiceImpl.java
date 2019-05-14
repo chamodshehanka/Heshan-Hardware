@@ -10,29 +10,34 @@ import java.util.ArrayList;
  * @project HeshanHardware
  **/
 public class OrderServiceImpl implements OrderService {
-    @Override
-    public void add(Order order) {
 
+    @Override
+    public boolean add(Order order) {
+        return false;
     }
 
     @Override
     public Order getByID(String s) {
-
         return null;
     }
 
     @Override
-    public Order update(String s, Order order) {
-        return null;
+    public boolean update(String s, Order order) {
+        return false;
     }
 
     @Override
-    public void remove(String s) {
-
+    public boolean remove(String s) {
+        return false;
     }
 
     @Override
     public ArrayList<Order> getAll() {
+        return null;
+    }
+
+    @Override
+    public String getNewID() {
         return null;
     }
 }

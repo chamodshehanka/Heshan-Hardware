@@ -8,14 +8,16 @@ import java.util.ArrayList;
  **/
 public interface SuperService<T, ID> {
 
-    public void add(T t);
+    public boolean add(T t);
 
     public T getByID(ID id);
 
-    public T update(ID id, T t);
+    public boolean update(ID id, T t);
 
-    public void remove(ID id);
+    public boolean remove(ID id);
 
     public ArrayList<T> getAll();
+
+    public String getNewID();
 
 }
