@@ -14,12 +14,34 @@
         ]]>
     </query>
 
+    <query id = "all_customers">
+        <![CDATA[
+            SELECT * FROM customer
+        ]]>
+    </query>
+
     <query id="insert_customer">
         <![CDATA[
             INSERT INTO customer
             VALUES(?,?,?,?,?)
         ]]>
     </query>
+
+    <query id="customer_by_id">
+        <![CDATA[
+            SELECT * FROM customer WHERE customer.customer_id = ?
+        ]]>
+    </query>
+
+    <query id="update_customer">
+        <![CDATA[
+            update customer as c
+            set c.customer_id = ?, c.customer_name = ?, c.gender = ?, c.address = ?, c.phone = ?
+            where c.customer_id = ?
+        ]]>
+    </query>
+
+
 
 
     <!-- Create table employee Query -->

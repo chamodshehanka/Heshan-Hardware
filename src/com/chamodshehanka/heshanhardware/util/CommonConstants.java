@@ -91,4 +91,6 @@ public class CommonConstants {
 
     public static final String QUERY_ID_INSERT_ADMIN = "admin_ids";
     public static final String QUERY_ID_INSERT_CUSTOMER = "insert_customer";
+    public static final String QUERY_ID_GET_CUSTOMER = "customer_by_id";
+    public static final String QUERY_ID_UPDATE_CUSTOMER = "update_customer";
 }

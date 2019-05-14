@@ -10,10 +10,7 @@ import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
 /**
@@ -58,11 +55,44 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer getByID(String customerID) {
+        try {
+            connection = DBConnectionUtil.getDBConnection();
+            preparedStatement = connection.prepareStatement(QueryUtil.queryByID(CommonConstants.QUERY_ID_GET_CUSTOMER));
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_ONE, customerID);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()){
+                return new Customer(
+                        resultSet.getString(CommonConstants.COLUMN_INDEX_ONE),
+                        resultSet.getString(CommonConstants.COLUMN_INDEX_TWO),
+                        resultSet.getString(CommonConstants.COLUMN_INDEX_THREE),
+                        resultSet.getString(CommonConstants.COLUMN_INDEX_FOUR),
+                        resultSet.getInt(CommonConstants.COLUMN_INDEX_FIVE)
+                );
+            }
+        } catch (SQLException | ClassNotFoundException | SAXException | ParserConfigurationException | IOException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 
     @Override
     public boolean update(String customerID, Customer customer) {
+        try {
+            connection = DBConnectionUtil.getDBConnection();
+            preparedStatement = connection.prepareStatement(QueryUtil.queryByID(CommonConstants.QUERY_ID_UPDATE_CUSTOMER));
+
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_ONE, customer.getCustomerID());
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_TWO, customer.getName());
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_THREE, customer.getGender());
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_FOUR, customer.getAddress());
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_FIVE, customer.getPhone());
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_SIX, customerID);
+
+            return 0 < preparedStatement.executeUpdate();
+        } catch (SQLException | ClassNotFoundException | SAXException | ParserConfigurationException | IOException e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
