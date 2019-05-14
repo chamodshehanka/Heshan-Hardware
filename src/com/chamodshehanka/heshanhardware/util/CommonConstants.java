@@ -12,10 +12,10 @@ public class CommonConstants {
     /** Constant for file path of config.properties */
     public static final String PROPERTY_FILE = "config.properties";
 
-    /** Constant for query tag in EmployeeQuery.xml */
+    /** Constant for query tag in DBQuery.xml */
     public static final String TAG_NAME = "query";
 
-    /** Constant for query id in EmployeeQuery.xml */
+    /** Constant for query id in DBQuery.xml */
     public static final String ATTRIB_ID = "id";
 
     /** Constant for employee id prefix */
@@ -41,28 +41,28 @@ public class CommonConstants {
     /** Constant for driver name key of MySQL database in config.properties */
     public static final String DRIVER_NAME = "driverName";
 
-    /** Constant for query id of drop_table in EmployeeQuery.xml */
+    /** Constant for query id of drop_table in DBQuery.xml */
     public static final String QUERY_ID_DROP_TABLE = "drop_table";
 
-    /** Constant for query id of create_table in EmployeeQuery.xml */
+    /** Constant for query id of create_table in DBQuery.xml */
     public static final String QUERY_ID_CREATE_TABLE = "create_employee_table";
 
-    /** Constant for query id of insert employees in EmployeeQuery.xml */
+    /** Constant for query id of insert employees in DBQuery.xml */
     public static final String QUERY_ID_INSERT_EMPLOYEES = "insert_employee";
 
-    /** Constant for query id of get an employee in EmployeeQuery.xml */
+    /** Constant for query id of get an employee in DBQuery.xml */
     public static final String QUERY_ID_GET_EMPLOYEE = "employee_by_id";
 
-    /** Constant for query id of get all employees in EmployeeQuery.xml */
+    /** Constant for query id of get all employees in DBQuery.xml */
     public static final String QUERY_ID_ALL_EMPLOYEES = "all_employees";
 
-    /** Constant for query id of remove a employee in EmployeeQuery.xml */
+    /** Constant for query id of remove a employee in DBQuery.xml */
     public static final String QUERY_ID_REMOVE_EMPLOYEE = "remove_employee";
 
-    /** Constant for query id of update a employee in EmployeeQuery.xml */
+    /** Constant for query id of update a employee in DBQuery.xml */
     public static final String QUERY_ID_UPDATE_EMPLOYEE = "update_employee";
 
-    /** Constant for query id of get all employee ids in EmployeeQuery.xml */
+    /** Constant for query id of get all employee ids in DBQuery.xml */
     public static final String QUERY_ID_GET_EMPLOYEE_IDS = "employee_ids";
 
     /** Constant for Column index one */
@@ -90,4 +90,7 @@ public class CommonConstants {
     public static final int COLUMN_INDEX_EIGHT = 8;
 
     public static final String QUERY_ID_INSERT_ADMIN = "admin_ids";
+    public static final String QUERY_ID_INSERT_CUSTOMER = "insert_customer";
+    public static final String QUERY_ID_GET_CUSTOMER = "customer_by_id";
+    public static final String QUERY_ID_UPDATE_CUSTOMER = "update_customer";
 }

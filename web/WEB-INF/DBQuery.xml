@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Queries>
+
+    <query id="create_customer_table">
+        <![CDATA[
+            create table customer(
+                customer_id   varchar(5) primary key,
+                customer_name varchar(100) null,
+                gender        varchar(6)   null,
+                address       varchar(200) null,
+                phone         int          null
+             );
+        ]]>
+    </query>
+
+    <query id = "all_customers">
+        <![CDATA[
+            SELECT * FROM customer
+        ]]>
+    </query>
+
+    <query id="insert_customer">
+        <![CDATA[
+            INSERT INTO customer
+            VALUES(?,?,?,?,?)
+        ]]>
+    </query>
+
+    <query id="customer_by_id">
+        <![CDATA[
+            SELECT * FROM customer WHERE customer.customer_id = ?
+        ]]>
+    </query>
+
+    <query id="update_customer">
+        <![CDATA[
+            update customer as c
+            set c.customer_id = ?, c.customer_name = ?, c.gender = ?, c.address = ?, c.phone = ?
+            where c.customer_id = ?
+        ]]>
+    </query>
+
+
+
+
+    <!-- Create table employee Query -->
+    <query id="create_employee_table">
+        <![CDATA[
+            CREATE TABLE employee(
+				employeeID varchar(10) not null,
+				employeeName varchar(20),
+				designation varchar(15),
+				faculty varchar(15),
+				department varchar(15),
+				address  varchar(50),
+				qualifications varchar(20),
+				gender varchar(10) DEFAULT 'Male',
+				primary key (employeeID)
+			)
+        ]]>
+    </query>
+
+    <!-- DROP TABLE EMPLOYEES Query -->
+    <query id="drop_table">
+        <![CDATA[
+            DROP TABLE IF EXISTS employee
+        ]]>
+    </query>
+
+    <!-- Select all customer orders Query -->
+    <query id="insert_employee">
+        <![CDATA[
+          	insert into employee (employeeID, employeeName, designation, faculty, department, address, qualifications, gender)
+          	values (?, ?, ?, ?, ?, ?, ?, ?)
+        ]]>
+    </query>
+
+    <!-- Select a particular employee by id Query -->
+    <query id="employee_by_id">
+        <![CDATA[
+            select * from employee where employee.employeeID = ?
+        ]]>
+    </query>
+
+    <!-- Select all employees -->
+    <query id="all_employees">
+        <![CDATA[
+            select * from employee
+        ]]>
+    </query>
+
+    <!-- Delete a particular employee by id Query -->
+    <query id="remove_employee">
+        <![CDATA[
+            delete from employee where employee.employeeID = ?
+        ]]>
+    </query>
+
+    <!-- Update a particular employee by id Query -->
+    <query id="update_employee">
+        <![CDATA[
+            update employee as e
+            set e.employeeName = ?, e.designation = ?, e.faculty = ?, e.department = ?, e.address = ?, e.qualifications = ?, e.gender = ?
+            where e.employeeID = ?
+        ]]>
+    </query>
+
+    <!-- Get employee IDs Query -->
+    <query id="employee_ids">
+        <![CDATA[
+            select e.employeeID from employee as e
+        ]]>
+    </query>
+
+</Queries>
