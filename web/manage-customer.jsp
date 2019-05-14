@@ -98,24 +98,24 @@
 
                 <div class="uk-margin">
                     <span class="uk-form-icon" uk-icon="icon: item"></span>
-                    <input id="txtCustomerID" class="uk-input" type="text" name="itemCode" placeholder="Item Code" value="<%=customer1.getCustomerID()%>">
+                    <input id="txtCustomerID" class="uk-input" type="text" name="customerID" placeholder="Customer ID" value="<%=customer1.getCustomerID()%>">
 
                 </div>
 
                 <div class="uk-margin">
-                    <input class="uk-input" type="text" name="description" placeholder="Description" value="<%=customer1.getName()%>">
+                    <input class="uk-input" type="text" name="name" placeholder="Name" value="<%=customer1.getName()%>">
                 </div>
 
                 <div class="uk-margin">
-                    <input class="uk-input" type="text" name="brand" placeholder="Brand" value="<%=customer1.getGender()%>">
+                    <input class="uk-input" type="text" name="gender" placeholder="Gender" value="<%=customer1.getGender()%>">
                 </div>
 
                 <div class="uk-margin">
-                    <input class="uk-input" type="text" name="unitPrice" placeholder="Unit Price" value="<%=customer1.getAddress()%>">
+                    <input class="uk-input" type="text" name="address" placeholder="Address" value="<%=customer1.getAddress()%>">
                 </div>
 
                 <div class="uk-margin">
-                    <input class="uk-input" type="text" name="qty" placeholder="Quantity" value="<%=customer1.getPhone()%>">
+                    <input class="uk-input" type="text" name="phone" placeholder="Phone" value="<%=customer1.getPhone()%>">
                 </div>
 
                 <button class="uk-button uk-button-primary" type="submit">Update Customer</button>
