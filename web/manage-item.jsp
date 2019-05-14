@@ -22,6 +22,13 @@
 <jsp:include page="views/header.jsp"></jsp:include>
 
 <section class="uk-card uk-card-default uk-card-hover uk-card-body align-items-center">
+
+    <div>
+        <h2 style="text-align: center">
+            Manage Items
+        </h2>
+    </div>
+
     <div class="container">
         <button class="uk-button uk-button-primary" uk-toggle="target: #add-item-modal" type="button">New Item</button>
         <button id="btnSearchItem" class="uk-button uk-button-primary" >Search Item</button>
