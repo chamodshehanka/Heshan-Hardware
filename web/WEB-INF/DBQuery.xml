@@ -2,8 +2,20 @@
 
 <Queries>
 
+    <query id="create_customer_table">
+        <![CDATA[
+            create table customer(
+                customer_id   varchar(5) primary key,
+                customer_name varchar(100) null,
+                gender        varchar(6)   null,
+                address       varchar(200) null,
+                phone         int          null
+             );
+        ]]>
+    </query>
+
     <query id="insert_customer">
-        <![CDATA[]
+        <![CDATA[
             INSERT INTO customer
             VALUES(?,?,?,?,?)
         ]]>

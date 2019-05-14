@@ -57,17 +57,17 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Customer getByID(String s) {
+    public Customer getByID(String customerID) {
         return null;
     }
 
     @Override
-    public boolean update(String s, Customer customer) {
+    public boolean update(String customerID, Customer customer) {
         return false;
     }
 
     @Override
-    public boolean remove(String s) {
+    public boolean remove(String customerID) {
         return false;
     }
 

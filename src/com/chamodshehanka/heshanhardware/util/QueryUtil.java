@@ -19,15 +19,12 @@ public class QueryUtil extends CommonUtil {
 
         NodeList nodeList;
         Element element = null;
-        /*
-         * Read the DBQuery.xml file and read each query node into node
-         * list. It refers tag name query
-         */
+
+        File file = new File(System
+                .getProperty("user.dir")+"\\web\\WEB-INF\\DBQuery.xml");
+
         nodeList = DocumentBuilderFactory.newInstance().newDocumentBuilder()
-                .parse(new File(
-                        System.getProperty(
-                        "catalina.base") + "\\wtpwebapps\\OOPEmployeeWebApp\\WEB-INF\\DBQuery.xml"
-                )).getElementsByTagName(CommonConstants.TAG_NAME);
+                .parse(file).getElementsByTagName(CommonConstants.TAG_NAME);
 
         for (int value = 0; value < nodeList.getLength(); value++) {
             element = (Element) nodeList.item(value);
