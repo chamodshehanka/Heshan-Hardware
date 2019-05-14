@@ -26,8 +26,9 @@ public class DBConnectionUtil {
 //                    CommonUtil.properties.getProperty(CommonConstants.PASSWORD)
 //            );
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/heshanhardware","root","wampwamp");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/heshanhardware","root","sura");
         }
         return connection;
     }
+
 }
