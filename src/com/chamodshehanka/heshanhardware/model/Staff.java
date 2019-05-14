@@ -1,47 +1,72 @@
 package com.chamodshehanka.heshanhardware.model;
 
 public class Staff {
-    private String Staff_ID;
-    private String Name;
-    private int Phone_No;
-    private String Email;
-    private String Type;
+    private String staffID;
+    private String name;
+    private int phone;
+    private String email;
+    private String type;
 
-    public Staff(String staff_ID, String name, int phone_No, String email, String type) {
-        Staff_ID = staff_ID;
-        Name = name;
-        Phone_No = phone_No;
-        Email = email;
-        Type = type;
+    public Staff() {
     }
 
+    public Staff(String staffID, String name, int phone, String email, String type) {
+        this.staffID = staffID;
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.type = type;
+    }
+
+    @Override
     public String toString() {
         return "Staff{" +
-                "Staff_ID='" + Staff_ID + '\'' +
-                ", Name='" + Name + '\'' +
-                ", Phone_No='" + Phone_No + '\'' +
-                ", Email=" + Email +
+                "staffID='" + staffID + '\'' +
+                ", name='" + name + '\'' +
+                ", phone=" + phone +
+                ", email='" + email + '\'' +
+                ", type='" + type + '\'' +
                 '}';
     }
 
-    public String getStaff_ID() { return Staff_ID; }
+    public String getStaffID() {
+        return staffID;
+    }
 
-    public void setStaff_ID(String staff_ID) { Staff_ID = staff_ID; }
+    public void setStaffID(String staffID) {
+        this.staffID = staffID;
+    }
 
-    public String getName() { return Name; }
+    public String getName() {
+        return name;
+    }
 
-    public void setName(String name) { Name = name; }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public int getPhone_No() { return Phone_No; }
+    public int getPhone() {
+        return phone;
+    }
 
-    public void setPhone_No(int phone_No) { Phone_No = phone_No; }
+    public void setPhone(int phone) {
+        this.phone = phone;
+    }
 
-    public String getEmail() { return Email; }
+    public String getEmail() {
+        return email;
+    }
 
-    public void setEmail(String email) { Email = email; }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-    public String getType() { return Type; }
+    public String getType() {
+        return type;
+    }
 
-    public void setType(String type) { Type = type; }
+    public void setType(String type) {
+        this.type = type;
+    }
 }
 

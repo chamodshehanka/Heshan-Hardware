@@ -90,9 +90,16 @@ public class CommonConstants {
     public static final int COLUMN_INDEX_EIGHT = 8;
 
     public static final String QUERY_ID_INSERT_ADMIN = "admin_ids";
+
     public static final String QUERY_ID_INSERT_CUSTOMER = "insert_customer";
     public static final String QUERY_ID_GET_CUSTOMER = "customer_by_id";
     public static final String QUERY_ID_UPDATE_CUSTOMER = "update_customer";
     public static final String QUERY_ID_REMOVE_CUSTOMER = "remove_customer";
     public static final String QUERY_ID_GET_ALL_CUSTOMERS = "all_customers";
+
+    public static final String QUERY_ID_INSERT_VENDOR = "insert_vendor";
+    public static final String QUERY_ID_GET_VENDOR = "vendor_by_id";
+    public static final String QUERY_ID_UPDATE_VENDOR = "update_vendor";
+    public static final String QUERY_ID_REMOVE_VENDOR = "remove_vendor";
+    public static final String QUERY_ID_GET_ALL_VENDORS = "all_vendors";
 }

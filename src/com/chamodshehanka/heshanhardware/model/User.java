@@ -4,8 +4,7 @@ package com.chamodshehanka.heshanhardware.model;
  * @author chamodshehanka on 4/14/2019
  * @project HeshanHardware
  **/
-public class
-User {
+public class User {
 
     private String userID;
     private String userName;
