@@ -22,7 +22,7 @@
 
 <div style="width: 100%;height: 10px"></div>
 <div class="container">
-    <div class="uk-alert-warning" uk-alert>
+    <div class="uk-alert-success" uk-alert>
         <a class="uk-alert-close" uk-close></a>
         <p><b>Tips : </b>Click menu icon to open side nav </p>
     </div>

@@ -60,7 +60,7 @@
     <a href="dashboard.jsp">Dashboard</a>
     <a href="manage-item.jsp">Items</a>
     <a href="#">Order</a>
-    <a href="#">Customer</a>
+    <a href="manage-customer.jsp">Customer</a>
     <a href="#">Contact</a>
 </div>
 <%--/SideNav--%>

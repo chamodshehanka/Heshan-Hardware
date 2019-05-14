@@ -36,7 +36,7 @@
     <%--End Add Customer Modal--%>
     <div id="add-item-modal" uk-modal>
         <div class="uk-modal-dialog uk-modal-body">
-            <h2 class="uk-modal-title">Add Item</h2>
+            <h2 class="uk-modal-title">Add Customer</h2>
             <button class="uk-modal-close" type="button"></button>
 
             <form action="${pageContext.request.contextPath}/AddCustomer" method="post">
@@ -50,19 +50,23 @@
                 </div>
 
                 <div class="uk-margin">
-                    <input class="uk-input" type="text" name="description" placeholder="Description">
+                    <input class="uk-input" type="text" name="name" placeholder="Name">
                 </div>
 
                 <div class="uk-margin">
-                    <input class="uk-input" type="text" name="brand" placeholder="Brand">
+                    <div class="uk-form-label">Gender</div>
+                    <div class="uk-form-controls">
+                        <label><input class="uk-radio" type="radio" name="gender"> Male</label><br>
+                        <label><input class="uk-radio" type="radio" name="gender"> Female</label>
+                    </div>
                 </div>
 
                 <div class="uk-margin">
-                    <input class="uk-input" type="text" name="unitPrice" placeholder="Unit Price">
+                    <textarea class="uk-textarea" rows="4" placeholder="Address" name="address"></textarea>
                 </div>
 
                 <div class="uk-margin">
-                    <input class="uk-input" type="text" name="qty" placeholder="Quantity">
+                    <input class="uk-input" type="text" name="phone" placeholder="Phone Number">
                 </div>
 
                 <button class="uk-button uk-button-primary" type="submit">Add Item</button>

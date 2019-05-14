@@ -6,7 +6,7 @@ import java.sql.SQLException;
  * @author chamodshehanka on 5/7/2019
  * @project HeshanHardware
  **/
-public class IDGenarator {
+public class IDGenerator {
 
     public static String getNewID(String tblName, String colName, String prefix) throws SQLException, ClassNotFoundException {
         String lastID = IDController.getLastID(tblName, colName);

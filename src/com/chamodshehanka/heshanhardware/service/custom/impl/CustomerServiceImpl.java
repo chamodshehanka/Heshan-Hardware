@@ -2,7 +2,9 @@ package com.chamodshehanka.heshanhardware.service.custom.impl;
 
 import com.chamodshehanka.heshanhardware.model.Customer;
 import com.chamodshehanka.heshanhardware.service.custom.CustomerService;
+import com.chamodshehanka.heshanhardware.util.IDGenerator;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -38,6 +40,12 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public String getNewID() {
-        return null;
+        String newID = null;
+        try {
+            newID = IDGenerator.getNewID("customer", "customer_id", "C");
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return newID;
     }
 }
