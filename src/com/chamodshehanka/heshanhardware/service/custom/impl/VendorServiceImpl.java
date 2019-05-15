@@ -22,8 +22,22 @@ import java.util.ArrayList;
 public class VendorServiceImpl implements VendorService {
 
     private static Connection connection;
-    private Statement statement;
+    private static Statement statement;
     private PreparedStatement preparedStatement;
+
+    static {
+        createVendorTable();
+    }
+
+    private static void createVendorTable(){
+        try {
+            connection = DBConnectionUtil.getDBConnection();
+            statement = connection.createStatement();
+            statement.executeUpdate(QueryUtil.queryByID(CommonConstants.QUERY_ID_CREATE_VENDOR_TABLE));
+        } catch (SQLException | ClassNotFoundException | SAXException | ParserConfigurationException | IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public boolean add(Vendor vendor) {

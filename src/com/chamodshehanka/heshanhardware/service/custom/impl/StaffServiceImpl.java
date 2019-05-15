@@ -39,7 +39,7 @@ public class StaffServiceImpl implements StaffService {
     public String getNewID() {
         String newID = null;
         try {
-            newID = IDGenerator.getNewID("Staff", "Staff_ID", "S");
+            newID = IDGenerator.getNewID("staff", "staff_ID", "S");
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }

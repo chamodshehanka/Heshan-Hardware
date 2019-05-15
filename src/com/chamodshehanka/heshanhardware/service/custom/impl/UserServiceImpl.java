@@ -3,6 +3,7 @@ package com.chamodshehanka.heshanhardware.service.custom.impl;
 import com.chamodshehanka.heshanhardware.model.User;
 import com.chamodshehanka.heshanhardware.service.custom.UserService;
 import com.chamodshehanka.heshanhardware.util.DBConnectionUtil;
+import com.chamodshehanka.heshanhardware.util.IDGenerator;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -92,7 +93,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String getNewID() {
-        return null;
+        String newID = null;
+        try {
+            newID = IDGenerator.getNewID("user","user_id","U");
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return newID;
     }
 
 
