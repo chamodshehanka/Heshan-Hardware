@@ -110,12 +110,13 @@ public class CommonConstants {
     public static final String QUERY_ID_REMOVE_ITEM = "remove_item";
     public static final String QUERY_ID_GET_ALL_ITEMS = "all_items";
 
+    public static final String QUERY_ID_CREATE_ORDER_TABLE = "create_order_table";
+
     public static final String QUERY_ID_CREATE_VENDOR_TABLE = "create_vendor_table";
     public static final String QUERY_ID_INSERT_VENDOR = "insert_vendor";
     public static final String QUERY_ID_GET_VENDOR = "vendor_by_id";
     public static final String QUERY_ID_UPDATE_VENDOR = "update_vendor";
     public static final String QUERY_ID_REMOVE_VENDOR = "remove_vendor";
     public static final String QUERY_ID_GET_ALL_VENDORS = "all_vendors";
-
 
 }
