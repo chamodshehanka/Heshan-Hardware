@@ -7,7 +7,7 @@ package com.chamodshehanka.heshanhardware.service;
 public interface ServiceFactory {
 
     public enum ServiceType {
-        ADMIN, CUSTOMER, EMPLOYEE, ITEM, ORDER, ORDERDETAIL
+        ADMIN, CUSTOMER, EMPLOYEE, ITEM, ORDER, ORDERDETAIL, USER, VENDOR
     }
 
     public SuperService getService(ServiceType serviceType)throws Exception;
