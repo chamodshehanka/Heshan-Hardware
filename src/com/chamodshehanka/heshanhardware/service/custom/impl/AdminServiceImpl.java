@@ -28,6 +28,19 @@ public class AdminServiceImpl implements AdminService {
     private static Statement statement;
     private static PreparedStatement preparedStatement;
 
+    static {
+        createAdminTable();
+    }
+
+    private static void createAdminTable(){
+        try {
+            connection = DBConnectionUtil.getDBConnection();
+            statement = connection.createStatement();
+            statement.executeUpdate(QueryUtil.queryByID(CommonConstants.QUERY_ID_CREATE_ADMIN_TABLE));
+        } catch (SQLException | ClassNotFoundException | SAXException | ParserConfigurationException | IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public boolean add(Admin admin) {
@@ -35,17 +48,17 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public Admin getByID(String s) {
+    public Admin getByID(String adminID) {
         return null;
     }
 
     @Override
-    public boolean update(String s, Admin admin) {
+    public boolean update(String adminID, Admin admin) {
         return false;
     }
 
     @Override
-    public boolean remove(String s) {
+    public boolean remove(String adminID) {
         return false;
     }
 

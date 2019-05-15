@@ -2,9 +2,52 @@
 
 <Queries>
 
+    <query id = "create_admin_table">
+        <![CDATA[
+            CREATE TABLE IF NOT EXISTS admin(
+                admin_id VARCHAR(5) PRIMARY KEY,
+                username VARCHAR(50),
+                password VARCHAR(100)
+            );
+        ]]>
+    </query>
+
+    <query id="insert_admin">
+        <![CDATA[
+            INSERT INTO admin
+            VALUES (?,?,?)
+        ]]>
+    </query>
+
+    <query id="admin_by_id">
+        <![CDATA[
+            SELECT * FROM admin WHERE admin.admin_id = ?
+        ]]>
+    </query>
+
+    <query id = "update_admin">
+        <![CDATA[
+            UPDATE admin AS a
+            SET a.admin_id = ?, a.username = ?, a.password = ?
+            WHERE a.admin_id = ?
+        ]]>
+    </query>
+
+    <query id="remove_admin">
+        <![CDATA[
+            DELETE FROM admin WHERE admin.admin_id = ?
+        ]]>
+    </query>
+
+    <query id = "all_admins">
+        <![CDATA[
+            SELECT * FROM admin
+        ]]>
+    </query>
+
     <query id="create_customer_table">
         <![CDATA[
-            create table customer(
+            create table IF NOT EXISTS customer(
                 customer_id   varchar(5) primary key,
                 customer_name varchar(100) null,
                 gender        varchar(6)   null,
@@ -48,12 +91,51 @@
     </query>
 
 
+    <query id="create_vendor_table">
+        <![CDATA[
+            CREATE TABLE IF NOT EXISTS vendor(
+                vendor_id VARCHAR(5) PRIMARY KEY,
+                name VARCHAR(50),
+                type VARCHAR(10),
+                phone INT,
+                email VARCHAR(100)
+            );
+        ]]>
+    </query>
+
+    <query id="insert_vendor">
+        <![CDATA[
+            INSERT INTO vendor
+            VALUES (?,?,?,?,?)
+        ]]>
+    </query>
+
+    <query id="vendor_by_id">
+        <![CDATA[
+            SELECT * FROM vendor WHERE vendor.vendor_id = ?
+        ]]>
+    </query>
+
+    <query id="update_vendor">
+        <![CDATA[
+            UPDATE vendor AS v
+            SET v.vendor_id = ?, v.name = ?, v.type = ?, v.phone = ?, v.email = ?
+            WHERE v.vendor_id = ?
+        ]]>
+    </query>
+
+    <query id="remove_vendor">
+        <![CDATA[
+            DELETE FROM vendor WHERE vendor.vendor_id = ?
+        ]]>
+    </query>
+
 
 
     <!-- Create table employee Query -->
     <query id="create_employee_table">
         <![CDATA[
-            CREATE TABLE employee(
+            CREATE TABLE IF NOT EXISTS employee(
 				employeeID varchar(10) not null,
 				employeeName varchar(20),
 				designation varchar(15),
