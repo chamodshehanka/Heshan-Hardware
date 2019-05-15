@@ -85,18 +85,18 @@
             </div>
 
             <%
-                Vendor vendor1 = (Vendor) request.getAttribute("customer");
+                Vendor vendor1 = (Vendor) request.getAttribute("vendor");
                 if (vendor1 == null){
                     vendor1 = new Vendor("N/A","N/A","N/A",0,"N/A");
                 }
             %>
 
-            <form action="${pageContext.request.contextPath}/UpdateCustomer" method="post">
+            <form action="${pageContext.request.contextPath}/UpdateVendor" method="post">
 
 
                 <div class="uk-margin">
                     <span class="uk-form-icon" uk-icon="icon: item"></span>
-                    <input id="txtCustomerID" class="uk-input" type="text" name="customerID" placeholder="Customer ID" value="<%=vendor1.getVendorID()%>">
+                    <input id="txtCustomerID" class="uk-input" type="text" name="vendorID" placeholder="Vendor ID" value="<%=vendor1.getVendorID()%>">
 
                 </div>
 
@@ -105,15 +105,15 @@
                 </div>
 
                 <div class="uk-margin">
-                    <input class="uk-input" type="text" name="gender" placeholder="Gender" value="<%=vendor1.getType()%>">
+                    <input class="uk-input" type="text" name="type" placeholder="Type" value="<%=vendor1.getType()%>">
                 </div>
 
                 <div class="uk-margin">
-                    <input class="uk-input" type="text" name="address" placeholder="Address" value="<%=vendor1.getPhone()%>">
+                    <input class="uk-input" type="text" name="phone" placeholder="Phone" value="<%=vendor1.getPhone()%>">
                 </div>
 
                 <div class="uk-margin">
-                    <input class="uk-input" type="text" name="phone" placeholder="Phone" value="<%=vendor1.getEmail()%>">
+                    <input class="uk-input" type="email" name="email" placeholder="Email" value="<%=vendor1.getEmail()%>">
                 </div>
 
                 <button class="uk-button uk-button-primary" type="submit">Update Customer</button>
@@ -159,7 +159,7 @@
                     <td class="pt-3-half" contenteditable="true"><%=vendor.getPhone()%></td>
                     <td class="pt-3-half" contenteditable="true"><%=vendor.getEmail()%></td>
                     <td class="pt-3-half">
-                        <form method="post" action="${pageContext.request.contextPath}/SearchCustomer">
+                        <form method="post" action="${pageContext.request.contextPath}/SearchVendor">
                             <input type="hidden" name="customerID" value="<%=vendor.getVendorID()%>">
 
                             <button type="submit" class="btn btn-secondary btn-rounded btn-sm my-0">Edit</button>
@@ -168,8 +168,8 @@
 
                     <td>
 
-                        <form method="post" action="${pageContext.request.contextPath}/DeleteCustomer">
-                            <input type="hidden" name="itemCode" value="<%=vendor.getVendorID()%>">
+                        <form method="post" action="${pageContext.request.contextPath}/DeleteVendor">
+                            <input type="hidden" name="vendorID" value="<%=vendor.getVendorID()%>">
 
                             <span class="table-remove">
                                         <button type="submit" class="btn btn-danger btn-rounded btn-sm my-0">Remove</button>
