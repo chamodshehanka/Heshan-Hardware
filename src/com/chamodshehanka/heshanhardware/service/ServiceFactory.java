@@ -10,5 +10,5 @@ public interface ServiceFactory {
         ADMIN, CUSTOMER, EMPLOYEE, ITEM, ORDER, ORDERDETAIL, USER, VENDOR
     }
 
-    public SuperService getService(ServiceType serviceType)throws Exception;
+    public SuperService getService(ServiceType serviceType);
 }

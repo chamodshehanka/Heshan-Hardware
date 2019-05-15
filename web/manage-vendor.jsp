@@ -23,31 +23,31 @@
 <section class="uk-card uk-card-default uk-card-hover uk-card-body align-items-center">
     <div>
         <h2 style="text-align: center">
-            Manage Customer
+            Manage Vendor
         </h2>
     </div>
 
     <div class="container">
-        <button class="uk-button uk-button-primary" uk-toggle="target: #add-customer-modal" type="button">New Vendor</button>
+        <button class="uk-button uk-button-primary" uk-toggle="target: #add-vendor-modal" type="button">New Vendor</button>
         <button id="btnUpdateModal" class="uk-button uk-button-primary" uk-toggle="target: #update-customer-modal" type="button">Update Vendor</button>
     </div>
 
     <%--Modals--%>
 
-    <%--Add Customer Modal--%>
-    <div id="add-customer-modal" uk-modal>
+    <%--Add Vendor Modal--%>
+    <div id="add-vendor-modal" uk-modal>
         <div class="uk-modal-dialog uk-modal-body">
             <h2 class="uk-modal-title">Add Customer</h2>
             <button class="uk-modal-close" type="button"></button>
 
-            <form action="${pageContext.request.contextPath}/AddCustomer" method="post">
+            <form action="${pageContext.request.contextPath}/AddVendor" method="post">
 
 
                 <div class="uk-margin">
                     <%
                         VendorService vendorService = new VendorServiceImpl();
                     %>
-                    <input class="uk-input" type="text" name="customerID" value="<%=vendorService.getNewID()%>">
+                    <input class="uk-input" type="text" name="vendorID" value="<%=vendorService.getNewID()%>">
                 </div>
 
                 <div class="uk-margin">
@@ -55,28 +55,27 @@
                 </div>
 
                 <div class="uk-margin">
-                    <div class="uk-form-label">Gender</div>
-                    <div class="uk-form-controls">
-                        <label><input class="uk-radio" type="radio" name="gender"> Male</label><br>
-                        <label><input class="uk-radio" type="radio" name="gender"> Female</label>
-                    </div>
-                </div>
-
-                <div class="uk-margin">
-                    <textarea class="uk-textarea" rows="4" placeholder="Address" name="address"></textarea>
+                    <select class="uk-select" name="type">
+                        <option value="Local">Local</option>
+                        <option value="Foreign">Foreign</option>
+                    </select>
                 </div>
 
                 <div class="uk-margin">
                     <input class="uk-input" type="text" name="phone" placeholder="Phone Number">
                 </div>
 
-                <button class="uk-button uk-button-primary" type="submit">Add Customer</button>
+                <div class="uk-margin">
+                    <input class="uk-input" type="email" name="email" placeholder="Email">
+                </div>
+
+                <button class="uk-button uk-button-primary" type="submit">Add Vendor</button>
             </form>
         </div>
     </div>
-    <%--End Add Customer Modal--%>
+    <%--End Add Vendor Modal--%>
 
-    <%--Update Customer Modal--%>
+    <%--Update Vendor Modal--%>
     <div id="update-customer-modal" uk-modal>
         <div class="uk-modal-dialog uk-modal-body">
             <h2 class="uk-modal-title">Update Item</h2>

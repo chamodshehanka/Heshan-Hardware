@@ -13,7 +13,7 @@ import java.util.ArrayList;
  **/
 public class VendorController {
 
-    public static boolean addVendor(Vendor vendor) throws Exception {
+    public static boolean addVendor(Vendor vendor) {
         VendorService vendorService = (VendorService) ServiceFactoryImpl.getInstance()
                 .getService(ServiceFactory.ServiceType.VENDOR);
         return vendorService.add(vendor);
