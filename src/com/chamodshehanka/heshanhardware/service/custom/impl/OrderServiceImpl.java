@@ -17,17 +17,17 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Order getByID(String s) {
+    public Order getByID(String orderID) {
         return null;
     }
 
     @Override
-    public boolean update(String s, Order order) {
+    public boolean update(String orderID, Order order) {
         return false;
     }
 
     @Override
-    public boolean remove(String s) {
+    public boolean remove(String orderID) {
         return false;
     }
 
