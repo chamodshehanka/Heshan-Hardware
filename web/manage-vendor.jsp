@@ -28,8 +28,8 @@
     </div>
 
     <div class="container">
-        <button class="uk-button uk-button-primary" uk-toggle="target: #add-customer-modal" type="button">New Customer</button>
-        <button id="btnUpdateModal" class="uk-button uk-button-primary" uk-toggle="target: #update-customer-modal" type="button">Update Customer</button>
+        <button class="uk-button uk-button-primary" uk-toggle="target: #add-customer-modal" type="button">New Vendor</button>
+        <button id="btnUpdateModal" class="uk-button uk-button-primary" uk-toggle="target: #update-customer-modal" type="button">Update Vendor</button>
     </div>
 
     <%--Modals--%>
