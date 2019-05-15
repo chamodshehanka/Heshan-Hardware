@@ -20,8 +20,22 @@ import java.util.ArrayList;
 public class CustomerServiceImpl implements CustomerService {
 
     private static Connection connection;
-    private Statement statement;
+    private static Statement statement;
     private PreparedStatement preparedStatement;
+
+    static {
+        createCustomerTable();
+    }
+
+    private static void createCustomerTable() {
+        try {
+            connection = DBConnectionUtil.getDBConnection();
+            statement = connection.createStatement();
+            statement.executeUpdate(QueryUtil.queryByID(CommonConstants.QUERY_ID_CREATE_CUSTOMER_TABLE));
+        } catch (SQLException | ClassNotFoundException | SAXException | ParserConfigurationException | IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public boolean add(Customer customer) {

@@ -1,7 +1,10 @@
 package com.chamodshehanka.heshanhardware.servlet;
 
+import com.chamodshehanka.heshanhardware.model.Admin;
 import com.chamodshehanka.heshanhardware.model.User;
+import com.chamodshehanka.heshanhardware.service.custom.AdminService;
 import com.chamodshehanka.heshanhardware.service.custom.UserService;
+import com.chamodshehanka.heshanhardware.service.custom.impl.AdminServiceImpl;
 import com.chamodshehanka.heshanhardware.service.custom.impl.UserServiceImpl;
 
 import javax.servlet.RequestDispatcher;
@@ -21,6 +24,7 @@ import java.util.ArrayList;
 public class SignUpServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserService userService = new UserServiceImpl();
+        AdminService adminService = new AdminServiceImpl();
 
         String userID = userService.getNewID();
         String username = request.getParameter("username");
@@ -42,7 +46,11 @@ public class SignUpServlet extends HttpServlet {
                     new User(userID, username, password, userType)
             );
 
-            if (isAdded){
+            boolean isAdminAdded = adminService.add(
+                    new Admin(adminService.getNewID(),username,password)
+            );
+
+            if (isAdded && isAdminAdded){
                 RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/dashboard.jsp");
                 requestDispatcher.forward(request, response);
             }else {

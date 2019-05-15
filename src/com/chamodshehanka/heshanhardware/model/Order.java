@@ -10,18 +10,16 @@ public class Order {
     private String orderID;
     private String orderDate;
     private String customerID;
-    private int orderDiscount;
 
     private ArrayList<OrderDetail> orderDetailArrayList;
 
     public Order() {
     }
 
-    public Order(String orderID, String orderDate, String customerID, int orderDiscount, ArrayList<OrderDetail> orderDetailArrayList) {
+    public Order(String orderID, String orderDate, String customerID, ArrayList<OrderDetail> orderDetailArrayList) {
         this.orderID = orderID;
         this.orderDate = orderDate;
         this.customerID = customerID;
-        this.orderDiscount = orderDiscount;
         this.orderDetailArrayList = orderDetailArrayList;
     }
 
@@ -31,7 +29,6 @@ public class Order {
                 "orderID='" + orderID + '\'' +
                 ", orderDate='" + orderDate + '\'' +
                 ", customerID='" + customerID + '\'' +
-                ", orderDiscount=" + orderDiscount +
                 ", orderDetailArrayList=" + orderDetailArrayList +
                 '}';
     }
@@ -58,14 +55,6 @@ public class Order {
 
     public void setCustomerID(String customerID) {
         this.customerID = customerID;
-    }
-
-    public int getOrderDiscount() {
-        return orderDiscount;
-    }
-
-    public void setOrderDiscount(int orderDiscount) {
-        this.orderDiscount = orderDiscount;
     }
 
     public ArrayList<OrderDetail> getOrderDetailArrayList() {

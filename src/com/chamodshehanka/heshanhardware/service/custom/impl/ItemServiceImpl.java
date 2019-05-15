@@ -2,9 +2,14 @@ package com.chamodshehanka.heshanhardware.service.custom.impl;
 
 import com.chamodshehanka.heshanhardware.model.Item;
 import com.chamodshehanka.heshanhardware.service.custom.ItemService;
+import com.chamodshehanka.heshanhardware.util.CommonConstants;
 import com.chamodshehanka.heshanhardware.util.DBConnectionUtil;
 import com.chamodshehanka.heshanhardware.util.IDGenerator;
+import com.chamodshehanka.heshanhardware.util.QueryUtil;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -17,6 +22,20 @@ public class ItemServiceImpl implements ItemService {
     private static Connection connection;
     private static Statement statement;
     private static PreparedStatement preparedStatement;
+
+    static {
+//        createItemTable();
+    }
+
+    private static void createItemTable(){
+        try {
+            connection = DBConnectionUtil.getDBConnection();
+            statement = connection.createStatement();
+            statement.executeUpdate(QueryUtil.queryByID(CommonConstants.QUERY_ID_CREATE_ITEM_TABLE));
+        } catch (SQLException | ClassNotFoundException | SAXException | ParserConfigurationException | IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public boolean add(Item item) {

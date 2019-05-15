@@ -103,6 +103,13 @@ public class CommonConstants {
     public static final String QUERY_ID_REMOVE_CUSTOMER = "remove_customer";
     public static final String QUERY_ID_GET_ALL_CUSTOMERS = "all_customers";
 
+    public static final String QUERY_ID_CREATE_ITEM_TABLE = "create_item_table";
+    public static final String QUERY_ID_INSERT_ITEM = "insert_item";
+    public static final String QUERY_ID_GET_ITEM = "item_by_id";
+    public static final String QUERY_ID_UPDATE_ITEM = "update_item";
+    public static final String QUERY_ID_REMOVE_ITEM = "remove_item";
+    public static final String QUERY_ID_GET_ALL_ITEMS = "all_items";
+
     public static final String QUERY_ID_CREATE_VENDOR_TABLE = "create_vendor_table";
     public static final String QUERY_ID_INSERT_VENDOR = "insert_vendor";
     public static final String QUERY_ID_GET_VENDOR = "vendor_by_id";
