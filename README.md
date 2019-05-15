@@ -1,4 +1,4 @@
-![Logo](web/WEB-INF/assets/images/logo.jpg)
+![Logo](web/assets/images/logo.jpg)
 
 # Heshan Hardware
 
