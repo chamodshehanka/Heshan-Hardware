@@ -1,8 +1,6 @@
-<%@ page import="com.chamodshehanka.heshanhardware.service.custom.VendorService" %>
-<%@ page import="com.chamodshehanka.heshanhardware.service.custom.impl.VendorServiceImpl" %>
+<%@ page import="com.chamodshehanka.heshanhardware.controller.VendorController" %>
 <%@ page import="com.chamodshehanka.heshanhardware.model.Vendor" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="com.chamodshehanka.heshanhardware.controller.VendorController" %>
 <%--
   Created by IntelliJ IDEA.
   User: chamodshehanka
@@ -94,7 +92,7 @@
 
                 <div class="uk-margin">
                     <span class="uk-form-icon" uk-icon="icon: item"></span>
-                    <input id="txtCustomerID" class="uk-input" type="text" name="vendorID" placeholder="Vendor ID" value="<%=vendor1.getVendorID()%>">
+                    <input id="txtVendorID" class="uk-input" type="text" name="vendorID" placeholder="Vendor ID" value="<%=vendor1.getVendorID()%>">
 
                 </div>
 
@@ -151,14 +149,14 @@
                 %>
 
                 <tr>
-                    <td id="itemCode" class="pt-3-half" contenteditable="true"><%=vendor.getVendorID()%></td>
+                    <td id="vendorID" class="pt-3-half" contenteditable="true"><%=vendor.getVendorID()%></td>
                     <td class="pt-3-half" contenteditable="true"><%=vendor.getName()%></td>
                     <td class="pt-3-half" contenteditable="true"><%=vendor.getType()%></td>
                     <td class="pt-3-half" contenteditable="true"><%=vendor.getPhone()%></td>
                     <td class="pt-3-half" contenteditable="true"><%=vendor.getEmail()%></td>
                     <td class="pt-3-half">
                         <form method="post" action="${pageContext.request.contextPath}/SearchVendor">
-                            <input type="hidden" name="customerID" value="<%=vendor.getVendorID()%>">
+                            <input type="hidden" name="vendorID" value="<%=vendor.getVendorID()%>">
 
                             <button type="submit" class="btn btn-secondary btn-rounded btn-sm my-0">Edit</button>
                         </form>
@@ -188,7 +186,17 @@
 <jsp:include page="views/footer.jsp"></jsp:include>
 <jsp:include page="views/footer-tags.jsp"></jsp:include>
 <script>
+    $(document).ready(function () {
+        var customerID =  $('#txtVendorID').val();
 
+        if (customerID !== "N/A"){
+            openUpdateModal();
+        }
+    });
+
+    function openUpdateModal() {
+        $('#btnUpdateModal').trigger('click');
+    }
 </script>
 </body>
 </html>

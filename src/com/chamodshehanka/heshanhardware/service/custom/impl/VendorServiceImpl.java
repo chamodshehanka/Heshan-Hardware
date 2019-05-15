@@ -63,7 +63,7 @@ public class VendorServiceImpl implements VendorService {
         try {
             connection = DBConnectionUtil.getDBConnection();
             preparedStatement = connection.prepareStatement(QueryUtil.queryByID(CommonConstants.QUERY_ID_GET_VENDOR));
-
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_ONE, vendorID);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()){
                 return new Vendor(
