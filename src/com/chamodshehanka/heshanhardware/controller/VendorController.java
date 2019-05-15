@@ -19,31 +19,31 @@ public class VendorController {
         return vendorService.add(vendor);
     }
 
-    public static boolean updateVendor(Vendor vendor) throws Exception {
+    public static boolean updateVendor(Vendor vendor) {
         VendorService vendorService = (VendorService) ServiceFactoryImpl.getInstance()
                 .getService(ServiceFactory.ServiceType.VENDOR);
         return vendorService.update(vendor.getVendorID(), vendor);
     }
 
-    public static boolean removeVendor(String vendorID)throws Exception {
+    public static boolean removeVendor(String vendorID) {
         VendorService vendorService = (VendorService) ServiceFactoryImpl.getInstance()
                 .getService(ServiceFactory.ServiceType.VENDOR);
         return vendorService.remove(vendorID);
     }
 
-    public static Vendor getVendorByID(String vendorID)throws Exception{
+    public static Vendor getVendorByID(String vendorID) {
         VendorService vendorService = (VendorService) ServiceFactoryImpl.getInstance()
                 .getService(ServiceFactory.ServiceType.VENDOR);
         return vendorService.getByID(vendorID);
     }
 
-    public static ArrayList<Vendor> getAllVendors()throws Exception {
+    public static ArrayList<Vendor> getAllVendors() {
         VendorService vendorService = (VendorService) ServiceFactoryImpl.getInstance()
                 .getService(ServiceFactory.ServiceType.VENDOR);
         return vendorService.getAll();
     }
 
-    public static String getNewVendorID()throws Exception {
+    public static String getNewVendorID() {
         VendorService vendorService = (VendorService) ServiceFactoryImpl.getInstance()
                 .getService(ServiceFactory.ServiceType.VENDOR);
         return vendorService.getNewID();

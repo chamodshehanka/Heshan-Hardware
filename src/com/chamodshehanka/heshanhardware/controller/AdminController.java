@@ -13,37 +13,37 @@ import java.util.ArrayList;
  **/
 public class AdminController {
 
-    public static boolean addAdmin(Admin admin)throws Exception{
+    public static boolean addAdmin(Admin admin) {
         AdminService adminService = (AdminService) ServiceFactoryImpl.getInstance()
                 .getService(ServiceFactory.ServiceType.ADMIN);
         return adminService.add(admin);
     }
 
-    public static boolean updateAdmin(Admin admin)throws Exception{
+    public static boolean updateAdmin(Admin admin) {
         AdminService adminService = (AdminService) ServiceFactoryImpl.getInstance()
                 .getService(ServiceFactory.ServiceType.ADMIN);
         return adminService.update(admin.getAdminID(), admin);
     }
 
-    public static boolean removeAdmin(String adminID)throws Exception{
+    public static boolean removeAdmin(String adminID) {
         AdminService adminService = (AdminService) ServiceFactoryImpl.getInstance()
                 .getService(ServiceFactory.ServiceType.ADMIN);
         return adminService.remove(adminID);
     }
 
-    public static Admin getAdminByID(String adminID)throws Exception{
+    public static Admin getAdminByID(String adminID) {
         AdminService adminService = (AdminService) ServiceFactoryImpl.getInstance()
                 .getService(ServiceFactory.ServiceType.ADMIN);
         return adminService.getByID(adminID);
     }
 
-    public static ArrayList<Admin> getAllAdmins()throws Exception{
+    public static ArrayList<Admin> getAllAdmins() {
         AdminService adminService = (AdminService) ServiceFactoryImpl.getInstance()
                 .getService(ServiceFactory.ServiceType.ADMIN);
         return adminService.getAll();
     }
 
-    public static String getNewAdminID()throws Exception{
+    public static String getNewAdminID() {
         AdminService adminService = (AdminService) ServiceFactoryImpl.getInstance()
                 .getService(ServiceFactory.ServiceType.ADMIN);
         return adminService.getNewID();
