@@ -21,7 +21,7 @@ public class GetVendorServlet extends HttpServlet {
         Vendor vendor = VendorController.getVendorByID(vendorID);
         response.setContentType("text/html");
         request.setAttribute("vendor", vendor);
-        request.getRequestDispatcher("/manage-customer.jsp").forward(request,response);
+        request.getRequestDispatcher("/manage-vendor.jsp").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

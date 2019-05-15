@@ -2,6 +2,7 @@
 <%@ page import="com.chamodshehanka.heshanhardware.service.custom.impl.VendorServiceImpl" %>
 <%@ page import="com.chamodshehanka.heshanhardware.model.Vendor" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="com.chamodshehanka.heshanhardware.controller.VendorController" %>
 <%--
   Created by IntelliJ IDEA.
   User: chamodshehanka
@@ -44,10 +45,7 @@
 
 
                 <div class="uk-margin">
-                    <%
-                        VendorService vendorService = new VendorServiceImpl();
-                    %>
-                    <input class="uk-input" type="text" name="vendorID" value="<%=vendorService.getNewID()%>">
+                    <input class="uk-input" type="text" name="vendorID" value="<%=VendorController.getNewVendorID()%>">
                 </div>
 
                 <div class="uk-margin">
@@ -146,7 +144,7 @@
                 </tr>
 
                 <%
-                    ArrayList<Vendor> vendorArrayList = vendorService.getAll();
+                    ArrayList<Vendor> vendorArrayList = VendorController.getAllVendors();
 
                     for (Vendor vendor : vendorArrayList
                     ) {
