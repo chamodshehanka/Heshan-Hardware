@@ -130,6 +130,11 @@
         ]]>
     </query>
 
+    <query id="all_vendors">
+        <![CDATA[
+            SELECT * FROM vendor
+        ]]>
+    </query>
 
 
     <!-- Create table employee Query -->
