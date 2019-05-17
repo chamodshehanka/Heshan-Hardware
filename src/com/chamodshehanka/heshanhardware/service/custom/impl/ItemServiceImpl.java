@@ -24,7 +24,7 @@ public class ItemServiceImpl implements ItemService {
     private static PreparedStatement preparedStatement;
 
     static {
-//        createItemTable();
+        createItemTable();
     }
 
     private static void createItemTable(){
@@ -41,16 +41,16 @@ public class ItemServiceImpl implements ItemService {
     public boolean add(Item item) {
         try {
             connection = DBConnectionUtil.getDBConnection();
-            preparedStatement = connection.prepareStatement("INSERT INTO item VALUES (?,?,?,?,?)");
+            preparedStatement = connection.prepareStatement(QueryUtil.queryByID(CommonConstants.QUERY_ID_INSERT_ITEM));
 
-            preparedStatement.setObject(1, item.getItemCode());
-            preparedStatement.setObject(2, item.getItemDescription());
-            preparedStatement.setObject(3, item.getItemBrand());
-            preparedStatement.setObject(4, item.getUnitPrice());
-            preparedStatement.setObject(5, item.getQty());
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_ONE, item.getItemCode());
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_TWO, item.getItemDescription());
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_THREE, item.getItemBrand());
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_FOUR, item.getUnitPrice());
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_FIVE, item.getQty());
 
             return 0 < preparedStatement.executeUpdate();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException | SAXException | ParserConfigurationException | IOException e) {
             e.printStackTrace();
         }
         return false;
@@ -60,21 +60,20 @@ public class ItemServiceImpl implements ItemService {
     public Item getByID(String itemCode) {
         try {
             connection = DBConnectionUtil.getDBConnection();
-            preparedStatement = connection.prepareStatement("SELECT * FROM item WHERE item_code = ?");
+            preparedStatement = connection.prepareStatement(QueryUtil.queryByID(CommonConstants.QUERY_ID_GET_ITEM));
             preparedStatement.setObject(1, itemCode);
 
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()){
-                Item item = new Item(
-                        resultSet.getString(1),
-                        resultSet.getString(2),
-                        resultSet.getString(3),
-                        resultSet.getDouble(4),
-                        resultSet.getInt(5)
+                return new Item(
+                        resultSet.getString(CommonConstants.COLUMN_INDEX_ONE),
+                        resultSet.getString(CommonConstants.COLUMN_INDEX_TWO),
+                        resultSet.getString(CommonConstants.COLUMN_INDEX_THREE),
+                        resultSet.getDouble(CommonConstants.COLUMN_INDEX_FOUR),
+                        resultSet.getInt(CommonConstants.COLUMN_INDEX_FIVE)
                 );
-                return item;
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException | SAXException | ParserConfigurationException | IOException e) {
             e.printStackTrace();
         }
         return null;
@@ -84,12 +83,17 @@ public class ItemServiceImpl implements ItemService {
     public boolean update(String itemCode, Item item) {
         try {
             connection = DBConnectionUtil.getDBConnection();
-            preparedStatement = connection
-                    .prepareStatement(
-                            "UPDATE item SET item_code=?,description=?,brand=?,unitprice=?,qty=? WHERE item_code='"+itemCode+"'"
-                    );
+            preparedStatement = connection.prepareStatement(QueryUtil.queryByID(CommonConstants.QUERY_ID_UPDATE_ITEM));
+
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_ONE, item.getItemCode());
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_TWO, item.getItemDescription());
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_THREE, item.getItemBrand());
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_FOUR, item.getUnitPrice());
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_FIVE, item.getQty());
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_SIX, itemCode);
+
             preparedStatement.executeUpdate();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException | SAXException | ParserConfigurationException | IOException e) {
             e.printStackTrace();
         }
         return false;
@@ -99,9 +103,10 @@ public class ItemServiceImpl implements ItemService {
     public boolean remove(String itemCode) {
         try {
             connection = DBConnectionUtil.getDBConnection();
-            preparedStatement = connection.prepareStatement("DELETE FROM item WHERE item_code='"+itemCode+"'");
+            preparedStatement = connection.prepareStatement(QueryUtil.queryByID(CommonConstants.QUERY_ID_REMOVE_ITEM));
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_ONE, itemCode);
             return 0 < preparedStatement.executeUpdate();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException | SAXException | ParserConfigurationException | IOException e) {
             e.printStackTrace();
         }
 
@@ -115,19 +120,18 @@ public class ItemServiceImpl implements ItemService {
         try {
             connection = DBConnectionUtil.getDBConnection();
             statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM item");
+            ResultSet resultSet = statement.executeQuery(QueryUtil.queryByID(CommonConstants.QUERY_ID_GET_ALL_ITEMS));
 
             while (resultSet.next()){
-                Item item = new Item(
-                        resultSet.getString(1),
-                        resultSet.getString(2),
-                        resultSet.getString(3),
-                        resultSet.getDouble(4),
-                        resultSet.getInt(5)
-                );
-                itemArrayList.add(item);
+                itemArrayList.add(new Item(
+                        resultSet.getString(CommonConstants.COLUMN_INDEX_ONE),
+                        resultSet.getString(CommonConstants.COLUMN_INDEX_TWO),
+                        resultSet.getString(CommonConstants.COLUMN_INDEX_THREE),
+                        resultSet.getDouble(CommonConstants.COLUMN_INDEX_FOUR),
+                        resultSet.getInt(CommonConstants.COLUMN_INDEX_FIVE)
+                ));
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException | SAXException | ParserConfigurationException | IOException e) {
             e.printStackTrace();
         }
 
@@ -138,7 +142,8 @@ public class ItemServiceImpl implements ItemService {
     public String getNewID(){
         String newID = null;
         try {
-            newID = IDGenerator.getNewID("item","item_code","I");
+            newID = IDGenerator.getNewID(CommonConstants.ITEM_TABLE_NAME,
+                    CommonConstants.ITEM_TABLE_COL_NAME,CommonConstants.ITEM_ID_PREFIX);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
