@@ -7,7 +7,7 @@ package com.chamodshehanka.heshanhardware.service;
 public interface ServiceFactory {
 
     public enum ServiceType {
-        ADMIN, CUSTOMER, EMPLOYEE, ITEM, ORDER, ORDERDETAIL, USER, VENDOR
+        ADMIN, CUSTOMER, EMPLOYEE, ITEM, ORDER, ORDER_DETAIL, STAFF, USER, VENDOR
     }
 
     public SuperService getService(ServiceType serviceType);
