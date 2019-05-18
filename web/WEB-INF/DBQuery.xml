@@ -90,6 +90,37 @@
         ]]>
     </query>
 
+    <query id="create_item_table">
+        <![CDATA[
+            CREATE TABLE item(
+                item_code VARCHAR(5),
+                description VARCHAR(50),
+                brand VARCHAR(10),
+                unitprice DECIMAL(10,2),
+                qty INT
+            )
+        ]]>
+    </query>
+
+    <query id="insert_item">
+        <![CDATA[
+            INSERT INTO item
+            VALUES (?,?,?,?,?)
+        ]]>
+    </query>
+
+    <query id="item_by_id">
+        <![CDATA[
+            SELECT * FROM item WHERE item.item_code = ?
+        ]]>
+    </query>
+
+    <query id="update_item">
+        <![CDATA[
+            UPDATE item as i
+            SET i.item_code = ?, i.description = ?, i.brand = ?
+        ]]>
+    </query>
 
     <query id="create_vendor_table">
         <![CDATA[
