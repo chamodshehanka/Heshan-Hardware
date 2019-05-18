@@ -27,7 +27,7 @@
 
     <div class="container">
         <button class="uk-button uk-button-primary" uk-toggle="target: #add-staff-modal" type="button">New Staff Member</button>
-        <button id="btnUpdateModal" class="uk-button uk-button-primary" uk-toggle="target: #update-customer-modal" type="button">Update Staff Member</button>
+        <button id="btnUpdateModal" class="uk-button uk-button-primary" uk-toggle="target: #update-staff-modal" type="button">Update Staff Member</button>
     </div>
 
     <%--Modals--%>
@@ -50,6 +50,10 @@
                 </div>
 
                 <div class="uk-margin">
+                    <input class="uk-input" type="text" name="username" placeholder="User Name">
+                </div>
+
+                <div class="uk-margin">
                     <select class="uk-select" name="type">
                         <option value="Store Keeper">Store Keeper</option>
                         <option value="Cashier">Cashier</option>
@@ -64,6 +68,11 @@
                     <input class="uk-input" type="email" name="email" placeholder="Email">
                 </div>
 
+                <div class="uk-margin">
+                    <input class="uk-input" type="password" name="password">
+                </div>
+
+
                 <button class="uk-button uk-button-primary" type="submit">Add Staff</button>
             </form>
         </div>
@@ -71,50 +80,49 @@
     <%--End Add Staff Modal--%>
 
     <%--Update Staff Modal--%>
-<%--    <div id="update-customer-modal" uk-modal>--%>
-<%--        <div class="uk-modal-dialog uk-modal-body">--%>
-<%--            <h2 class="uk-modal-title">Update Item</h2>--%>
+    <div id="update-staff-modal" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <h2 class="uk-modal-title">Update Item</h2>
 
-<%--            <div class="uk-alert-danger" uk-alert>--%>
-<%--                <a class="uk-alert-close" uk-close></a>--%>
-<%--            </div>--%>
+            <div class="uk-alert-danger" uk-alert>
+                <a class="uk-alert-close" uk-close></a>
+            </div>
 
-<%--            <%--%>
-<%--                Vendor vendor1 = (Vendor) request.getAttribute("vendor");--%>
-<%--                if (vendor1 == null){--%>
-<%--                    vendor1 = new Vendor("N/A","N/A","N/A",0,"N/A");--%>
-<%--                }--%>
-<%--            %>--%>
+            <%
+                Staff staff1 = (Staff) request.getAttribute("staff");
+                if (staff1 == null){
+                    staff1 = new Staff("N/A","N/A",0,"","N/A");
+                }
+            %>
 
-<%--            <form action="${pageContext.request.contextPath}/UpdateVendor" method="post">--%>
+            <form action="${pageContext.request.contextPath}/UpdateStaff" method="post">
 
 
-<%--                <div class="uk-margin">--%>
-<%--                    <span class="uk-form-icon" uk-icon="icon: item"></span>--%>
-<%--                    <input id="txtVendorID" class="uk-input" type="text" name="vendorID" placeholder="Vendor ID" value="<%=vendor1.getVendorID()%>">--%>
+                <div class="uk-margin">
+                    <input id="txtStaffID" class="uk-input" type="text" name="staffID" placeholder="Staff ID" value="<%=staff1.getStaffID()%>">
 
-<%--                </div>--%>
+                </div>
 
-<%--                <div class="uk-margin">--%>
-<%--                    <input class="uk-input" type="text" name="name" placeholder="Name" value="<%=vendor1.getName()%>">--%>
-<%--                </div>--%>
+                <div class="uk-margin">
+                    <input class="uk-input" type="text" name="name" placeholder="Name" value="<%=staff1.getName()%>">
+                </div>
 
-<%--                <div class="uk-margin">--%>
-<%--                    <input class="uk-input" type="text" name="type" placeholder="Type" value="<%=vendor1.getType()%>">--%>
-<%--                </div>--%>
+                <div class="uk-margin">
+                    <input class="uk-input" type="text" name="type" placeholder="Type" value="<%=staff1.getType()%>">
+                </div>
 
-<%--                <div class="uk-margin">--%>
-<%--                    <input class="uk-input" type="text" name="phone" placeholder="Phone" value="<%=vendor1.getPhone()%>">--%>
-<%--                </div>--%>
+                <div class="uk-margin">
+                    <input class="uk-input" type="text" name="phone" placeholder="Phone" value="<%=staff1.getPhone()%>">
+                </div>
 
-<%--                <div class="uk-margin">--%>
-<%--                    <input class="uk-input" type="email" name="email" placeholder="Email" value="<%=vendor1.getEmail()%>">--%>
-<%--                </div>--%>
+                <div class="uk-margin">
+                    <input class="uk-input" type="email" name="email" placeholder="Email" value="<%=staff1.getEmail()%>">
+                </div>
 
-<%--                <button class="uk-button uk-button-primary" type="submit">Update Customer</button>--%>
-<%--            </form>--%>
-<%--        </div>--%>
-<%--    </div>--%>
+                <button class="uk-button uk-button-primary" type="submit">Update Staff</button>
+            </form>
+        </div>
+    </div>
     <%--End Staff Update Modal--%>
 
     <%--End Modals--%>
@@ -154,8 +162,8 @@
                     <td class="pt-3-half" contenteditable="true"><%=staff.getPhone()%></td>
                     <td class="pt-3-half" contenteditable="true"><%=staff.getEmail()%></td>
                     <td class="pt-3-half">
-                        <form method="post" action="${pageContext.request.contextPath}/SearchVendor">
-                            <input type="hidden" name="vendorID" value="<%=staff.getStaffID()%>">
+                        <form method="post" action="${pageContext.request.contextPath}/SearchStaff">
+                            <input type="hidden" name="staffID" value="<%=staff.getStaffID()%>">
 
                             <button type="submit" class="btn btn-secondary btn-rounded btn-sm my-0">Edit</button>
                         </form>
@@ -163,8 +171,8 @@
 
                     <td>
 
-                        <form method="post" action="${pageContext.request.contextPath}/DeleteVendor">
-                            <input type="hidden" name="vendorID" value="<%=staff.getStaffID()%>">
+                        <form method="post" action="${pageContext.request.contextPath}/DeleteStaff">
+                            <input type="hidden" name="staffID" value="<%=staff.getStaffID()%>">
 
                             <span class="table-remove">
                                 <button type="submit" class="btn btn-danger btn-rounded btn-sm my-0">Remove</button>
@@ -184,7 +192,17 @@
 <jsp:include page="views/footer.jsp"></jsp:include>
 <jsp:include page="views/footer-tags.jsp"></jsp:include>
 <script>
+    $(document).ready(function () {
+        var staffID =  $('#txtStaffID').val();
 
+        if (staffID !== "N/A"){
+            openUpdateModal();
+        }
+    });
+
+    function openUpdateModal() {
+        $('#btnUpdateModal').trigger('click');
+    }
 </script>
 </body>
 </html>
