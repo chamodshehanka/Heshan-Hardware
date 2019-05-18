@@ -51,9 +51,11 @@ public class SignUpServlet extends HttpServlet {
             );
 
             if (isAdded && isAdminAdded){
+                request.setAttribute("message", "done");
                 RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/dashboard.jsp");
                 requestDispatcher.forward(request, response);
             }else {
+                request.setAttribute("message", "error");
                 RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/error.jsp");
                 requestDispatcher.forward(request, response);
             }

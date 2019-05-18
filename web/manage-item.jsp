@@ -97,7 +97,7 @@
 
                     <div class="uk-inline">
                         <span class="uk-form-icon" uk-icon="icon: item"></span>
-                        <input class="uk-input" type="text" name="itemCode" placeholder="Item Code" value="<%=item1.getItemCode()%>">
+                        <input id="txtItemCode" class="uk-input" type="text" name="itemCode" placeholder="Item Code" value="<%=item1.getItemCode()%>">
 
                     </div>
 
@@ -191,23 +191,18 @@
 <!-- Editable table -->
 
 <jsp:include page="views/footer.jsp"></jsp:include>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/uikit.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.4/js/uikit.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.4/js/uikit-icons.min.js"></script>
-<script src="assets/js/validationUtil.js" type="text/javascript"></script>
-<script src="assets/js/tableController.js" type="text/javascript"></script>
+<jsp:include page="views/footer-tags.jsp"></jsp:include>
 <script>
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-    }
+    $(document).ready(function () {
+        var itemCode =  $('#txtItemCode').val();
 
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft= "0";
+        if (itemCode !== "N/A"){
+            openUpdateModal();
+        }
+    });
+
+    function openUpdateModal() {
+        $('#btnUpdateModal').trigger('click');
     }
 </script>
 </body>

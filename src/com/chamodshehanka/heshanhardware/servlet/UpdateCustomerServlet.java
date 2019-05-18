@@ -29,8 +29,10 @@ public class UpdateCustomerServlet extends HttpServlet {
                 new Customer(customerID,name, gender,address,phone));
 
         if (isUpdated){
+            request.setAttribute("message", "done");
             request.getRequestDispatcher("/manage-customer.jsp").forward(request, response);
         }else {
+            request.setAttribute("message", "error");
             request.getRequestDispatcher("/manage-customer.jsp").forward(request, response);
         }
     }

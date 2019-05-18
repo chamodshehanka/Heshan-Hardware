@@ -30,8 +30,10 @@ public class AddOrderServlet extends HttpServlet {
         boolean isOrderAdded = OrderController.addOrder(new Order(orderID, orderDate, customerID, orderDetailArrayList));
 
         if (isOrderAdded){
+            request.setAttribute("message", "done");
             request.getRequestDispatcher("/manage-order.jsp").forward(request, response);
         }else {
+            request.setAttribute("message", "error");
             request.getRequestDispatcher("/manage-order.jsp").forward(request, response);
         }
     }

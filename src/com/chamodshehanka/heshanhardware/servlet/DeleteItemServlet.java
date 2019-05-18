@@ -24,9 +24,11 @@ public class DeleteItemServlet extends HttpServlet {
         boolean isRemoved = itemService.remove(itemCode);
 
         if (isRemoved){
+            request.setAttribute("message", "done");
             RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/manage-item.jsp");
             requestDispatcher.forward(request, response);
         } else {
+            request.setAttribute("message", "error");
             RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/error.jsp");
             requestDispatcher.forward(request, response);
         }

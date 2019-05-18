@@ -23,13 +23,11 @@ public class DeleteCustomerServlet extends HttpServlet {
         boolean isDeleted = customerService.remove(customerID);
 
         if (isDeleted){
-            request.getRequestDispatcher("/manage-customer.jsp");
+            request.setAttribute("message", "done");
+            request.getRequestDispatcher("/manage-customer.jsp").forward(request,response);
         }else {
-            response.setContentType("text/html");
-            PrintWriter pw=response.getWriter();
-            pw.println("<script type=\"text/javascript\">");
-            pw.println("alert('Invalid Username or Password');");
-            pw.println("</script>");
+            request.setAttribute("message", "error");
+            request.getRequestDispatcher("/manage-customer.jsp").forward(request,response);
         }
     }
 

@@ -26,8 +26,10 @@ public class UpdateVendorServlet extends HttpServlet {
         boolean isUpdated = VendorController.updateVendor(new Vendor(vendorID,name,type,phone,email));
 
         if (isUpdated){
+            request.setAttribute("message", "done");
             request.getRequestDispatcher("/manage-vendor.jsp").forward(request,response);
         }else {
+            request.setAttribute("message", "error");
             request.getRequestDispatcher("/manage-vendor.jsp").forward(request,response);
         }
     }

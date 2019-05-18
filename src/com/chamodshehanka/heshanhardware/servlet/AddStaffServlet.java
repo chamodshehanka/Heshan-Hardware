@@ -34,9 +34,11 @@ public class AddStaffServlet extends HttpServlet {
         boolean isUserAdded = UserController.addUser(new User(userID, username, password, type));
 
         if (isStaffAdded && isUserAdded){
+            request.setAttribute("message", "done");
             request.getRequestDispatcher("/manage-staff.jsp").forward(request,response);
         }else {
-
+            request.setAttribute("message", "error");
+            request.getRequestDispatcher("/manage-staff.jsp").forward(request,response);
         }
     }
 

@@ -26,8 +26,10 @@ public class AddVendorServlet extends HttpServlet {
         boolean isAdded = VendorController.addVendor(new Vendor(vendorID,name,type,phone,email));
 
         if (isAdded){
+            request.setAttribute("message", "done");
             request.getRequestDispatcher("/manage-vendor.jsp").forward(request,response);
         }else {
+            request.setAttribute("message", "error");
             request.getRequestDispatcher("/manage-vendor.jsp").forward(request,response);
         }
     }

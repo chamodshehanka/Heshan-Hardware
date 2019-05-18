@@ -137,7 +137,7 @@
 
     <query id="all_items">
         <![CDATA[
-            SELECT * FROM customer
+            SELECT * FROM item
         ]]>
     </query>
 
@@ -157,7 +157,7 @@
     <query id = "add_staff">
         <![CDATA[
             INSERT INTO staff
-            VALUES (?,?,?,?,?)
+            VALUES(?,?,?,?,?)
          ]]>
     </query>
 
@@ -170,7 +170,7 @@
     <query id = "update_staff">
         <![CDATA[
             UPDATE staff as s
-            SET s.staff_id = ?, s.staff_name = ?, s.phone = ?, s.email = ?, s.type = ?
+            SET s.staff_id = ?, s.name = ?, s.phone = ?, s.email = ?, s.type = ?
             WHERE s.staff_id = ?
          ]]>
     </query>

@@ -23,7 +23,7 @@ public class UpdateStaffServlet extends HttpServlet {
         String email = request.getParameter("email");
         String type = request.getParameter("type");
 
-        boolean isUpdated = StaffController.addStaff(new Staff(staffID,name,phone,email,type));
+        boolean isUpdated = StaffController.updateStaff(new Staff(staffID,name,phone,email,type));
 
         if (isUpdated){
             request.getRequestDispatcher("/manage-staff.jsp").forward(request,response);

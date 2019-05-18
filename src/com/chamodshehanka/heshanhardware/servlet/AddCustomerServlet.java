@@ -30,9 +30,11 @@ public class AddCustomerServlet extends HttpServlet {
         boolean isAdded = customerService.add(new Customer(customerID, name, gender, address, phone));
 
         if (isAdded){
+            request.setAttribute("message", "done");
             RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/manage-customer.jsp");
             requestDispatcher.forward(request, response);
         }else {
+            request.setAttribute("message", "error");
             RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/error.jsp");
             requestDispatcher.forward(request, response);
         }

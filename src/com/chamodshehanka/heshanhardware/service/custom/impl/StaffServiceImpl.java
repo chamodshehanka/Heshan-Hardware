@@ -42,7 +42,7 @@ public class StaffServiceImpl implements StaffService {
     }
 
     @Override
-    public boolean add( Staff staff ) {
+    public boolean add(Staff staff) {
         try {
             connection = DBConnectionUtil.getDBConnection();
             preparedStatement = connection.prepareStatement(QueryUtil.queryByID(CommonConstants.QUERY_ID_INSERT_STAFF));

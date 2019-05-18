@@ -21,8 +21,10 @@ public class DeleteVendorServlet extends HttpServlet {
         boolean isRemoved = VendorController.removeVendor(vendorID);
 
         if (isRemoved){
+            request.setAttribute("message", "done");
             request.getRequestDispatcher("/manage-vendor.jsp").forward(request,response);
         }else {
+            request.setAttribute("message", "error");
             request.getRequestDispatcher("/manage-vendor.jsp").forward(request,response);
         }
     }

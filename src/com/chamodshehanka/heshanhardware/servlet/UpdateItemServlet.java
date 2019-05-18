@@ -31,9 +31,11 @@ public class UpdateItemServlet extends HttpServlet {
                     new Item(itemCode, description, brand, unitPrice, qty));
 
         if (isUpdated) {
+            request.setAttribute("message", "done");
             RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("manage-item.jsp");
             requestDispatcher.forward(request, response);
         }else {
+            request.setAttribute("message", "error");
             RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("error.jsp");
             requestDispatcher.forward(request, response);
         }
