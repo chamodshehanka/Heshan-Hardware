@@ -154,10 +154,9 @@
         ]]>
     </query>
 
-    <query id = "add_staff">
+    <query id = "insert_staff">
         <![CDATA[
-            INSERT INTO staff
-            VALUES(?,?,?,?,?)
+            INSERT INTO staff VALUES(?,?,?,?,?)
          ]]>
     </query>
 

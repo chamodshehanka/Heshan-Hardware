@@ -45,6 +45,7 @@ public class StaffServiceImpl implements StaffService {
     public boolean add(Staff staff) {
         try {
             connection = DBConnectionUtil.getDBConnection();
+            System.out.println("Q:"+QueryUtil.queryByID(CommonConstants.QUERY_ID_INSERT_STAFF));
             preparedStatement = connection.prepareStatement(QueryUtil.queryByID(CommonConstants.QUERY_ID_INSERT_STAFF));
 
             preparedStatement.setObject(CommonConstants.COLUMN_INDEX_ONE, staff.getStaffID());
