@@ -10,10 +10,7 @@ import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
 /**
@@ -92,7 +89,23 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public ArrayList<Order> getAll() {
-        return null;
+        ArrayList<Order> orderArrayList = new ArrayList<>();
+        try {
+            connection = DBConnectionUtil.getDBConnection();
+            statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(QueryUtil.queryByID(CommonConstants.QUERY_ID_GET_ALL_ORDERS));
+            while (resultSet.next()){
+                orderArrayList.add(new Order(
+                        resultSet.getString(CommonConstants.COLUMN_INDEX_ONE),
+                        resultSet.getString(CommonConstants.COLUMN_INDEX_TWO),
+                        resultSet.getString(CommonConstants.COLUMN_INDEX_THREE),
+                        null
+                ));
+            }
+        } catch (SQLException | ClassNotFoundException | SAXException | ParserConfigurationException | IOException e) {
+            e.printStackTrace();
+        }
+        return orderArrayList;
     }
 
     @Override
