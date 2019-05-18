@@ -80,12 +80,33 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean update(String userID, User user) {
+        try {
+            connection = DBConnectionUtil.getDBConnection();
+            preparedStatement = connection.prepareStatement(QueryUtil.queryByID(CommonConstants.QUERY_ID_UPDATE_USER));
+
+            preparedStatement.setString(CommonConstants.COLUMN_INDEX_ONE, user.getUserID());
+            preparedStatement.setString(CommonConstants.COLUMN_INDEX_TWO, user.getUserName());
+            preparedStatement.setString(CommonConstants.COLUMN_INDEX_THREE, user.getUserPassword());
+            preparedStatement.setString(CommonConstants.COLUMN_INDEX_FOUR, user.getUserType());
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_FIVE, userID);
+
+            return 0 < preparedStatement.executeUpdate();
+        } catch (SQLException | ClassNotFoundException | SAXException | ParserConfigurationException | IOException e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
     @Override
     public boolean remove(String userID) {
-
+        try {
+            connection = DBConnectionUtil.getDBConnection();
+            preparedStatement = connection.prepareStatement(QueryUtil.queryByID(CommonConstants.QUERY_ID_REMOVE_USER));
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_ONE, userID);
+            return 0 < preparedStatement.executeUpdate();
+        } catch (SQLException | ClassNotFoundException | SAXException | ParserConfigurationException | IOException e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
