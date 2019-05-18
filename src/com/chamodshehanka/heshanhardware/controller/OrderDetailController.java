@@ -30,7 +30,7 @@ public class OrderDetailController {
 
     public static ArrayList<OrderDetail> getOrderDetailByID(String orderID){
         orderDetailService = new OrderDetailServiceImpl();
-        return null;
+        return orderDetailService.getOrderAllDetailByID(orderID);
     }
 
 }

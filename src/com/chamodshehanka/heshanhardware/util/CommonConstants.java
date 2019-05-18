@@ -103,6 +103,7 @@ public class CommonConstants {
     public static final String QUERY_ID_UPDATE_ORDER_DETAIL = "update_order_detail";
     public static final String QUERY_ID_REMOVE_ORDER_DETAIL = "remove_order_detail";
     public static final String QUERY_ID_GET_ALL_ORDER_DETAILS = "all_order_details";
+    public static final String QUERY_ID_GET_ALL_ORDER_DETAILS_BY_ID = "all_order_details_by_id";
 
     public static final String STAFF_ID_PREFIX = "S";
     public static final String STAFF_TABLE_NAME = "staff";

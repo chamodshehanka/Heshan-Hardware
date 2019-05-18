@@ -9,10 +9,7 @@ import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
 /**
@@ -59,18 +56,39 @@ public class OrderDetailServiceImpl implements OrderDetailService {
         return false;
     }
 
+    public ArrayList<OrderDetail> getOrderAllDetailByID(String orderID){
+        ArrayList<OrderDetail> orderDetailArrayList = new ArrayList<>();
+        try {
+            connection = DBConnectionUtil.getDBConnection();
+            preparedStatement = connection.prepareStatement(QueryUtil.queryByID(CommonConstants.QUERY_ID_GET_ALL_ORDER_DETAILS_BY_ID));
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_ONE, orderID);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                orderDetailArrayList.add(new OrderDetail(
+                        resultSet.getString(CommonConstants.COLUMN_INDEX_ONE),
+                        resultSet.getString(CommonConstants.COLUMN_INDEX_TWO),
+                        resultSet.getInt(CommonConstants.COLUMN_INDEX_THREE),
+                        resultSet.getDouble(CommonConstants.COLUMN_INDEX_FOUR)
+                ));
+            }
+        } catch (SQLException | ClassNotFoundException | SAXException | ParserConfigurationException | IOException e) {
+            e.printStackTrace();
+        }
+        return orderDetailArrayList;
+    }
+
     @Override
     public OrderDetail getByID(String s) {
         return null;
     }
 
     @Override
-    public boolean update(String s, OrderDetail orderDetail) {
+    public boolean update(String orderID, OrderDetail orderDetail) {
         return false;
     }
 
     @Override
-    public boolean remove(String s) {
+    public boolean remove(String orderID) {
         return false;
     }
 
