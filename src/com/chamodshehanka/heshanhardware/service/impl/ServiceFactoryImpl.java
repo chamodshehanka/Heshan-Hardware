@@ -26,7 +26,6 @@ public class ServiceFactoryImpl implements ServiceFactory {
         switch (serviceType){
             case ADMIN: return new AdminServiceImpl();
             case CUSTOMER: return new CustomerServiceImpl();
-            case EMPLOYEE: return new EmployeeServiceImpl();
             case ITEM: return new ItemServiceImpl();
             case ORDER: return new OrderServiceImpl();
             case ORDER_DETAIL: return new OrderDetailServiceImpl();
