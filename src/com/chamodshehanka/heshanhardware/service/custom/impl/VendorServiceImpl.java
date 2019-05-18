@@ -139,7 +139,8 @@ public class VendorServiceImpl implements VendorService {
     public String getNewID() {
         String newID = null;
         try {
-            newID = IDGenerator.getNewID("vendor", "vendor_id", "V");
+            newID = IDGenerator.getNewID(CommonConstants.VENDOR_TABLE_NAME,
+                    CommonConstants.VENDOR_TABLE_COL_NAME, CommonConstants.VENDOR_ID_PREFIX);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
