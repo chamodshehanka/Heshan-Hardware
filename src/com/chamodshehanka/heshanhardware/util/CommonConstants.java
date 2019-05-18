@@ -88,7 +88,7 @@ public class CommonConstants {
     public static final String QUERY_ID_GET_ALL_ITEMS = "all_items";
 
     public static final String ORDER_ID_PREFIX = "O";
-    public static final String ORDER_TABLE_NAME = "order";
+    public static final String ORDER_TABLE_NAME = "orders";
     public static final String ORDER_TABLE_COL_NAME = "order_id";
     public static final String QUERY_ID_CREATE_ORDER_TABLE = "create_order_table";
     public static final String QUERY_ID_INSERT_ORDER = "insert_order";
