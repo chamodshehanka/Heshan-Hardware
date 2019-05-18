@@ -19,12 +19,26 @@ import java.util.ArrayList;
 public class OrderDetailServiceImpl implements OrderDetailService {
 
     private OrderDetailServiceImpl orderDetailService;
-    private Connection connection;
+    private static Connection connection;
     private PreparedStatement preparedStatement;
-    private Statement statement;
+    private static Statement statement;
 
     public OrderDetailServiceImpl(){
         orderDetailService = new OrderDetailServiceImpl();
+    }
+
+    static {
+        createOrderTable();
+    }
+
+    private static void createOrderTable() {
+        try {
+            connection = DBConnectionUtil.getDBConnection();
+            statement = connection.createStatement();
+            statement.executeUpdate(QueryUtil.queryByID(CommonConstants.QUERY_ID_CREATE_ORDER_DETAIL_TABLE));
+        } catch (SQLException | ClassNotFoundException | SAXException | ParserConfigurationException | IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public boolean addOrderDetails(ArrayList<OrderDetail> orderDetailArrayList){
