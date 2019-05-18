@@ -25,7 +25,7 @@
         if (type === "done"){
             UIkit.notification({message: 'Success ...', status: 'success'});
         }else if (type === "error"){
-            UIkit.notification({message: 'Failed ...', status: 'danger'});
+            UIkit.notification({message: 'Error ...', status: 'danger'});
         }
 
     }
