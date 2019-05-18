@@ -17,7 +17,96 @@
 <jsp:include page="views/header.jsp"></jsp:include>
 
 
+<section class="uk-card uk-card-default uk-card-hover uk-card-body align-items-center">
+    <div>
+        <h2 style="text-align: center">
+            Manage User
+        </h2>
+    </div>
 
+    <div class="container">
+        <button class="uk-button uk-button-primary" uk-toggle="target: #add-user-modal" type="button">New User</button>
+        <button id="btnUpdateModal" class="uk-button uk-button-primary" uk-toggle="target: #update-user-modal" type="button">Update User</button>
+    </div>
+
+    <%--Modals--%>
+
+    <%--Add User Modal--%>
+    <div id="add-user-modal" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <h2 class="uk-modal-title">Add User</h2>
+            <button class="uk-modal-close" type="button"></button>
+
+            <form action="${pageContext.request.contextPath}/AddUser" method="post">
+
+
+                <div class="uk-margin">
+                    <input class="uk-input" type="text" name="userID" value="<%=UserController.getNewUserID()%>">
+                </div>
+
+                <div class="uk-margin">
+                    <input class="uk-input" type="text" name="username" placeholder="User Name">
+                </div>
+
+                <div class="uk-margin">
+                    <input class="uk-input" type="password" name="password" placeholder="Password">
+                </div>
+
+                <div class="uk-margin">
+                    <select class="uk-select" name="type">
+                        <option value="Admin">Admin</option>
+                        <option value="Cashier">Cashier</option>
+                        <option value="Store Keeper">Store Keeper</option>
+                    </select>
+                </div>
+
+                <button class="uk-button uk-button-primary" type="submit">Add User</button>
+            </form>
+        </div>
+    </div>
+    <%--End Add User Modal--%>
+
+    <%--Update Customer Modal--%>
+    <div id="update-user-modal" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <h2 class="uk-modal-title">Update User</h2>
+
+            <%
+                User user1 = (User) request.getAttribute("user");
+                if (user1 == null){
+                    user1 = new User("N/A","N/A","N/A","N/A");
+                }
+            %>
+
+            <form action="${pageContext.request.contextPath}/UpdateUser" method="post">
+
+
+                <div class="uk-margin">
+                    <input id="txtUserID" class="uk-input" type="text" name="userID" placeholder="User ID" value="<%=user1.getUserID()%>">
+
+                </div>
+
+                <div class="uk-margin">
+                    <input class="uk-input" type="text" name="username" placeholder="User Name" value="<%=user1.getUserName()%>">
+                </div>
+
+                <div class="uk-margin">
+                    <input class="uk-input" type="password" name="password" placeholder="Password" value="<%=user1.getUserPassword()%>">
+                </div>
+
+                <div class="uk-margin">
+                    <input class="uk-input" type="text" name="type" placeholder="Type" value="<%=user1.getUserType()%>">
+                </div>
+
+                <button class="uk-button uk-button-primary" type="submit">Update User</button>
+            </form>
+        </div>
+    </div>
+    <%--End User Update Modal--%>
+
+    <%--End Modals--%>
+
+</section>
 
 
 <div class="card">

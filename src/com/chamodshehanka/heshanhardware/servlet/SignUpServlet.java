@@ -29,7 +29,7 @@ public class SignUpServlet extends HttpServlet {
         String userID = userService.getNewID();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String userType = "admin";
+        String userType = "Admin";
 
         boolean isValidUserName = true;
 

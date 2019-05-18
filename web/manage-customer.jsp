@@ -90,7 +90,6 @@
                 if (customer1 == null){
                     customer1 = new Customer("N/A","N/A","N/A","N/A",0);
                 }
-                out.println(customer1.getName());
             %>
 
             <form action="${pageContext.request.contextPath}/UpdateCustomer" method="post">
