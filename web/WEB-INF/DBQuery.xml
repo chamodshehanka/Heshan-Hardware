@@ -70,6 +70,12 @@
         ]]>
     </query>
 
+    <query id="remove_customer">
+        <![CDATA[
+            DELETE FROM customer WHERE customer_id = ?
+        ]]>
+    </query>
+
     <query id="customer_by_id">
         <![CDATA[
             SELECT * FROM customer WHERE customer.customer_id = ?
@@ -92,7 +98,7 @@
 
     <query id="create_item_table">
         <![CDATA[
-            CREATE TABLE item(
+            CREATE TABLE IF NOT EXIST item(
                 item_code VARCHAR(5),
                 description VARCHAR(50),
                 brand VARCHAR(10),
@@ -118,7 +124,155 @@
     <query id="update_item">
         <![CDATA[
             UPDATE item as i
-            SET i.item_code = ?, i.description = ?, i.brand = ?
+            SET i.item_code = ?, i.description = ?, i.brand = ?, i.unitprice = ?, i.qty = ?
+            WHERE i.item_code = ?
+        ]]>
+    </query>
+
+    <query id="remove_item">
+        <![CDATA[
+            DELETE FROM item WHERE item_code = ?
+        ]]>
+    </query>
+
+    <query id="all_items">
+        <![CDATA[
+            SELECT * FROM customer
+        ]]>
+    </query>
+
+    <!-- crate table staff query -->
+    <query id = "create_staff_table">
+        <![CDATA[
+            CREATE TABLE IF NOT EXISTS staff(
+                staff_id VARCHAR(20) PRIMARY KEY,
+                name VARCHAR(50),
+                phone int,
+                email VARCHAR(20),
+                type VARCHAR(10)
+             );
+        ]]>
+    </query>
+
+    <query id = "add_staff">
+        <![CDATA[
+            INSERT INTO staff
+            VALUES (?,?,?,?,?)
+         ]]>
+    </query>
+
+    <query id = "staff_by_id">
+        <![CDATA[
+            SELECT * FROM staff WHERE staff.staff_id = ?
+        ]]>
+    </query>
+
+    <query id = "update_staff">
+        <![CDATA[
+            UPDATE staff as s
+            SET s.staff_id = ?, s.staff_name = ?, s.phone = ?, s.email = ?, s.type = ?
+            WHERE s.staff_id = ?
+         ]]>
+    </query>
+
+    <query id = "remove_staff">
+        <![CDATA[
+            DELETE FROM staff WHERE staff.staff_id = ?
+        ]]>
+    </query>
+
+    <query id = "all_staff">
+        <![CDATA[
+            SELECT * FROM staff
+        ]]>
+    </query>
+
+    <!--create table order_detail query-->
+    <query id = "create_order_detail_table">
+        <![CDATA[
+            CREATE TABLE IF NOT EXISTS order_detail(
+                order_id VARCHAR(10),
+                item_code VARCHAR(20),
+                item_qty int,
+                item_unit_price DECIMAL(10,2),
+                PRIMARY KEY(order_id, item_code)
+            )
+         ]]>
+    </query>
+
+    <query id = "insert_order_detail">
+        <![CDATA[
+            INSERT INTO order_detail
+            VALUES (?,?,?,?)
+        ]]>
+    </query>
+
+    <query id = "update_order_detail">
+        <![CDATA[
+            UPDATE order_detail as o
+            SET o.order_id = ?, o.item_code = ?, o.item_qty = ?, o.item_unit_price = ?
+            WHERE o.order_detail = ?
+        ]]>
+    </query>
+
+    <query id = "remove_order_detail">
+        <![CDATA[
+            DELETE FROM order_detail WHERE order_detail.order_id = ?
+        ]]>
+    </query>
+
+    <query id = "all_order_details">
+        <![CDATA[
+            SELECT * FROM order_detail
+        ]]>
+    </query>
+
+    <query id="all_order_details_by_id">
+        <![CDATA[
+            SELECT * FROM order_detail WHERE order_id = ?
+        ]]>
+    </query>
+
+    <query id="create_user_table">
+        <![CDATA[
+            CREATE TABLE IF NOT EXIST user(
+                user_id VARCHAR(5) PRIMARY KEY,
+                user_name VARCHAR(50),
+                user_password VARCHAR(100),
+                user_type VARCHAR(10)
+            )
+        ]]>
+    </query>
+
+    <query id="insert_user">
+        <![CDATA[
+            INSERT INTO user VALUES(?,?,?,?)
+        ]]>
+    </query>
+
+    <query id="user_by_id">
+        <![CDATA[
+            SELECT * FROM user WHERE user_id = ?
+        ]]>
+    </query>
+
+    <query id="update_user">
+        <![CDATA[
+            UPDATE user AS u
+            SET u.user_id = ?, u.user_name = ?, u.user_password = ?, u.user_type = ?
+            WHERE u.user_id = ?
+        ]]>
+    </query>
+
+    <query id="remove_user">
+        <![CDATA[
+             DELETE FROM user WHERE user_id = ?
+        ]]>
+    </query>
+
+    <query id="all_users">
+        <![CDATA[
+            SELECT * FROM user
         ]]>
     </query>
 

@@ -61,6 +61,7 @@
     <a href="manage-item.jsp">Items</a>
     <a href="manage-order.jsp">Order</a>
     <a href="manage-customer.jsp">Customer</a>
+    <a href="manage-staff.jsp">Staff</a>
     <a href="manage-vendor.jsp">Vendor</a>
     <a href="manage-user.jsp">User</a>
 </div>
