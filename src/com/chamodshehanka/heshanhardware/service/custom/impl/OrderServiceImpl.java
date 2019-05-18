@@ -1,5 +1,6 @@
 package com.chamodshehanka.heshanhardware.service.custom.impl;
 
+import com.chamodshehanka.heshanhardware.controller.OrderDetailController;
 import com.chamodshehanka.heshanhardware.model.Order;
 import com.chamodshehanka.heshanhardware.service.custom.OrderService;
 import com.chamodshehanka.heshanhardware.util.CommonConstants;
@@ -43,8 +44,33 @@ public class OrderServiceImpl implements OrderService {
     public boolean add(Order order) {
         try {
             connection = DBConnectionUtil.getDBConnection();
-        } catch (SQLException | ClassNotFoundException e) {
+            connection.setAutoCommit(false);
+            preparedStatement = connection.prepareStatement(QueryUtil.queryByID(CommonConstants.QUERY_ID_INSERT_ORDER));
+
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_ONE, order.getOrderID());
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_TWO, order.getOrderDate());
+            preparedStatement.setObject(CommonConstants.COLUMN_INDEX_THREE, order.getCustomerID());
+
+            int isOrderAdded = preparedStatement.executeUpdate();
+            if (isOrderAdded > 0){
+                boolean isAdded = OrderDetailController.addOrderDetail(order.getOrderDetailArrayList());
+                if (isAdded){
+                    connection.commit();
+                    return true;
+                }else {
+                    connection.rollback();
+                    connection.close();
+                    return false;
+                }
+            }
+        } catch (SQLException | ClassNotFoundException | SAXException | ParserConfigurationException | IOException e) {
             e.printStackTrace();
+        }finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         return false;
     }

@@ -133,7 +133,8 @@ public class AdminServiceImpl implements AdminService {
     public String getNewID() {
         String newID = null;
         try {
-            newID = IDGenerator.getNewID("admin","admin_id","A");
+            newID = IDGenerator.getNewID(CommonConstants.ADMIN_TABLE_NAME,
+                    CommonConstants.ADMIN_TABLE_COL_NAME,CommonConstants.ADMIN_ID_PREFIX);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }

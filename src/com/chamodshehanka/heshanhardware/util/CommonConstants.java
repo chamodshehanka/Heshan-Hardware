@@ -91,11 +91,11 @@ public class CommonConstants {
     public static final String ORDER_TABLE_NAME = "order";
     public static final String ORDER_TABLE_COL_NAME = "order_id";
     public static final String QUERY_ID_CREATE_ORDER_TABLE = "create_order_table";
-    public static final String QUERY_ID_INSERT_ORDER = "insert_item";
-    public static final String QUERY_ID_GET_ORDER = "item_by_id";
-    public static final String QUERY_ID_UPDATE_ORDER = "update_item";
-    public static final String QUERY_ID_REMOVE_ORDER = "remove_item";
-    public static final String QUERY_ID_GET_ALL_ORDERS = "all_items";
+    public static final String QUERY_ID_INSERT_ORDER = "insert_order";
+    public static final String QUERY_ID_GET_ORDER = "order_by_id";
+    public static final String QUERY_ID_UPDATE_ORDER = "update_order";
+    public static final String QUERY_ID_REMOVE_ORDER = "remove_order";
+    public static final String QUERY_ID_GET_ALL_ORDERS = "all_orders";
 
     public static final String QUERY_ID_CREATE_ORDER_DETAIL_TABLE = "create_order_detail_table";
     public static final String QUERY_ID_INSERT_ORDER_DETAIL = "insert_order_detail";

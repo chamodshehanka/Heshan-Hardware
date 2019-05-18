@@ -150,7 +150,8 @@ public class CustomerServiceImpl implements CustomerService {
     public String getNewID() {
         String newID = null;
         try {
-            newID = IDGenerator.getNewID("customer", "customer_id", "C");
+            newID = IDGenerator.getNewID(CommonConstants.CUSTOMER_TABLE_NAME,
+                    CommonConstants.CUSTOMER_TABLE_COL_NAME, CommonConstants.CUSTOMER_ID_PREFIX);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
