@@ -97,7 +97,42 @@ public class CommonConstants {
     public static final String QUERY_ID_REMOVE_ORDER = "remove_item";
     public static final String QUERY_ID_GET_ALL_ORDERS = "all_items";
 
+    public static final String QUERY_ID_CREATE_ORDER_DETAIL_TABLE = "create_order_detail_table";
+    public static final String QUERY_ID_INSERT_ORDER_DETAIL = "insert_order_detail";
+    public static final String QUERY_ID_GET_ORDER_DETAIL = "order_detail_by_id";
+    public static final String QUERY_ID_UPDATE_ORDER_DETAIL = "update_order_detail";
+    public static final String QUERY_ID_REMOVE_ORDER_DETAIL = "remove_order_detail";
+    public static final String QUERY_ID_GET_ALL_ORDER_DETAILS = "all_order_details";
 
+    public static final String STAFF_ID_PREFIX = "S";
+    public static final String STAFF_TABLE_NAME = "staff";
+    public static final String STAFF_TABLE_COL_NAME = "staff_id";
+    public static final String QUERY_ID_CREATE_STAFF_TABLE = "create_staff_table";
+    public static final String QUERY_ID_INSERT_STAFF = "insert_staff";
+    public static final String QUERY_ID_GET_STAFF = "staff_by_id";
+    public static final String QUERY_ID_UPDATE_STAFF = "update_staff";
+    public static final String QUERY_ID_REMOVE_STAFF = "remove_staff";
+    public static final String QUERY_ID_GET_ALL_STAFF = "all_staff";
+
+    public static final String STOCK_ID_PREFIX = "S";
+    public static final String STOCK_TABLE_NAME = "stock";
+    public static final String STOCK_TABLE_COL_NAME = "stock_id";
+    public static final String QUERY_ID_CREATE_STOCK_TABLE = "create_stock_table";
+    public static final String QUERY_ID_INSERT_STOCK = "insert_stock";
+    public static final String QUERY_ID_GET_STOCK = "stock_by_id";
+    public static final String QUERY_ID_UPDATE_STOCK = "update_stock";
+    public static final String QUERY_ID_REMOVE_STOCK = "remove_stock";
+    public static final String QUERY_ID_GET_ALL_STOCK = "all_stock";
+
+    public static final String USER_ID_PREFIX = "U";
+    public static final String USER_TABLE_NAME = "user";
+    public static final String USER_TABLE_COL_NAME = "user_id";
+    public static final String QUERY_ID_CREATE_USER_TABLE = "create_user_table";
+    public static final String QUERY_ID_INSERT_USER = "insert_user";
+    public static final String QUERY_ID_GET_USER = "user_by_id";
+    public static final String QUERY_ID_UPDATE_USER = "update_user";
+    public static final String QUERY_ID_REMOVE_USER = "remove_user";
+    public static final String QUERY_ID_GET_ALL_USERS = "all_users";
 
     public static final String VENDOR_ID_PREFIX = "V";
     public static final String VENDOR_TABLE_NAME = "vendor";
