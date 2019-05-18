@@ -1,5 +1,6 @@
 package com.chamodshehanka.heshanhardware.servlet;
 
+import com.chamodshehanka.heshanhardware.controller.UserController;
 import com.chamodshehanka.heshanhardware.model.User;
 import com.chamodshehanka.heshanhardware.service.custom.UserService;
 import com.chamodshehanka.heshanhardware.service.custom.impl.UserServiceImpl;
@@ -27,9 +28,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
-        UserService userService = new UserServiceImpl();
-        ArrayList<User> userArrayList = userService.getAll();
-
+        ArrayList<User> userArrayList = UserController.getAllUsers();
         String username = httpServletRequest.getParameter("username");
         String password = httpServletRequest.getParameter("password");
 

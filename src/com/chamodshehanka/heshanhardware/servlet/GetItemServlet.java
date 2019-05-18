@@ -1,8 +1,7 @@
 package com.chamodshehanka.heshanhardware.servlet;
 
+import com.chamodshehanka.heshanhardware.controller.ItemController;
 import com.chamodshehanka.heshanhardware.model.Item;
-import com.chamodshehanka.heshanhardware.service.custom.ItemService;
-import com.chamodshehanka.heshanhardware.service.custom.impl.ItemServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,9 +17,8 @@ import java.io.IOException;
 @WebServlet(name = "GetItemServlet", urlPatterns = "/SearchItem")
 public class GetItemServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ItemService itemService = new ItemServiceImpl();
         String itemCode = request.getParameter("itemCode");
-        Item item = itemService.getByID(itemCode);
+        Item item = ItemController.getItemByID(itemCode);
 
         response.setContentType("text/html");
         request.setAttribute("item", item);
@@ -28,13 +26,6 @@ public class GetItemServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ItemService itemService = new ItemServiceImpl();
-        String itemCode = request.getParameter("itemCode");
-        Item item = itemService.getByID(itemCode);
 
-        String result = item.getItemDescription();
-
-        response.setContentType("text/plain");
-        response.getWriter().write(result);
     }
 }

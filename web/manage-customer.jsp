@@ -1,7 +1,6 @@
-<%@ page import="com.chamodshehanka.heshanhardware.service.custom.CustomerService" %>
-<%@ page import="com.chamodshehanka.heshanhardware.service.custom.impl.CustomerServiceImpl" %>
-<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.chamodshehanka.heshanhardware.controller.CustomerController" %>
 <%@ page import="com.chamodshehanka.heshanhardware.model.Customer" %>
+<%@ page import="java.util.ArrayList" %>
 <%--
   Created by IntelliJ IDEA.
   User: chamodshehanka
@@ -44,10 +43,7 @@
 
 
                 <div class="uk-margin">
-                    <%
-                        CustomerService customerService = new CustomerServiceImpl();
-                    %>
-                    <input class="uk-input" type="text" name="customerID" value="<%=customerService.getNewID()%>">
+                    <input class="uk-input" type="text" name="customerID" value="<%=CustomerController.getNewCustomerID()%>">
                 </div>
 
                 <div class="uk-margin">
@@ -148,7 +144,7 @@
                 </tr>
 
                 <%
-                    ArrayList<Customer> customerArrayList = customerService.getAll();
+                    ArrayList<Customer> customerArrayList = CustomerController.getAllCustomers();
 
                     for (Customer customer : customerArrayList
                     ) {

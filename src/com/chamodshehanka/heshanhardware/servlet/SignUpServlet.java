@@ -1,11 +1,9 @@
 package com.chamodshehanka.heshanhardware.servlet;
 
+import com.chamodshehanka.heshanhardware.controller.AdminController;
+import com.chamodshehanka.heshanhardware.controller.UserController;
 import com.chamodshehanka.heshanhardware.model.Admin;
 import com.chamodshehanka.heshanhardware.model.User;
-import com.chamodshehanka.heshanhardware.service.custom.AdminService;
-import com.chamodshehanka.heshanhardware.service.custom.UserService;
-import com.chamodshehanka.heshanhardware.service.custom.impl.AdminServiceImpl;
-import com.chamodshehanka.heshanhardware.service.custom.impl.UserServiceImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,17 +21,14 @@ import java.util.ArrayList;
 @WebServlet(name = "SignUpServlet", urlPatterns = "/signUp")
 public class SignUpServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        UserService userService = new UserServiceImpl();
-        AdminService adminService = new AdminServiceImpl();
-
-        String userID = userService.getNewID();
+        String userID = UserController.getNewUserID();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String userType = "Admin";
 
         boolean isValidUserName = true;
 
-        ArrayList<User> userArrayList = userService.getAll();
+        ArrayList<User> userArrayList = UserController.getAllUsers();
         for (User user: userArrayList
         ) {
             if (user.getUserName().equals(username)){
@@ -42,13 +37,8 @@ public class SignUpServlet extends HttpServlet {
         }
 
         if (isValidUserName) {
-            boolean isAdded = userService.add(
-                    new User(userID, username, password, userType)
-            );
-
-            boolean isAdminAdded = adminService.add(
-                    new Admin(adminService.getNewID(),username,password)
-            );
+            boolean isAdded = UserController.addUser(new User(userID, username, password, userType));
+            boolean isAdminAdded = AdminController.addAdmin(new Admin(AdminController.getNewAdminID(),username,password));
 
             if (isAdded && isAdminAdded){
                 request.setAttribute("message", "done");

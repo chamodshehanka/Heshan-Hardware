@@ -1,8 +1,7 @@
 package com.chamodshehanka.heshanhardware.servlet;
 
+import com.chamodshehanka.heshanhardware.controller.ItemController;
 import com.chamodshehanka.heshanhardware.model.Item;
-import com.chamodshehanka.heshanhardware.service.custom.ItemService;
-import com.chamodshehanka.heshanhardware.service.custom.impl.ItemServiceImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,16 +18,13 @@ import java.io.IOException;
 @WebServlet(name = "UpdateItemServlet", urlPatterns = "/UpdateItem")
 public class UpdateItemServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ItemService itemService = new ItemServiceImpl();
-
         String itemCode = request.getParameter("itemCode");
         String description = request.getParameter("description");
         String brand = request.getParameter("brand");
         double unitPrice = Double.parseDouble(request.getParameter("unitPrice"));
         int qty = Integer.parseInt(request.getParameter("qty"));
 
-        boolean isUpdated = itemService.update(itemCode,
-                    new Item(itemCode, description, brand, unitPrice, qty));
+        boolean isUpdated = ItemController.updateItem(new Item(itemCode, description, brand, unitPrice, qty));
 
         if (isUpdated) {
             request.setAttribute("message", "done");

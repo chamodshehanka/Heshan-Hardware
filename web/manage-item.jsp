@@ -31,7 +31,6 @@
 
     <div class="container">
         <button class="uk-button uk-button-primary" uk-toggle="target: #add-item-modal" type="button">New Item</button>
-        <button id="btnSearchItem" class="uk-button uk-button-primary" >Search Item</button>
         <button class="uk-button uk-button-primary" uk-toggle="target: #update-item-modal">Update Item</button>
 
         <%--Modals--%>

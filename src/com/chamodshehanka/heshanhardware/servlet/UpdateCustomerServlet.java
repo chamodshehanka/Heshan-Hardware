@@ -1,8 +1,7 @@
 package com.chamodshehanka.heshanhardware.servlet;
 
+import com.chamodshehanka.heshanhardware.controller.CustomerController;
 import com.chamodshehanka.heshanhardware.model.Customer;
-import com.chamodshehanka.heshanhardware.service.custom.CustomerService;
-import com.chamodshehanka.heshanhardware.service.custom.impl.CustomerServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,9 +23,7 @@ public class UpdateCustomerServlet extends HttpServlet {
         String address = request.getParameter("address");
         int phone = Integer.parseInt(request.getParameter("phone"));
 
-        CustomerService customerService = new CustomerServiceImpl();
-        boolean isUpdated = customerService.update(customerID,
-                new Customer(customerID,name, gender,address,phone));
+        boolean isUpdated = CustomerController.updateCustomer(new Customer(customerID,name, gender,address,phone));
 
         if (isUpdated){
             request.setAttribute("message", "done");
