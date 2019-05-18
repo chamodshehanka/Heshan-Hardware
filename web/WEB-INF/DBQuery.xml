@@ -187,6 +187,50 @@
         ]]>
     </query>
 
+    <query id="create_order_table">
+        <![CDATA[
+            CREATE TABLE order(
+                order_id VARCHAR(5) PRIMARY KEY,
+                order_date VARCHAR(10),
+                customer_id VARCHAR(5)
+            )
+        ]]>
+    </query>
+
+    <query id="insert_order">
+        <![CDATA[
+            INSERT INTO order VALUES(?,?,?)
+        ]]>
+    </query>
+
+    <query id="order_by_id">
+        <![CDATA[
+            SELECT *
+            FROM order
+            WHERE order_id = ?
+        ]]>
+    </query>
+
+    <query id="update_order">
+        <![CDATA[
+            UPDATE order AS o
+            SET o.order_id = ?, o.order_date = ?, o.customer_id = ?
+            WHERE o.order_id = ?
+        ]]>
+    </query>
+
+    <query id="remove_order">
+        <![CDATA[
+            DELETE FROM order WHERE order_id = ?
+        ]]>
+    </query>
+
+    <query id="all_orders">
+        <![CDATA[
+            SELECT * FROM order
+        ]]>
+    </query>
+
     <!--create table order_detail query-->
     <query id = "create_order_detail_table">
         <![CDATA[
@@ -235,7 +279,7 @@
 
     <query id="create_user_table">
         <![CDATA[
-            CREATE TABLE IF NOT EXIST user(
+            CREATE TABLE IF NOT EXISTS user(
                 user_id VARCHAR(5) PRIMARY KEY,
                 user_name VARCHAR(50),
                 user_password VARCHAR(100),

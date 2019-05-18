@@ -51,8 +51,8 @@
 
                 <div class="uk-margin">
                     <select class="uk-select" name="type">
-                        <option value="Local"></option>
-                        <option value="Foreign">Foreign</option>
+                        <option value="Store Keeper">Store Keeper</option>
+                        <option value="Cashier">Cashier</option>
                     </select>
                 </div>
 
