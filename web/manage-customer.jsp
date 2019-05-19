@@ -53,8 +53,8 @@
                 <div class="uk-margin">
                     <div class="uk-form-label">Gender</div>
                     <div class="uk-form-controls">
-                        <label><input class="uk-radio" type="radio" name="gender"> Male</label><br>
-                        <label><input class="uk-radio" type="radio" name="gender"> Female</label>
+                        <label><input class="uk-radio" type="radio" name="gender" value="Male"> Male</label><br>
+                        <label><input class="uk-radio" type="radio" name="gender" value="Female"> Female</label>
                     </div>
                 </div>
 
