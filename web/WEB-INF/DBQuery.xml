@@ -98,7 +98,7 @@
 
     <query id="create_item_table">
         <![CDATA[
-            CREATE TABLE IF NOT EXIST item(
+            CREATE TABLE IF NOT EXISTS item(
                 item_code VARCHAR(5),
                 description VARCHAR(50),
                 brand VARCHAR(10),

@@ -75,7 +75,7 @@
     <%--Update Customer Modal--%>
     <div id="update-customer-modal" uk-modal>
         <div class="uk-modal-dialog uk-modal-body">
-            <h2 class="uk-modal-title">Update Item</h2>
+            <h2 class="uk-modal-title">Update Customer</h2>
 
             <div class="uk-alert-danger" uk-alert>
                 <a class="uk-alert-close" uk-close></a>
