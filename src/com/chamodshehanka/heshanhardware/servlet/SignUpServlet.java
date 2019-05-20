@@ -46,7 +46,7 @@ public class SignUpServlet extends HttpServlet {
                 requestDispatcher.forward(request, response);
             }else {
                 request.setAttribute("message", "error");
-                RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/error.jsp");
+                RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/index.jsp");
                 requestDispatcher.forward(request, response);
             }
         }
